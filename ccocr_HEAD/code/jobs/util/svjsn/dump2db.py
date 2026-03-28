@@ -3,6 +3,7 @@
 #
 #   dump2db.py      260328  cy
 #   updated: 260328 add angl/jw/jh to page; add 8-pt polygon to elm
+#   updated: 260328 apply rotate() before storing top/btm/lft/ryt (fix rotated docs)
 #
 #   Write jsn4db results to {jobid}.dump.db (SQLite).
 #   Called from svjsn() after all jsn4db() calls complete.
@@ -21,10 +22,11 @@
 import os
 import sqlite3
 
-from m.prnt         import prnt
-from m.env          import D
-from jobs.env       import DD
-from .dump2db_xl    import dump2db_xl
+from m.prnt                         import prnt
+from m.env                          import D
+from jobs.env                       import DD
+from jobs.jsn2db.markpng.rotate     import rotate
+from .dump2db_xl                    import dump2db_xl
 
 
 def dump2db(results):
@@ -98,6 +100,20 @@ def _create_tables(cur):
         )''')
 
 
+def _rot_bbox(elm, angl, ow, oh, jw, jh):
+    """Return (rot_top, rot_btm, rot_lft, rot_ryt) in rotated coordinate space."""
+    tl, tr, br, bl = rotate(
+        angl,
+        elm['otl_x'], elm['otl_y'],
+        elm['otr_x'], elm['otr_y'],
+        elm['obr_x'], elm['obr_y'],
+        elm['obl_x'], elm['obl_y'],
+        ow, oh, jw, jh)
+    xs = [tl[0], tr[0], br[0], bl[0]]
+    ys = [tl[1], tr[1], br[1], bl[1]]
+    return min(ys), max(ys), min(xs), max(xs)
+
+
 def _write_out(cur, out):
     pdf    = out['pdf']
     engine = out['engine']
@@ -106,35 +122,58 @@ def _write_out(cur, out):
 
     for pg in out['pages']:
         page_num = pg['page']
+        angl = pg['angl']
+        jw   = pg['jw']
+        jh   = pg['jh']
+        ow, oh = jw, jh  # PNG: API pixel coords == image pixel dims
+
+        # Collect all elements (line/word/orphan) in order
+        all_elms = []
+        for line in pg['lines']:
+            all_elms.append((line, 'line'))
+            for word in line.get('words', []):
+                all_elms.append((word, 'word'))
+        for word in pg.get('orphan_words', []):
+            all_elms.append((word, 'orphan'))
+
+        # Rotate each element's polygon; keep only valid (non-inverted) bboxes
+        rot_bboxes = []
+        for elm, typ in all_elms:
+            rt, rb, rl, rr = _rot_bbox(elm, angl, ow, oh, jw, jh)
+            rot_bboxes.append((rt, rb, rl, rr) if rt <= rb and rl <= rr else None)
+
+        # Page bounds from rotated, valid bboxes
+        valid = [b for b in rot_bboxes if b is not None]
+        if valid:
+            ptop = min(b[0] for b in valid)
+            plft = min(b[2] for b in valid)
+            pryt = max(b[3] for b in valid)
+        else:
+            ptop, plft, pryt = pg['ptop'], pg['plft'], pg['pryt']
+        zm = 1200 / (pryt - plft) if (pryt - plft) > 0 else 1.0
+
         cur.execute('''
             INSERT OR IGNORE INTO page(
                 pdf, page, ptop, plft, pryt,
                 angl, jw, jh, engine, apisrc)
             VALUES(?,?,?,?,?,?,?,?,?,?)''', (
-            pdf, page_num,
-            pg['ptop'], pg['plft'], pg['pryt'],
-            pg['angl'], pg['jw'], pg['jh'],
-            engine, apisrc))
+            pdf, page_num, ptop, plft, pryt,
+            angl, jw, jh, engine, apisrc))
 
-        for line in pg['lines']:
-            _ins_elm(
-                cur, pdf, page_num, engine, apisrc,
-                line, 'line', tb_exp)
-            for word in line.get('words', []):
-                _ins_elm(
-                    cur, pdf, page_num, engine, apisrc,
-                    word, 'word', tb_exp)
-
-        for word in pg.get('orphan_words', []):
-            _ins_elm(
-                cur, pdf, page_num, engine, apisrc,
-                word, 'orphan', tb_exp)
+        for (elm, typ), bbox in zip(all_elms, rot_bboxes):
+            if bbox is None:
+                continue
+            rt, rb, rl, rr = bbox
+            top = round((rt - ptop) * zm)
+            btm = round((rb - ptop) * zm)
+            lft = round((rl - plft) * zm)
+            ryt = round((rr - plft) * zm)
+            _ins_elm(cur, pdf, page_num, engine, apisrc,
+                     elm, typ, tb_exp, top, btm, lft, ryt)
 
 
 def _ins_elm(cur, pdf, page_num, engine, apisrc,
-             elm, typ, tb_exp):
-    top = elm['top']
-    btm = elm['btm']
+             elm, typ, tb_exp, top, btm, lft, ryt):
     cur.execute('''
         INSERT INTO elm(
             pdf, page, node, typ,
@@ -155,7 +194,7 @@ def _ins_elm(cur, pdf, page_num, engine, apisrc,
             ?,?,
             ?,?,?)''', (
         pdf, page_num, elm['node'], typ,
-        top, btm, elm['lft'], elm['ryt'],
+        top, btm, lft, ryt,
         elm['text'],
         elm['otop'], elm['obtm'], elm['olft'], elm['oryt'],
         elm['otl_x'], elm['otl_y'],
