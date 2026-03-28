@@ -24,10 +24,10 @@ def draw_rot(drwlst, dir_png, dir_marked, use_noup=False):
         for page in drwlst[(bare, engine)]:
             longname_src = s2l(bare, page, 'png')
             if use_noup:
-                longname_src = longname_src[:-len('.png')] + '.NOUP.png'
-            longname_dst = s2l(bare, page, 'png')
-            if use_noup:
-                longname_dst = longname_dst[:-len('.png')] + f'{eng_tag}.PNG.png'
+                longname_src = (longname_src[:-len('.png')]
+                                + '.NOUP.png')
+            longname_dst = (s2l(bare, page, 'png')[:-len('.png')]
+                            + f'{eng_tag}.png')
             srcfn = os.path.join(dir_png,    longname_src)
             dstfn = os.path.join(dir_marked, longname_dst)
             img = cv2read(srcfn)
