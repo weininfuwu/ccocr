@@ -5,6 +5,7 @@
 #   updated: 260321 strip engine suffix before s2l()
 #   updated: 260322 read usepng from sorter; straight OOS rows are skipped
 #             (mark_oos.py no longer inserts straight rows into _OOS)
+#   updated: 260328 remove use_noup; fix pngRMK filename to new naming
 #
 #--------1---------2---------3---------4---------5---------6---------7--------#
 import os
@@ -25,19 +26,17 @@ def oos():
     con     = sqlite3.connect(dumpdb)
     cur     = con.cursor()
     rtn     = cur.execute(
-        "SELECT pdf, pg_fm, pg_to, usepng FROM sorter WHERE docname = '_OOS'"
+        "SELECT pdf, pg_fm, pg_to, usepng, engine FROM sorter WHERE docname = '_OOS'"
         ).fetchall()
     for i in rtn:
-        [pdf, pg, pg_to, usepng] = i
+        [pdf, pg, pg_to, usepng, engine] = i
         # straight rows are not inserted into _OOS by mark_oos, but guard anyway
         if usepng == 'straight':
             continue
-        use_noup = (usepng == 'png' and DD.pdf2api)
+        tag = 'CNV'   # OOS entries are always cnvpng (straight skipped above)
         os.makedirs(ignrd, exist_ok=True)
         while pg <= pg_to:
-            longname = s2l(pdf, pg, 'png')
-            if use_noup:
-                longname = longname[:-len('.png')] + '.NOUP.png'
+            longname = f'{pdf}.{tag}.{engine}.{pg:02d}.png'
             prnt(longname)
             shutil.copy(os.path.join(pngRMK, longname), ignrd)
             pg += 1

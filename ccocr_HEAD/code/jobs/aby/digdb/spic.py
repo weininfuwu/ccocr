@@ -4,6 +4,7 @@
 #   spic.py     230425  cy
 #   updated: 260321 use webp for web, jpg for excel
 #   updated: 260322 replace use_noup_png() global with do.usepng check
+#   updated: 260328 remove use_noup (NOUP files gone); guard ww>=1
 #
 #--------1---------2---------3---------4---------5---------6---------7--------#
 
@@ -38,7 +39,6 @@ def spic(dig):
                         continue
                     io.spic = err_png   # placeholder so downstream never sees None
                 continue
-            use_noup = (docObj.usepng == 'png' and DD.pdf2api)
             for io in docObj.itm:
                 if io.dl.clm is None:
                     continue
@@ -55,8 +55,6 @@ def spic(dig):
                     continue
                 clipped.append(io.seq)
                 _longname = s2l(docObj.pdf, io.page, 'png')
-                if use_noup:
-                    _longname = _longname[:-len('.png')] + '.NOUP.png'
                 png = os.path.join(DD.pngROT, _longname)
                 png = cv2read(png)
                 h, w = png.shape[:2]
@@ -68,7 +66,7 @@ def spic(dig):
                 oww  = ryt - lft
                 ohh  = btm - top
                 hh   = int(30 * (30/46))
-                ww   = int(hh * (oww / ohh))
+                ww   = max(1, int(hh * (oww / ohh)))
                 clip = cv2.resize(clip, (ww, hh))
                 cv2write(os.path.join(spicdir, f'{io.seq}{ext}'), clip)
                 io.spic = os.path.join(spicdir, f'{io.seq}{ext}')
