@@ -5,6 +5,7 @@
 #   updated: 260321 add engine column to sorter, read from elm.engine
 #   updated: 260322 add usepng column to sorter, read from elm.usepng
 #             key = 'pdf|engine|usepng' to distinguish all combinations
+#   updated: 260328 elm.usepng -> elm.apisrc; map cnvpng/original -> png/straight
 #
 #--------1---------2---------3---------4---------5---------6---------7--------#
 
@@ -27,13 +28,15 @@ def setupdb(dumpdb):
             usepng  TEXT                                -- 07  'png' / 'straight'
         )''')
     tmplst = gv.cur.execute(
-            'SELECT DISTINCT pdf, page, engine, usepng FROM elm ORDER BY pdf, page'
+            'SELECT DISTINCT pdf, page, engine, apisrc FROM elm ORDER BY pdf, page'
             ).fetchall()
     # key = 'pdf|engine|usepng' to uniquely identify each processing variant
+    _apisrc2usepng = {'cnvpng': 'png', 'original': 'straight'}
     pdf_pg     = {}
     pdf_meta   = {}     # key -> (engine, usepng)
     for i in tmplst:
-        pdf, page, engine, usepng = i[0], i[1], i[2] or '', i[3] or ''
+        pdf, page, engine, apisrc = i[0], i[1], i[2] or '', i[3] or ''
+        usepng = _apisrc2usepng.get(apisrc, apisrc)
         key = f'{pdf}|{engine}|{usepng}'
         pdf_pg.setdefault(key, [])
         pdf_pg[key].append(page)
