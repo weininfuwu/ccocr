@@ -18,7 +18,7 @@
 #     "engine" : "CV" | "DI",
 #     "dpi"    : "200dpi" | "300dpi" | "400dpi",
 #     "qlty"   : "lv1" | "lv2" | "lv3",
-#     "usepng" : true | false | "BOTH",
+#     "apisrc" : "cnvpng" | "original",
 #     "pages"  : [
 #       {
 #         "page" : 1,
