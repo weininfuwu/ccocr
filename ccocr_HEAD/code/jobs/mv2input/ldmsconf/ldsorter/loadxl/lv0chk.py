@@ -44,8 +44,8 @@ def lv0chk(sht):
 #            row[clm.sp_blw] = 0
             row[clm.sp_blw] = -1    # sql use ">", not ">="
         if not ((   type(row[clm.sp_blw]) == int or
-                    row[clm.sp_blw][:4] in [
-                                            'TOP_','BTM_','RYT_','LFT_'])):
+                    (type(row[clm.sp_blw]) == str and
+                     row[clm.sp_blw][:4] in ['TOP_','BTM_','RYT_','LFT_']))):
             raise Exception(( f'ERROR: {row[clm.docname]} {row[clm.dname]} '
                         f'has WRONG sp_blw "{row[clm.sp_blw]}"'))
         ## of_blw   (D)
@@ -60,8 +60,8 @@ def lv0chk(sht):
 #            row[clm.sp_abv] = misc.tb_exp
             row[clm.sp_abv] = DD.tb_exp
         if not ((   type(row[clm.sp_abv]) == int or
-                    row[clm.sp_abv][:4] in [
-                                            'TOP_','BTM_','RYT_','LFT_'])):
+                    (type(row[clm.sp_abv]) == str and
+                     row[clm.sp_abv][:4] in ['TOP_','BTM_','RYT_','LFT_']))):
             raise Exception(( f'ERROR: {row[clm.docname]} {row[clm.dname]} '
                         f'has WRONG sp_abv "{row[clm.sp_abv]}"'))
         ## of_abv   (F)
@@ -75,8 +75,8 @@ def lv0chk(sht):
 #            row[clm.sp_rof] = 0
             row[clm.sp_rof] = -1    # sql use ">", not ">="
         if not ((   type(row[clm.sp_rof]) == int or
-                    row[clm.sp_rof][:4] in [
-                                            'TOP_','BTM_','RYT_','LFT_'])):
+                    (type(row[clm.sp_rof]) == str and
+                     row[clm.sp_rof][:4] in ['TOP_','BTM_','RYT_','LFT_']))):
             raise Exception(( f'ERROR: {row[clm.docname]} {row[clm.dname]} '
                         f'has WRONG sp_rof "{row[clm.sp_rof]}"'))
         ## of_rof   (H)
@@ -89,8 +89,8 @@ def lv0chk(sht):
         if row[clm.sp_lof] == None:
             row[clm.sp_lof] = 9999999
         if not ((   type(row[clm.sp_lof]) == int or
-                    row[clm.sp_lof][:4] in [
-                                            'TOP_','BTM_','RYT_','LFT_'])):
+                    (type(row[clm.sp_lof]) == str and
+                     row[clm.sp_lof][:4] in ['TOP_','BTM_','RYT_','LFT_']))):
             raise Exception(( f'ERROR: {row[clm.docname]} {row[clm.dname]} '
                         f'has WRONG sp_lof "{row[clm.sp_lof]}"'))
         ## of_lof   (J)
