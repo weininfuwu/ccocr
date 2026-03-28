@@ -1,0 +1,65 @@
+{
+  "apiVersion": "2024-11-30",
+  "modelId": "prebuilt-read",
+  "stringIndexType": "textElements",
+  "content": "",
+  "pages": [
+    {
+      "pageNumber": 1,
+      "angle": 0,
+      "width": 1654,
+      "height": 2339,
+      "unit": "pixel",
+      "lines": [
+        {
+          "content": "DUMMYlineFORblankPAGE",
+          "polygon": [
+            1.0,
+            0.1,
+            1.5,
+            0.1,
+            1.5,
+            0.2,
+            1.0,
+            0.2
+          ],
+          "spans": [
+            {
+              "offset": 0,
+              "length": 21
+            }
+          ],
+          "words": [
+            {
+              "content": "dummyWORDforBLANKpage",
+              "polygon": [
+                1.0,
+                0.1,
+                1.5,
+                0.1,
+                1.5,
+                0.2,
+                1.0,
+                0.2
+              ],
+              "confidence": 1.0,
+              "span": {
+                "offset": 0,
+                "length": 21
+              }
+            }
+          ]
+        }
+      ],
+      "spans": [
+        {
+          "offset": 0,
+          "length": 0
+        }
+      ],
+      "orphan_words": []
+    }
+  ],
+  "styles": [],
+  "contentFormat": "text"
+}

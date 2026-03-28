@@ -1,0 +1,1770 @@
+{
+  "status": "succeeded",
+  "createdDateTime": "2026-03-28T00:49:00Z",
+  "lastUpdatedDateTime": "2026-03-28T00:49:01Z",
+  "analyzeResult": {
+    "version": "3.2.0",
+    "modelVersion": "2022-04-30",
+    "readResults": [
+      {
+        "page": 1,
+        "angle": 0,
+        "width": 1654,
+        "height": 2339,
+        "unit": "pixel",
+        "lines": [
+          {
+            "boundingBox": [
+              232,
+              191,
+              809,
+              190,
+              809,
+              243,
+              232,
+              244
+            ],
+            "text": "COMMERCIAL INVOICE",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  234,
+                  193,
+                  573,
+                  191,
+                  572,
+                  243,
+                  233,
+                  244
+                ],
+                "text": "COMMERCIAL",
+                "confidence": 0.993
+              },
+              {
+                "boundingBox": [
+                  588,
+                  191,
+                  791,
+                  191,
+                  791,
+                  244,
+                  587,
+                  243
+                ],
+                "text": "INVOICE",
+                "confidence": 0.995
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              230,
+              304,
+              560,
+              303,
+              560,
+              334,
+              230,
+              335
+            ],
+            "text": "Invoice No: INV-2026-005",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  231,
+                  305,
+                  320,
+                  304,
+                  320,
+                  335,
+                  231,
+                  336
+                ],
+                "text": "Invoice",
+                "confidence": 0.993
+              },
+              {
+                "boundingBox": [
+                  326,
+                  304,
+                  371,
+                  304,
+                  371,
+                  335,
+                  326,
+                  335
+                ],
+                "text": "No:",
+                "confidence": 0.998
+              },
+              {
+                "boundingBox": [
+                  377,
+                  304,
+                  554,
+                  303,
+                  553,
+                  335,
+                  377,
+                  335
+                ],
+                "text": "INV-2026-005",
+                "confidence": 0.993
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              231,
+              368,
+              548,
+              368,
+              548,
+              397,
+              231,
+              398
+            ],
+            "text": "Invoice Date: 2026-03-21",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  233,
+                  369,
+                  322,
+                  368,
+                  321,
+                  398,
+                  232,
+                  399
+                ],
+                "text": "Invoice",
+                "confidence": 0.961
+              },
+              {
+                "boundingBox": [
+                  328,
+                  368,
+                  396,
+                  368,
+                  396,
+                  398,
+                  327,
+                  398
+                ],
+                "text": "Date:",
+                "confidence": 0.998
+              },
+              {
+                "boundingBox": [
+                  402,
+                  368,
+                  547,
+                  368,
+                  547,
+                  398,
+                  402,
+                  398
+                ],
+                "text": "2026-03-21",
+                "confidence": 0.995
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              234,
+              431,
+              426,
+              430,
+              426,
+              461,
+              234,
+              463
+            ],
+            "text": "Currency: USD",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  234,
+                  432,
+                  354,
+                  431,
+                  354,
+                  462,
+                  234,
+                  464
+                ],
+                "text": "Currency:",
+                "confidence": 0.994
+              },
+              {
+                "boundingBox": [
+                  360,
+                  431,
+                  417,
+                  430,
+                  417,
+                  462,
+                  360,
+                  462
+                ],
+                "text": "USD",
+                "confidence": 0.998
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              232,
+              556,
+              322,
+              556,
+              322,
+              586,
+              231,
+              585
+            ],
+            "text": "Seller",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  233,
+                  556,
+                  321,
+                  558,
+                  319,
+                  587,
+                  232,
+                  586
+                ],
+                "text": "Seller",
+                "confidence": 0.994
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              232,
+              636,
+              506,
+              636,
+              506,
+              667,
+              232,
+              666
+            ],
+            "text": "ABC Trading Co ., Ltd.",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  233,
+                  636,
+                  287,
+                  636,
+                  286,
+                  667,
+                  233,
+                  666
+                ],
+                "text": "ABC",
+                "confidence": 0.996
+              },
+              {
+                "boundingBox": [
+                  297,
+                  636,
+                  392,
+                  636,
+                  392,
+                  667,
+                  297,
+                  667
+                ],
+                "text": "Trading",
+                "confidence": 0.997
+              },
+              {
+                "boundingBox": [
+                  398,
+                  636,
+                  428,
+                  636,
+                  428,
+                  668,
+                  398,
+                  668
+                ],
+                "text": "Co",
+                "confidence": 0.998
+              },
+              {
+                "boundingBox": [
+                  434,
+                  636,
+                  450,
+                  636,
+                  451,
+                  668,
+                  434,
+                  668
+                ],
+                "text": ".,",
+                "confidence": 0.998
+              },
+              {
+                "boundingBox": [
+                  456,
+                  636,
+                  505,
+                  637,
+                  506,
+                  667,
+                  457,
+                  668
+                ],
+                "text": "Ltd.",
+                "confidence": 0.991
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              233,
+              681,
+              498,
+              683,
+              498,
+              714,
+              232,
+              712
+            ],
+            "text": "1-2-3 Example Street",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  235,
+                  682,
+                  298,
+                  683,
+                  298,
+                  713,
+                  234,
+                  712
+                ],
+                "text": "1-2-3",
+                "confidence": 0.998
+              },
+              {
+                "boundingBox": [
+                  305,
+                  683,
+                  415,
+                  684,
+                  414,
+                  715,
+                  304,
+                  714
+                ],
+                "text": "Example",
+                "confidence": 0.997
+              },
+              {
+                "boundingBox": [
+                  420,
+                  684,
+                  499,
+                  684,
+                  498,
+                  714,
+                  420,
+                  715
+                ],
+                "text": "Street",
+                "confidence": 0.997
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              233,
+              729,
+              402,
+              729,
+              402,
+              761,
+              233,
+              761
+            ],
+            "text": "Tokyo, Japan",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  236,
+                  730,
+                  318,
+                  732,
+                  315,
+                  762,
+                  234,
+                  762
+                ],
+                "text": "Tokyo,",
+                "confidence": 0.992
+              },
+              {
+                "boundingBox": [
+                  324,
+                  732,
+                  402,
+                  732,
+                  400,
+                  762,
+                  321,
+                  762
+                ],
+                "text": "Japan",
+                "confidence": 0.998
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              233,
+              777,
+              538,
+              778,
+              538,
+              811,
+              233,
+              809
+            ],
+            "text": "Country of Origin: Japan",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  234,
+                  777,
+                  330,
+                  777,
+                  329,
+                  810,
+                  233,
+                  810
+                ],
+                "text": "Country",
+                "confidence": 0.997
+              },
+              {
+                "boundingBox": [
+                  336,
+                  777,
+                  360,
+                  777,
+                  360,
+                  811,
+                  336,
+                  811
+                ],
+                "text": "of",
+                "confidence": 0.998
+              },
+              {
+                "boundingBox": [
+                  367,
+                  777,
+                  450,
+                  778,
+                  449,
+                  812,
+                  366,
+                  811
+                ],
+                "text": "Origin:",
+                "confidence": 0.997
+              },
+              {
+                "boundingBox": [
+                  457,
+                  778,
+                  537,
+                  779,
+                  536,
+                  812,
+                  456,
+                  812
+                ],
+                "text": "Japan",
+                "confidence": 0.998
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              249,
+              956,
+              292,
+              954,
+              293,
+              981,
+              251,
+              981
+            ],
+            "text": "No",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  250,
+                  955,
+                  285,
+                  954,
+                  286,
+                  981,
+                  250,
+                  982
+                ],
+                "text": "No",
+                "confidence": 0.998
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              410,
+              953,
+              553,
+              956,
+              552,
+              986,
+              409,
+              984
+            ],
+            "text": "Description",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  411,
+                  954,
+                  548,
+                  956,
+                  547,
+                  987,
+                  410,
+                  985
+                ],
+                "text": "Description",
+                "confidence": 0.991
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              250,
+              1007,
+              284,
+              1006,
+              283,
+              1031,
+              249,
+              1032
+            ],
+            "text": "28",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  251,
+                  1007,
+                  281,
+                  1006,
+                  281,
+                  1031,
+                  252,
+                  1032
+                ],
+                "text": "28",
+                "confidence": 0.998
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              412,
+              1003,
+              796,
+              1002,
+              796,
+              1037,
+              412,
+              1038
+            ],
+            "text": "Industrial Component Model 28",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  414,
+                  1004,
+                  521,
+                  1005,
+                  520,
+                  1038,
+                  412,
+                  1036
+                ],
+                "text": "Industrial",
+                "confidence": 0.933
+              },
+              {
+                "boundingBox": [
+                  527,
+                  1005,
+                  671,
+                  1004,
+                  671,
+                  1038,
+                  526,
+                  1038
+                ],
+                "text": "Component",
+                "confidence": 0.995
+              },
+              {
+                "boundingBox": [
+                  677,
+                  1004,
+                  757,
+                  1003,
+                  757,
+                  1036,
+                  678,
+                  1038
+                ],
+                "text": "Model",
+                "confidence": 0.998
+              },
+              {
+                "boundingBox": [
+                  763,
+                  1003,
+                  796,
+                  1003,
+                  797,
+                  1035,
+                  764,
+                  1036
+                ],
+                "text": "28",
+                "confidence": 0.998
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              252,
+              1057,
+              285,
+              1057,
+              285,
+              1083,
+              251,
+              1083
+            ],
+            "text": "29",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  252,
+                  1057,
+                  281,
+                  1057,
+                  281,
+                  1083,
+                  252,
+                  1083
+                ],
+                "text": "29",
+                "confidence": 0.995
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              411,
+              1053,
+              800,
+              1053,
+              800,
+              1087,
+              411,
+              1087
+            ],
+            "text": "Industrial Component Model 29",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  412,
+                  1053,
+                  520,
+                  1055,
+                  520,
+                  1088,
+                  412,
+                  1086
+                ],
+                "text": "Industrial",
+                "confidence": 0.991
+              },
+              {
+                "boundingBox": [
+                  526,
+                  1055,
+                  671,
+                  1055,
+                  671,
+                  1088,
+                  526,
+                  1088
+                ],
+                "text": "Component",
+                "confidence": 0.996
+              },
+              {
+                "boundingBox": [
+                  678,
+                  1055,
+                  757,
+                  1055,
+                  756,
+                  1087,
+                  677,
+                  1088
+                ],
+                "text": "Model",
+                "confidence": 0.998
+              },
+              {
+                "boundingBox": [
+                  763,
+                  1055,
+                  797,
+                  1054,
+                  796,
+                  1086,
+                  763,
+                  1087
+                ],
+                "text": "29",
+                "confidence": 0.998
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              250,
+              1106,
+              286,
+              1107,
+              285,
+              1133,
+              249,
+              1132
+            ],
+            "text": "30",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  250,
+                  1106,
+                  281,
+                  1107,
+                  280,
+                  1133,
+                  250,
+                  1132
+                ],
+                "text": "30",
+                "confidence": 0.998
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              411,
+              1104,
+              798,
+              1103,
+              798,
+              1135,
+              411,
+              1136
+            ],
+            "text": "Industrial Component Model 30",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  413,
+                  1104,
+                  520,
+                  1105,
+                  519,
+                  1136,
+                  412,
+                  1136
+                ],
+                "text": "Industrial",
+                "confidence": 0.991
+              },
+              {
+                "boundingBox": [
+                  527,
+                  1105,
+                  672,
+                  1105,
+                  670,
+                  1137,
+                  525,
+                  1136
+                ],
+                "text": "Component",
+                "confidence": 0.995
+              },
+              {
+                "boundingBox": [
+                  678,
+                  1105,
+                  757,
+                  1104,
+                  755,
+                  1136,
+                  676,
+                  1137
+                ],
+                "text": "Model",
+                "confidence": 0.998
+              },
+              {
+                "boundingBox": [
+                  763,
+                  1104,
+                  796,
+                  1104,
+                  794,
+                  1136,
+                  761,
+                  1136
+                ],
+                "text": "30",
+                "confidence": 0.998
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              861,
+              556,
+              956,
+              555,
+              956,
+              587,
+              861,
+              588
+            ],
+            "text": "Buyer",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  863,
+                  556,
+                  955,
+                  556,
+                  954,
+                  588,
+                  861,
+                  588
+                ],
+                "text": "Buyer",
+                "confidence": 0.994
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              859,
+              634,
+              1159,
+              636,
+              1159,
+              669,
+              859,
+              667
+            ],
+            "text": "XYZ Manufacturing Inc.",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  862,
+                  635,
+                  916,
+                  635,
+                  915,
+                  668,
+                  861,
+                  667
+                ],
+                "text": "XYZ",
+                "confidence": 0.998
+              },
+              {
+                "boundingBox": [
+                  922,
+                  636,
+                  1102,
+                  637,
+                  1101,
+                  670,
+                  921,
+                  668
+                ],
+                "text": "Manufacturing",
+                "confidence": 0.976
+              },
+              {
+                "boundingBox": [
+                  1108,
+                  637,
+                  1160,
+                  637,
+                  1160,
+                  670,
+                  1108,
+                  670
+                ],
+                "text": "Inc.",
+                "confidence": 0.955
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              861,
+              682,
+              1070,
+              683,
+              1070,
+              714,
+              861,
+              713
+            ],
+            "text": "456 Sample Ave",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  864,
+                  683,
+                  909,
+                  683,
+                  908,
+                  714,
+                  863,
+                  714
+                ],
+                "text": "456",
+                "confidence": 0.998
+              },
+              {
+                "boundingBox": [
+                  915,
+                  683,
+                  1011,
+                  683,
+                  1010,
+                  715,
+                  914,
+                  714
+                ],
+                "text": "Sample",
+                "confidence": 0.997
+              },
+              {
+                "boundingBox": [
+                  1017,
+                  683,
+                  1069,
+                  684,
+                  1068,
+                  715,
+                  1016,
+                  715
+                ],
+                "text": "Ave",
+                "confidence": 0.995
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              860,
+              728,
+              1151,
+              728,
+              1151,
+              762,
+              860,
+              763
+            ],
+            "text": "Los Angeles, CA, USA",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  863,
+                  729,
+                  907,
+                  729,
+                  905,
+                  763,
+                  861,
+                  762
+                ],
+                "text": "Los",
+                "confidence": 0.996
+              },
+              {
+                "boundingBox": [
+                  914,
+                  729,
+                  1023,
+                  728,
+                  1022,
+                  763,
+                  912,
+                  763
+                ],
+                "text": "Angeles,",
+                "confidence": 0.995
+              },
+              {
+                "boundingBox": [
+                  1030,
+                  728,
+                  1079,
+                  728,
+                  1079,
+                  763,
+                  1029,
+                  763
+                ],
+                "text": "CA,",
+                "confidence": 0.998
+              },
+              {
+                "boundingBox": [
+                  1086,
+                  728,
+                  1144,
+                  728,
+                  1144,
+                  762,
+                  1086,
+                  763
+                ],
+                "text": "USA",
+                "confidence": 0.998
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              962,
+              957,
+              1007,
+              958,
+              1005,
+              983,
+              961,
+              983
+            ],
+            "text": "Qty",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  961,
+                  957,
+                  1003,
+                  957,
+                  1003,
+                  983,
+                  961,
+                  982
+                ],
+                "text": "Qty",
+                "confidence": 0.991
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              1115,
+              954,
+              1240,
+              956,
+              1239,
+              984,
+              1114,
+              983
+            ],
+            "text": "Unit Price",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  1116,
+                  954,
+                  1167,
+                  956,
+                  1167,
+                  984,
+                  1115,
+                  983
+                ],
+                "text": "Unit",
+                "confidence": 0.981
+              },
+              {
+                "boundingBox": [
+                  1173,
+                  956,
+                  1237,
+                  956,
+                  1237,
+                  984,
+                  1172,
+                  984
+                ],
+                "text": "Price",
+                "confidence": 0.998
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              1070,
+              1007,
+              1088,
+              1006,
+              1085,
+              1035,
+              1069,
+              1036
+            ],
+            "text": "1",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  1069,
+                  1007,
+                  1085,
+                  1006,
+                  1087,
+                  1034,
+                  1070,
+                  1035
+                ],
+                "text": "1",
+                "confidence": 0.996
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              1209,
+              1003,
+              1358,
+              1003,
+              1358,
+              1034,
+              1209,
+              1034
+            ],
+            "text": "USD 150.00",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  1211,
+                  1006,
+                  1263,
+                  1004,
+                  1262,
+                  1033,
+                  1210,
+                  1034
+                ],
+                "text": "USD",
+                "confidence": 0.993
+              },
+              {
+                "boundingBox": [
+                  1275,
+                  1004,
+                  1358,
+                  1004,
+                  1358,
+                  1035,
+                  1274,
+                  1033
+                ],
+                "text": "150.00",
+                "confidence": 0.997
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              1068,
+              1057,
+              1088,
+              1057,
+              1086,
+              1087,
+              1067,
+              1087
+            ],
+            "text": "2",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  1068,
+                  1057,
+                  1086,
+                  1057,
+                  1086,
+                  1087,
+                  1068,
+                  1087
+                ],
+                "text": "2",
+                "confidence": 0.996
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              1207,
+              1054,
+              1362,
+              1054,
+              1362,
+              1083,
+              1207,
+              1084
+            ],
+            "text": "USD 150.00",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  1208,
+                  1055,
+                  1261,
+                  1055,
+                  1259,
+                  1084,
+                  1207,
+                  1084
+                ],
+                "text": "USD",
+                "confidence": 0.994
+              },
+              {
+                "boundingBox": [
+                  1274,
+                  1055,
+                  1360,
+                  1055,
+                  1358,
+                  1084,
+                  1273,
+                  1084
+                ],
+                "text": "150.00",
+                "confidence": 0.997
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              1068,
+              1107,
+              1090,
+              1106,
+              1088,
+              1135,
+              1067,
+              1136
+            ],
+            "text": "3",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  1067,
+                  1107,
+                  1083,
+                  1106,
+                  1085,
+                  1134,
+                  1068,
+                  1135
+                ],
+                "text": "3",
+                "confidence": 0.996
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              1209,
+              1103,
+              1365,
+              1104,
+              1365,
+              1134,
+              1209,
+              1134
+            ],
+            "text": "USD 150.00",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  1210,
+                  1104,
+                  1262,
+                  1104,
+                  1260,
+                  1134,
+                  1209,
+                  1133
+                ],
+                "text": "USD",
+                "confidence": 0.991
+              },
+              {
+                "boundingBox": [
+                  1274,
+                  1104,
+                  1359,
+                  1105,
+                  1357,
+                  1134,
+                  1272,
+                  1135
+                ],
+                "text": "150.00",
+                "confidence": 0.997
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              1391,
+              955,
+              1493,
+              956,
+              1493,
+              985,
+              1390,
+              984
+            ],
+            "text": "Amount",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  1393,
+                  956,
+                  1493,
+                  957,
+                  1492,
+                  986,
+                  1392,
+                  984
+                ],
+                "text": "Amount",
+                "confidence": 0.997
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              1483,
+              1004,
+              1636,
+              1004,
+              1636,
+              1033,
+              1483,
+              1034
+            ],
+            "text": "USD 150.00",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  1485,
+                  1006,
+                  1537,
+                  1004,
+                  1536,
+                  1033,
+                  1484,
+                  1033
+                ],
+                "text": "USD",
+                "confidence": 0.998
+              },
+              {
+                "boundingBox": [
+                  1551,
+                  1004,
+                  1634,
+                  1004,
+                  1633,
+                  1034,
+                  1550,
+                  1033
+                ],
+                "text": "150.00",
+                "confidence": 0.995
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              1481,
+              1053,
+              1639,
+              1055,
+              1638,
+              1086,
+              1481,
+              1084
+            ],
+            "text": "USD 300.00",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  1482,
+                  1054,
+                  1537,
+                  1054,
+                  1536,
+                  1084,
+                  1481,
+                  1083
+                ],
+                "text": "USD",
+                "confidence": 0.995
+              },
+              {
+                "boundingBox": [
+                  1549,
+                  1054,
+                  1637,
+                  1055,
+                  1634,
+                  1087,
+                  1548,
+                  1084
+                ],
+                "text": "300.00",
+                "confidence": 0.997
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              1486,
+              1103,
+              1637,
+              1104,
+              1637,
+              1134,
+              1486,
+              1134
+            ],
+            "text": "USD 450.00",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  1488,
+                  1104,
+                  1537,
+                  1104,
+                  1535,
+                  1134,
+                  1487,
+                  1134
+                ],
+                "text": "USD",
+                "confidence": 0.998
+              },
+              {
+                "boundingBox": [
+                  1549,
+                  1104,
+                  1636,
+                  1104,
+                  1634,
+                  1135,
+                  1548,
+                  1135
+                ],
+                "text": "450.00",
+                "confidence": 0.997
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              1489,
+              2158,
+              1576,
+              2157,
+              1575,
+              2186,
+              1488,
+              2187
+            ],
+            "text": "Page 4",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  1489,
+                  2158,
+                  1551,
+                  2157,
+                  1551,
+                  2186,
+                  1489,
+                  2187
+                ],
+                "text": "Page",
+                "confidence": 0.989
+              },
+              {
+                "boundingBox": [
+                  1557,
+                  2157,
+                  1574,
+                  2157,
+                  1574,
+                  2186,
+                  1557,
+                  2186
+                ],
+                "text": "4",
+                "confidence": 0.997
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

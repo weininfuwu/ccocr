@@ -1,0 +1,331 @@
+{
+  "apiVersion": "2024-11-30",
+  "modelId": "prebuilt-read",
+  "stringIndexType": "textElements",
+  "content": "Total Amount: USD 18,000.00\nDummy invoice (guaranteed no overlap) for OCR testing.",
+  "pages": [
+    {
+      "pageNumber": 1,
+      "angle": 0,
+      "width": 1654,
+      "height": 2339,
+      "unit": "pixel",
+      "words": [
+        {
+          "content": "Total",
+          "polygon": [
+            862,
+            287,
+            937,
+            286,
+            937,
+            321,
+            862,
+            320
+          ],
+          "confidence": 0.995,
+          "span": {
+            "offset": 0,
+            "length": 5
+          }
+        },
+        {
+          "content": "Amount:",
+          "polygon": [
+            948,
+            286,
+            1072,
+            285,
+            1071,
+            322,
+            948,
+            321
+          ],
+          "confidence": 0.995,
+          "span": {
+            "offset": 6,
+            "length": 7
+          }
+        },
+        {
+          "content": "USD",
+          "polygon": [
+            1083,
+            285,
+            1145,
+            285,
+            1145,
+            322,
+            1083,
+            322
+          ],
+          "confidence": 0.997,
+          "span": {
+            "offset": 14,
+            "length": 3
+          }
+        },
+        {
+          "content": "18,000.00",
+          "polygon": [
+            1156,
+            285,
+            1295,
+            286,
+            1295,
+            320,
+            1155,
+            322
+          ],
+          "confidence": 0.995,
+          "span": {
+            "offset": 18,
+            "length": 9
+          }
+        },
+        {
+          "content": "Dummy",
+          "polygon": [
+            234,
+            2080,
+            317,
+            2079,
+            317,
+            2110,
+            234,
+            2110
+          ],
+          "confidence": 0.996,
+          "span": {
+            "offset": 28,
+            "length": 5
+          }
+        },
+        {
+          "content": "invoice",
+          "polygon": [
+            324,
+            2079,
+            406,
+            2079,
+            406,
+            2111,
+            323,
+            2110
+          ],
+          "confidence": 0.995,
+          "span": {
+            "offset": 34,
+            "length": 7
+          }
+        },
+        {
+          "content": "(guaranteed",
+          "polygon": [
+            415,
+            2079,
+            547,
+            2079,
+            547,
+            2111,
+            415,
+            2111
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 42,
+            "length": 11
+          }
+        },
+        {
+          "content": "no",
+          "polygon": [
+            557,
+            2079,
+            583,
+            2078,
+            583,
+            2111,
+            556,
+            2111
+          ],
+          "confidence": 0.998,
+          "span": {
+            "offset": 54,
+            "length": 2
+          }
+        },
+        {
+          "content": "overlap)",
+          "polygon": [
+            590,
+            2078,
+            679,
+            2079,
+            679,
+            2111,
+            590,
+            2111
+          ],
+          "confidence": 0.994,
+          "span": {
+            "offset": 57,
+            "length": 8
+          }
+        },
+        {
+          "content": "for",
+          "polygon": [
+            688,
+            2079,
+            717,
+            2079,
+            717,
+            2111,
+            687,
+            2111
+          ],
+          "confidence": 0.998,
+          "span": {
+            "offset": 66,
+            "length": 3
+          }
+        },
+        {
+          "content": "OCR",
+          "polygon": [
+            724,
+            2079,
+            778,
+            2079,
+            778,
+            2111,
+            724,
+            2111
+          ],
+          "confidence": 0.994,
+          "span": {
+            "offset": 70,
+            "length": 3
+          }
+        },
+        {
+          "content": "testing.",
+          "polygon": [
+            786,
+            2079,
+            868,
+            2079,
+            868,
+            2111,
+            786,
+            2111
+          ],
+          "confidence": 0.994,
+          "span": {
+            "offset": 74,
+            "length": 8
+          }
+        }
+      ],
+      "lines": [
+        {
+          "content": "Total Amount: USD 18,000.00",
+          "polygon": [
+            862,
+            284,
+            1294,
+            284,
+            1294,
+            321,
+            862,
+            321
+          ],
+          "spans": [
+            {
+              "offset": 0,
+              "length": 27
+            }
+          ]
+        },
+        {
+          "content": "Dummy invoice (guaranteed no overlap) for OCR testing.",
+          "polygon": [
+            233,
+            2078,
+            867,
+            2078,
+            867,
+            2110,
+            233,
+            2110
+          ],
+          "spans": [
+            {
+              "offset": 28,
+              "length": 54
+            }
+          ]
+        }
+      ],
+      "spans": [
+        {
+          "offset": 0,
+          "length": 82
+        }
+      ]
+    }
+  ],
+  "paragraphs": [
+    {
+      "spans": [
+        {
+          "offset": 0,
+          "length": 27
+        }
+      ],
+      "boundingRegions": [
+        {
+          "pageNumber": 1,
+          "polygon": [
+            862,
+            284,
+            1294,
+            284,
+            1294,
+            321,
+            862,
+            321
+          ]
+        }
+      ],
+      "content": "Total Amount: USD 18,000.00"
+    },
+    {
+      "spans": [
+        {
+          "offset": 28,
+          "length": 54
+        }
+      ],
+      "boundingRegions": [
+        {
+          "pageNumber": 1,
+          "polygon": [
+            233,
+            2078,
+            867,
+            2078,
+            867,
+            2110,
+            233,
+            2110
+          ]
+        }
+      ],
+      "content": "Dummy invoice (guaranteed no overlap) for OCR testing."
+    }
+  ],
+  "styles": [],
+  "contentFormat": "text"
+}

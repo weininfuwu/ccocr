@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--  vim: set ts=2 sw=2 sts=2 et ff=unix fenc=utf-8 ai :
+
+      index.html    250728  cy
+      updated:      260320  L&F refresh
+
+-->
+<html lang='ja'>
+<head>
+  <title>CCocr - {{ jobid }}</title>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' href='/static/css/ccocr.css'>
+</head>
+<body>
+
+<!-- toolbar: tab buttons -->
+<div id='toolbar'>
+  <span class='label'>シート：</span>
+  {% include 'include/btns.html' %}
+</div>
+
+<!-- instruction -->
+<div id='instruction'>
+  誤読があれば修正して、右下の「確認終了」を押してください。
+</div>
+
+<!-- table area -->
+<div id='table-wrap'>
+  {% include 'include/tables.html' %}
+</div>
+
+<!-- footer: submit button -->
+<div id='post-bar'>
+  {% include 'include/footer.html' %}
+</div>
+
+<script type='module' src='./static/js/ccocr.js'></script>
+</body>
+</html>

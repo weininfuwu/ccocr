@@ -1,0 +1,44 @@
+{
+  "pages": [
+    {
+      "page": 1,
+      "ptop": 35,
+      "plft": 145,
+      "pryt": 161,
+      "lines": [
+        {
+          "node": "1",
+          "top": 0,
+          "btm": 1725,
+          "lft": 0,
+          "ryt": 1200,
+          "otop": 35,
+          "obtm": 58,
+          "olft": 145,
+          "oryt": 161,
+          "text": "DUMMYlineFORblankPAGE",
+          "conf": 1,
+          "words": [
+            {
+              "node": "1.1",
+              "top": 0,
+              "btm": 1725,
+              "lft": 0,
+              "ryt": 1200,
+              "otop": 35,
+              "obtm": 58,
+              "olft": 145,
+              "oryt": 161,
+              "text": "dummyWORDforBLANKpage",
+              "conf": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "engine": "CV",
+  "dpi": "200dpi",
+  "qlty": "lv0",
+  "usepng": "BOTH"
+}

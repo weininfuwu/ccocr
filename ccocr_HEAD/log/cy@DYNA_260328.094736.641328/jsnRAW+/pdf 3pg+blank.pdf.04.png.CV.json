@@ -1,0 +1,55 @@
+{
+  "status": "succeeded",
+  "createdDateTime": "2026-03-28T00:49:08Z",
+  "lastUpdatedDateTime": "2026-03-28T00:49:09Z",
+  "analyzeResult": {
+    "version": "3.2.0",
+    "modelVersion": "2022-04-30",
+    "readResults": [
+      {
+        "page": 1,
+        "angle": 0,
+        "width": 1654,
+        "height": 2339,
+        "unit": "pixel",
+        "lines": [
+          {
+            "boundingBox": [
+              145,
+              35,
+              161,
+              35,
+              161,
+              58,
+              145,
+              58
+            ],
+            "text": "DUMMYlineFORblankPAGE",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 1
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  145,
+                  35,
+                  161,
+                  35,
+                  161,
+                  58,
+                  145,
+                  58
+                ],
+                "text": "dummyWORDforBLANKpage",
+                "confidence": 1
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

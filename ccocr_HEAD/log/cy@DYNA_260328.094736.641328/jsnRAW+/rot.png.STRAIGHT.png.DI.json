@@ -1,0 +1,2464 @@
+{
+  "apiVersion": "2024-11-30",
+  "modelId": "prebuilt-read",
+  "stringIndexType": "textElements",
+  "content": "COMMERCIAL INVOICE\nInvoice No: INV-2026-001 Invoice Date: 2026-03-21 Currency: USD\nSeller ABC Trading Co., Ltd. 1-2-3 Example Street Tokyo, Japan Country of Origin: Japan\nBuyer XYZ Manufacturing Inc. 456 Sample Ave Los Angeles, CA, USA\nNo\nDescription\nQty\nUnit Price\nAmount\n1\nIndustrial Sensor Model A\n10\nUSD 120.00\nUSD 1,200.00\n2\nControl Module Model B\n5\nUSD 300.00\nUSD 1,500.00\nTotal Amount: USD 2,700.00\nThis is a dummy invoice for OCR testing purposes only.",
+  "pages": [
+    {
+      "pageNumber": 1,
+      "angle": -14.596599578857422,
+      "width": 3305,
+      "height": 4032,
+      "unit": "pixel",
+      "words": [
+        {
+          "content": "COMMERCIAL",
+          "polygon": [
+            418,
+            836,
+            910,
+            701,
+            931,
+            767,
+            438,
+            898
+          ],
+          "confidence": 0.993,
+          "span": {
+            "offset": 0,
+            "length": 10
+          }
+        },
+        {
+          "content": "INVOICE",
+          "polygon": [
+            941,
+            693,
+            1240,
+            612,
+            1257,
+            677,
+            961,
+            759
+          ],
+          "confidence": 0.994,
+          "span": {
+            "offset": 11,
+            "length": 7
+          }
+        },
+        {
+          "content": "Invoice",
+          "polygon": [
+            454,
+            974,
+            582,
+            939,
+            592,
+            978,
+            464,
+            1012
+          ],
+          "confidence": 0.989,
+          "span": {
+            "offset": 19,
+            "length": 7
+          }
+        },
+        {
+          "content": "No:",
+          "polygon": [
+            595,
+            936,
+            655,
+            919,
+            666,
+            959,
+            606,
+            975
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 27,
+            "length": 3
+          }
+        },
+        {
+          "content": "INV-2026-001",
+          "polygon": [
+            671,
+            915,
+            919,
+            846,
+            928,
+            887,
+            682,
+            954
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 31,
+            "length": 12
+          }
+        },
+        {
+          "content": "Invoice",
+          "polygon": [
+            474,
+            1054,
+            602,
+            1019,
+            614,
+            1057,
+            487,
+            1093
+          ],
+          "confidence": 0.981,
+          "span": {
+            "offset": 44,
+            "length": 7
+          }
+        },
+        {
+          "content": "Date:",
+          "polygon": [
+            615,
+            1016,
+            708,
+            990,
+            721,
+            1028,
+            628,
+            1053
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 52,
+            "length": 5
+          }
+        },
+        {
+          "content": "2026-03-21",
+          "polygon": [
+            722,
+            987,
+            925,
+            931,
+            937,
+            973,
+            734,
+            1025
+          ],
+          "confidence": 0.994,
+          "span": {
+            "offset": 58,
+            "length": 10
+          }
+        },
+        {
+          "content": "Currency:",
+          "polygon": [
+            496,
+            1134,
+            671,
+            1087,
+            682,
+            1127,
+            508,
+            1175
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 69,
+            "length": 9
+          }
+        },
+        {
+          "content": "USD",
+          "polygon": [
+            686,
+            1083,
+            774,
+            1058,
+            782,
+            1098,
+            697,
+            1123
+          ],
+          "confidence": 0.995,
+          "span": {
+            "offset": 79,
+            "length": 3
+          }
+        },
+        {
+          "content": "Seller",
+          "polygon": [
+            543,
+            1312,
+            671,
+            1282,
+            678,
+            1321,
+            554,
+            1352
+          ],
+          "confidence": 0.993,
+          "span": {
+            "offset": 83,
+            "length": 6
+          }
+        },
+        {
+          "content": "ABC",
+          "polygon": [
+            566,
+            1399,
+            649,
+            1377,
+            667,
+            1436,
+            584,
+            1459
+          ],
+          "confidence": 0.997,
+          "span": {
+            "offset": 90,
+            "length": 3
+          }
+        },
+        {
+          "content": "Trading",
+          "polygon": [
+            662,
+            1374,
+            796,
+            1339,
+            815,
+            1395,
+            680,
+            1432
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 94,
+            "length": 7
+          }
+        },
+        {
+          "content": "Co.,",
+          "polygon": [
+            811,
+            1336,
+            876,
+            1319,
+            894,
+            1374,
+            829,
+            1391
+          ],
+          "confidence": 0.988,
+          "span": {
+            "offset": 102,
+            "length": 4
+          }
+        },
+        {
+          "content": "Ltd.",
+          "polygon": [
+            887,
+            1316,
+            967,
+            1296,
+            982,
+            1350,
+            905,
+            1371
+          ],
+          "confidence": 0.983,
+          "span": {
+            "offset": 107,
+            "length": 4
+          }
+        },
+        {
+          "content": "1-2-3",
+          "polygon": [
+            591,
+            1471,
+            682,
+            1450,
+            694,
+            1493,
+            603,
+            1517
+          ],
+          "confidence": 0.993,
+          "span": {
+            "offset": 112,
+            "length": 5
+          }
+        },
+        {
+          "content": "Example",
+          "polygon": [
+            697,
+            1446,
+            850,
+            1406,
+            863,
+            1448,
+            710,
+            1488
+          ],
+          "confidence": 0.995,
+          "span": {
+            "offset": 118,
+            "length": 7
+          }
+        },
+        {
+          "content": "Street",
+          "polygon": [
+            863,
+            1403,
+            976,
+            1371,
+            988,
+            1415,
+            876,
+            1444
+          ],
+          "confidence": 0.996,
+          "span": {
+            "offset": 126,
+            "length": 6
+          }
+        },
+        {
+          "content": "Tokyo,",
+          "polygon": [
+            599,
+            1535,
+            725,
+            1504,
+            739,
+            1561,
+            612,
+            1593
+          ],
+          "confidence": 0.993,
+          "span": {
+            "offset": 133,
+            "length": 6
+          }
+        },
+        {
+          "content": "Japan",
+          "polygon": [
+            739,
+            1500,
+            853,
+            1467,
+            866,
+            1525,
+            753,
+            1557
+          ],
+          "confidence": 0.995,
+          "span": {
+            "offset": 140,
+            "length": 5
+          }
+        },
+        {
+          "content": "Country",
+          "polygon": [
+            626,
+            1610,
+            767,
+            1573,
+            777,
+            1619,
+            634,
+            1655
+          ],
+          "confidence": 0.995,
+          "span": {
+            "offset": 146,
+            "length": 7
+          }
+        },
+        {
+          "content": "of",
+          "polygon": [
+            780,
+            1570,
+            812,
+            1561,
+            821,
+            1608,
+            790,
+            1616
+          ],
+          "confidence": 0.988,
+          "span": {
+            "offset": 154,
+            "length": 2
+          }
+        },
+        {
+          "content": "Origin:",
+          "polygon": [
+            825,
+            1558,
+            941,
+            1526,
+            951,
+            1573,
+            835,
+            1604
+          ],
+          "confidence": 0.993,
+          "span": {
+            "offset": 157,
+            "length": 7
+          }
+        },
+        {
+          "content": "Japan",
+          "polygon": [
+            953,
+            1523,
+            1067,
+            1491,
+            1078,
+            1538,
+            964,
+            1570
+          ],
+          "confidence": 0.996,
+          "span": {
+            "offset": 165,
+            "length": 5
+          }
+        },
+        {
+          "content": "Buyer",
+          "polygon": [
+            1458,
+            1067,
+            1587,
+            1037,
+            1598,
+            1079,
+            1468,
+            1112
+          ],
+          "confidence": 0.995,
+          "span": {
+            "offset": 171,
+            "length": 5
+          }
+        },
+        {
+          "content": "XYZ",
+          "polygon": [
+            1481,
+            1160,
+            1561,
+            1140,
+            1574,
+            1183,
+            1494,
+            1202
+          ],
+          "confidence": 0.993,
+          "span": {
+            "offset": 177,
+            "length": 3
+          }
+        },
+        {
+          "content": "Manufacturing",
+          "polygon": [
+            1575,
+            1137,
+            1827,
+            1072,
+            1838,
+            1115,
+            1587,
+            1180
+          ],
+          "confidence": 0.993,
+          "span": {
+            "offset": 181,
+            "length": 13
+          }
+        },
+        {
+          "content": "Inc.",
+          "polygon": [
+            1844,
+            1068,
+            1911,
+            1051,
+            1920,
+            1091,
+            1855,
+            1110
+          ],
+          "confidence": 0.973,
+          "span": {
+            "offset": 195,
+            "length": 4
+          }
+        },
+        {
+          "content": "456",
+          "polygon": [
+            1500,
+            1231,
+            1569,
+            1213,
+            1579,
+            1256,
+            1511,
+            1273
+          ],
+          "confidence": 0.997,
+          "span": {
+            "offset": 200,
+            "length": 3
+          }
+        },
+        {
+          "content": "Sample",
+          "polygon": [
+            1583,
+            1209,
+            1717,
+            1175,
+            1727,
+            1216,
+            1594,
+            1252
+          ],
+          "confidence": 0.998,
+          "span": {
+            "offset": 204,
+            "length": 6
+          }
+        },
+        {
+          "content": "Ave",
+          "polygon": [
+            1730,
+            1172,
+            1802,
+            1154,
+            1810,
+            1193,
+            1740,
+            1212
+          ],
+          "confidence": 0.998,
+          "span": {
+            "offset": 211,
+            "length": 3
+          }
+        },
+        {
+          "content": "Los",
+          "polygon": [
+            1514,
+            1292,
+            1581,
+            1273,
+            1598,
+            1331,
+            1530,
+            1350
+          ],
+          "confidence": 0.993,
+          "span": {
+            "offset": 215,
+            "length": 3
+          }
+        },
+        {
+          "content": "Angeles,",
+          "polygon": [
+            1593,
+            1270,
+            1747,
+            1228,
+            1763,
+            1284,
+            1610,
+            1327
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 219,
+            "length": 8
+          }
+        },
+        {
+          "content": "CA,",
+          "polygon": [
+            1763,
+            1224,
+            1825,
+            1208,
+            1841,
+            1263,
+            1779,
+            1280
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 228,
+            "length": 3
+          }
+        },
+        {
+          "content": "USA",
+          "polygon": [
+            1842,
+            1203,
+            1930,
+            1181,
+            1943,
+            1236,
+            1858,
+            1259
+          ],
+          "confidence": 0.996,
+          "span": {
+            "offset": 232,
+            "length": 3
+          }
+        },
+        {
+          "content": "No",
+          "polygon": [
+            771,
+            2053,
+            829,
+            2047,
+            834,
+            2081,
+            776,
+            2090
+          ],
+          "confidence": 0.994,
+          "span": {
+            "offset": 236,
+            "length": 2
+          }
+        },
+        {
+          "content": "Description",
+          "polygon": [
+            994,
+            1996,
+            1205,
+            1943,
+            1214,
+            1983,
+            1010,
+            2042
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 239,
+            "length": 11
+          }
+        },
+        {
+          "content": "Qty",
+          "polygon": [
+            1798,
+            1778,
+            1865,
+            1771,
+            1870,
+            1810,
+            1803,
+            1819
+          ],
+          "confidence": 0.997,
+          "span": {
+            "offset": 251,
+            "length": 3
+          }
+        },
+        {
+          "content": "Unit",
+          "polygon": [
+            2023,
+            1720,
+            2100,
+            1701,
+            2108,
+            1740,
+            2032,
+            1758
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 255,
+            "length": 4
+          }
+        },
+        {
+          "content": "Price",
+          "polygon": [
+            2113,
+            1698,
+            2207,
+            1675,
+            2211,
+            1714,
+            2121,
+            1737
+          ],
+          "confidence": 0.996,
+          "span": {
+            "offset": 260,
+            "length": 5
+          }
+        },
+        {
+          "content": "Amount",
+          "polygon": [
+            2425,
+            1615,
+            2572,
+            1575,
+            2578,
+            1613,
+            2434,
+            1652
+          ],
+          "confidence": 0.998,
+          "span": {
+            "offset": 266,
+            "length": 6
+          }
+        },
+        {
+          "content": "1",
+          "polygon": [
+            799,
+            2130,
+            818,
+            2125,
+            824,
+            2160,
+            803,
+            2165
+          ],
+          "confidence": 0.996,
+          "span": {
+            "offset": 273,
+            "length": 1
+          }
+        },
+        {
+          "content": "Industrial",
+          "polygon": [
+            1014,
+            2065,
+            1180,
+            2022,
+            1192,
+            2066,
+            1027,
+            2110
+          ],
+          "confidence": 0.977,
+          "span": {
+            "offset": 275,
+            "length": 10
+          }
+        },
+        {
+          "content": "Sensor",
+          "polygon": [
+            1194,
+            2018,
+            1321,
+            1985,
+            1333,
+            2028,
+            1207,
+            2062
+          ],
+          "confidence": 0.995,
+          "span": {
+            "offset": 286,
+            "length": 6
+          }
+        },
+        {
+          "content": "Model",
+          "polygon": [
+            1333,
+            1982,
+            1439,
+            1953,
+            1450,
+            1997,
+            1345,
+            2025
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 293,
+            "length": 5
+          }
+        },
+        {
+          "content": "A",
+          "polygon": [
+            1452,
+            1950,
+            1483,
+            1941,
+            1493,
+            1985,
+            1464,
+            1993
+          ],
+          "confidence": 0.994,
+          "span": {
+            "offset": 299,
+            "length": 1
+          }
+        },
+        {
+          "content": "10",
+          "polygon": [
+            1951,
+            1816,
+            1997,
+            1808,
+            2004,
+            1842,
+            1958,
+            1851
+          ],
+          "confidence": 0.994,
+          "span": {
+            "offset": 301,
+            "length": 2
+          }
+        },
+        {
+          "content": "USD",
+          "polygon": [
+            2174,
+            1756,
+            2262,
+            1734,
+            2271,
+            1775,
+            2181,
+            1798
+          ],
+          "confidence": 0.996,
+          "span": {
+            "offset": 304,
+            "length": 3
+          }
+        },
+        {
+          "content": "120.00",
+          "polygon": [
+            2277,
+            1731,
+            2398,
+            1699,
+            2406,
+            1737,
+            2286,
+            1771
+          ],
+          "confidence": 0.994,
+          "span": {
+            "offset": 308,
+            "length": 6
+          }
+        },
+        {
+          "content": "USD",
+          "polygon": [
+            2541,
+            1658,
+            2627,
+            1636,
+            2638,
+            1678,
+            2553,
+            1700
+          ],
+          "confidence": 0.998,
+          "span": {
+            "offset": 315,
+            "length": 3
+          }
+        },
+        {
+          "content": "1,200.00",
+          "polygon": [
+            2643,
+            1632,
+            2801,
+            1590,
+            2808,
+            1631,
+            2653,
+            1674
+          ],
+          "confidence": 0.994,
+          "span": {
+            "offset": 319,
+            "length": 8
+          }
+        },
+        {
+          "content": "2",
+          "polygon": [
+            810,
+            2204,
+            839,
+            2197,
+            847,
+            2232,
+            817,
+            2240
+          ],
+          "confidence": 0.995,
+          "span": {
+            "offset": 328,
+            "length": 1
+          }
+        },
+        {
+          "content": "Control",
+          "polygon": [
+            1036,
+            2139,
+            1165,
+            2104,
+            1178,
+            2148,
+            1049,
+            2183
+          ],
+          "confidence": 0.993,
+          "span": {
+            "offset": 330,
+            "length": 7
+          }
+        },
+        {
+          "content": "Module",
+          "polygon": [
+            1180,
+            2100,
+            1308,
+            2066,
+            1321,
+            2109,
+            1193,
+            2144
+          ],
+          "confidence": 0.996,
+          "span": {
+            "offset": 338,
+            "length": 6
+          }
+        },
+        {
+          "content": "Model",
+          "polygon": [
+            1323,
+            2062,
+            1429,
+            2033,
+            1442,
+            2075,
+            1336,
+            2104
+          ],
+          "confidence": 0.994,
+          "span": {
+            "offset": 345,
+            "length": 5
+          }
+        },
+        {
+          "content": "B",
+          "polygon": [
+            1443,
+            2029,
+            1474,
+            2020,
+            1487,
+            2062,
+            1456,
+            2071
+          ],
+          "confidence": 0.994,
+          "span": {
+            "offset": 351,
+            "length": 1
+          }
+        },
+        {
+          "content": "5",
+          "polygon": [
+            1994,
+            1884,
+            2019,
+            1880,
+            2026,
+            1914,
+            2000,
+            1918
+          ],
+          "confidence": 0.995,
+          "span": {
+            "offset": 353,
+            "length": 1
+          }
+        },
+        {
+          "content": "USD",
+          "polygon": [
+            2196,
+            1828,
+            2281,
+            1806,
+            2290,
+            1846,
+            2205,
+            1868
+          ],
+          "confidence": 0.998,
+          "span": {
+            "offset": 355,
+            "length": 3
+          }
+        },
+        {
+          "content": "300.00",
+          "polygon": [
+            2295,
+            1803,
+            2421,
+            1770,
+            2427,
+            1808,
+            2304,
+            1843
+          ],
+          "confidence": 0.998,
+          "span": {
+            "offset": 359,
+            "length": 6
+          }
+        },
+        {
+          "content": "USD",
+          "polygon": [
+            2559,
+            1729,
+            2646,
+            1709,
+            2657,
+            1750,
+            2570,
+            1770
+          ],
+          "confidence": 0.996,
+          "span": {
+            "offset": 366,
+            "length": 3
+          }
+        },
+        {
+          "content": "1,500.00",
+          "polygon": [
+            2662,
+            1705,
+            2818,
+            1663,
+            2827,
+            1703,
+            2673,
+            1747
+          ],
+          "confidence": 0.996,
+          "span": {
+            "offset": 370,
+            "length": 8
+          }
+        },
+        {
+          "content": "Total",
+          "polygon": [
+            1759,
+            2207,
+            1864,
+            2180,
+            1877,
+            2224,
+            1772,
+            2252
+          ],
+          "confidence": 0.996,
+          "span": {
+            "offset": 379,
+            "length": 5
+          }
+        },
+        {
+          "content": "Amount:",
+          "polygon": [
+            1882,
+            2175,
+            2059,
+            2128,
+            2072,
+            2173,
+            1894,
+            2220
+          ],
+          "confidence": 0.995,
+          "span": {
+            "offset": 385,
+            "length": 7
+          }
+        },
+        {
+          "content": "USD",
+          "polygon": [
+            2079,
+            2123,
+            2168,
+            2099,
+            2181,
+            2144,
+            2091,
+            2168
+          ],
+          "confidence": 0.998,
+          "span": {
+            "offset": 393,
+            "length": 3
+          }
+        },
+        {
+          "content": "2,700.00",
+          "polygon": [
+            2183,
+            2094,
+            2359,
+            2046,
+            2369,
+            2093,
+            2195,
+            2140
+          ],
+          "confidence": 0.994,
+          "span": {
+            "offset": 397,
+            "length": 8
+          }
+        },
+        {
+          "content": "This",
+          "polygon": [
+            1148,
+            3565,
+            1211,
+            3548,
+            1224,
+            3590,
+            1161,
+            3606
+          ],
+          "confidence": 0.989,
+          "span": {
+            "offset": 406,
+            "length": 4
+          }
+        },
+        {
+          "content": "is",
+          "polygon": [
+            1219,
+            3546,
+            1252,
+            3537,
+            1265,
+            3579,
+            1232,
+            3587
+          ],
+          "confidence": 0.995,
+          "span": {
+            "offset": 411,
+            "length": 2
+          }
+        },
+        {
+          "content": "a",
+          "polygon": [
+            1264,
+            3534,
+            1283,
+            3528,
+            1296,
+            3570,
+            1277,
+            3575
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 414,
+            "length": 1
+          }
+        },
+        {
+          "content": "dummy",
+          "polygon": [
+            1294,
+            3525,
+            1408,
+            3495,
+            1421,
+            3537,
+            1307,
+            3567
+          ],
+          "confidence": 0.997,
+          "span": {
+            "offset": 416,
+            "length": 5
+          }
+        },
+        {
+          "content": "invoice",
+          "polygon": [
+            1416,
+            3493,
+            1534,
+            3461,
+            1547,
+            3504,
+            1429,
+            3535
+          ],
+          "confidence": 0.994,
+          "span": {
+            "offset": 422,
+            "length": 7
+          }
+        },
+        {
+          "content": "for",
+          "polygon": [
+            1545,
+            3459,
+            1589,
+            3447,
+            1601,
+            3489,
+            1558,
+            3501
+          ],
+          "confidence": 0.998,
+          "span": {
+            "offset": 430,
+            "length": 3
+          }
+        },
+        {
+          "content": "OCR",
+          "polygon": [
+            1599,
+            3444,
+            1677,
+            3424,
+            1689,
+            3466,
+            1611,
+            3486
+          ],
+          "confidence": 0.993,
+          "span": {
+            "offset": 434,
+            "length": 3
+          }
+        },
+        {
+          "content": "testing",
+          "polygon": [
+            1688,
+            3421,
+            1794,
+            3393,
+            1806,
+            3435,
+            1700,
+            3463
+          ],
+          "confidence": 0.996,
+          "span": {
+            "offset": 438,
+            "length": 7
+          }
+        },
+        {
+          "content": "purposes",
+          "polygon": [
+            1807,
+            3390,
+            1954,
+            3352,
+            1966,
+            3392,
+            1819,
+            3431
+          ],
+          "confidence": 0.992,
+          "span": {
+            "offset": 446,
+            "length": 8
+          }
+        },
+        {
+          "content": "only.",
+          "polygon": [
+            1965,
+            3349,
+            2042,
+            3329,
+            2053,
+            3369,
+            1977,
+            3389
+          ],
+          "confidence": 0.994,
+          "span": {
+            "offset": 455,
+            "length": 5
+          }
+        }
+      ],
+      "lines": [
+        {
+          "content": "COMMERCIAL INVOICE",
+          "polygon": [
+            417,
+            833,
+            1238,
+            612,
+            1256,
+            677,
+            435,
+            898
+          ],
+          "spans": [
+            {
+              "offset": 0,
+              "length": 18
+            }
+          ]
+        },
+        {
+          "content": "Invoice No: INV-2026-001",
+          "polygon": [
+            453,
+            972,
+            917,
+            846,
+            928,
+            886,
+            464,
+            1012
+          ],
+          "spans": [
+            {
+              "offset": 19,
+              "length": 24
+            }
+          ]
+        },
+        {
+          "content": "Invoice Date: 2026-03-21",
+          "polygon": [
+            473,
+            1052,
+            924,
+            930,
+            936,
+            972,
+            484,
+            1093
+          ],
+          "spans": [
+            {
+              "offset": 44,
+              "length": 24
+            }
+          ]
+        },
+        {
+          "content": "Currency: USD",
+          "polygon": [
+            496,
+            1133,
+            770,
+            1058,
+            782,
+            1098,
+            507,
+            1174
+          ],
+          "spans": [
+            {
+              "offset": 69,
+              "length": 13
+            }
+          ]
+        },
+        {
+          "content": "Seller",
+          "polygon": [
+            542,
+            1312,
+            668,
+            1282,
+            678,
+            1323,
+            552,
+            1352
+          ],
+          "spans": [
+            {
+              "offset": 83,
+              "length": 6
+            }
+          ]
+        },
+        {
+          "content": "ABC Trading Co., Ltd.",
+          "polygon": [
+            565,
+            1398,
+            966,
+            1296,
+            982,
+            1354,
+            581,
+            1458
+          ],
+          "spans": [
+            {
+              "offset": 90,
+              "length": 21
+            }
+          ]
+        },
+        {
+          "content": "1-2-3 Example Street",
+          "polygon": [
+            591,
+            1471,
+            975,
+            1371,
+            987,
+            1416,
+            603,
+            1516
+          ],
+          "spans": [
+            {
+              "offset": 112,
+              "length": 20
+            }
+          ]
+        },
+        {
+          "content": "Tokyo, Japan",
+          "polygon": [
+            598,
+            1535,
+            850,
+            1467,
+            866,
+            1525,
+            611,
+            1593
+          ],
+          "spans": [
+            {
+              "offset": 133,
+              "length": 12
+            }
+          ]
+        },
+        {
+          "content": "Country of Origin: Japan",
+          "polygon": [
+            626,
+            1609,
+            1066,
+            1491,
+            1078,
+            1538,
+            634,
+            1655
+          ],
+          "spans": [
+            {
+              "offset": 146,
+              "length": 24
+            }
+          ]
+        },
+        {
+          "content": "Buyer",
+          "polygon": [
+            1458,
+            1067,
+            1585,
+            1037,
+            1597,
+            1077,
+            1468,
+            1112
+          ],
+          "spans": [
+            {
+              "offset": 171,
+              "length": 5
+            }
+          ]
+        },
+        {
+          "content": "XYZ Manufacturing Inc.",
+          "polygon": [
+            1481,
+            1159,
+            1908,
+            1051,
+            1920,
+            1094,
+            1492,
+            1202
+          ],
+          "spans": [
+            {
+              "offset": 177,
+              "length": 22
+            }
+          ]
+        },
+        {
+          "content": "456 Sample Ave",
+          "polygon": [
+            1500,
+            1230,
+            1799,
+            1154,
+            1810,
+            1194,
+            1510,
+            1272
+          ],
+          "spans": [
+            {
+              "offset": 200,
+              "length": 14
+            }
+          ]
+        },
+        {
+          "content": "Los Angeles, CA, USA",
+          "polygon": [
+            1513,
+            1291,
+            1926,
+            1181,
+            1942,
+            1238,
+            1529,
+            1350
+          ],
+          "spans": [
+            {
+              "offset": 215,
+              "length": 20
+            }
+          ]
+        },
+        {
+          "content": "No",
+          "polygon": [
+            771,
+            2054,
+            827,
+            2047,
+            833,
+            2081,
+            777,
+            2090
+          ],
+          "spans": [
+            {
+              "offset": 236,
+              "length": 2
+            }
+          ]
+        },
+        {
+          "content": "Description",
+          "polygon": [
+            994,
+            1995,
+            1202,
+            1943,
+            1214,
+            1986,
+            1006,
+            2041
+          ],
+          "spans": [
+            {
+              "offset": 239,
+              "length": 11
+            }
+          ]
+        },
+        {
+          "content": "Qty",
+          "polygon": [
+            1798,
+            1779,
+            1864,
+            1771,
+            1869,
+            1810,
+            1805,
+            1819
+          ],
+          "spans": [
+            {
+              "offset": 251,
+              "length": 3
+            }
+          ]
+        },
+        {
+          "content": "Unit Price",
+          "polygon": [
+            2022,
+            1719,
+            2203,
+            1675,
+            2211,
+            1713,
+            2032,
+            1758
+          ],
+          "spans": [
+            {
+              "offset": 255,
+              "length": 10
+            }
+          ]
+        },
+        {
+          "content": "Amount",
+          "polygon": [
+            2424,
+            1615,
+            2570,
+            1575,
+            2578,
+            1612,
+            2434,
+            1652
+          ],
+          "spans": [
+            {
+              "offset": 266,
+              "length": 6
+            }
+          ]
+        },
+        {
+          "content": "1",
+          "polygon": [
+            799,
+            2130,
+            818,
+            2125,
+            823,
+            2161,
+            803,
+            2165
+          ],
+          "spans": [
+            {
+              "offset": 273,
+              "length": 1
+            }
+          ]
+        },
+        {
+          "content": "Industrial Sensor Model A",
+          "polygon": [
+            1013,
+            2064,
+            1480,
+            1941,
+            1492,
+            1986,
+            1025,
+            2109
+          ],
+          "spans": [
+            {
+              "offset": 275,
+              "length": 25
+            }
+          ]
+        },
+        {
+          "content": "10",
+          "polygon": [
+            1951,
+            1817,
+            1997,
+            1808,
+            2003,
+            1842,
+            1958,
+            1852
+          ],
+          "spans": [
+            {
+              "offset": 301,
+              "length": 2
+            }
+          ]
+        },
+        {
+          "content": "USD 120.00",
+          "polygon": [
+            2174,
+            1756,
+            2394,
+            1699,
+            2405,
+            1738,
+            2181,
+            1797
+          ],
+          "spans": [
+            {
+              "offset": 304,
+              "length": 10
+            }
+          ]
+        },
+        {
+          "content": "USD 1,200.00",
+          "polygon": [
+            2541,
+            1658,
+            2799,
+            1590,
+            2808,
+            1631,
+            2552,
+            1700
+          ],
+          "spans": [
+            {
+              "offset": 315,
+              "length": 12
+            }
+          ]
+        },
+        {
+          "content": "2",
+          "polygon": [
+            810,
+            2204,
+            838,
+            2197,
+            846,
+            2233,
+            817,
+            2240
+          ],
+          "spans": [
+            {
+              "offset": 328,
+              "length": 1
+            }
+          ]
+        },
+        {
+          "content": "Control Module Model B",
+          "polygon": [
+            1035,
+            2138,
+            1474,
+            2020,
+            1486,
+            2063,
+            1047,
+            2182
+          ],
+          "spans": [
+            {
+              "offset": 330,
+              "length": 22
+            }
+          ]
+        },
+        {
+          "content": "5",
+          "polygon": [
+            1993,
+            1885,
+            2019,
+            1880,
+            2025,
+            1914,
+            1996,
+            1919
+          ],
+          "spans": [
+            {
+              "offset": 353,
+              "length": 1
+            }
+          ]
+        },
+        {
+          "content": "USD 300.00",
+          "polygon": [
+            2195,
+            1828,
+            2417,
+            1770,
+            2427,
+            1809,
+            2205,
+            1868
+          ],
+          "spans": [
+            {
+              "offset": 355,
+              "length": 10
+            }
+          ]
+        },
+        {
+          "content": "USD 1,500.00",
+          "polygon": [
+            2559,
+            1729,
+            2815,
+            1663,
+            2826,
+            1706,
+            2570,
+            1770
+          ],
+          "spans": [
+            {
+              "offset": 366,
+              "length": 12
+            }
+          ]
+        },
+        {
+          "content": "Total Amount: USD 2,700.00",
+          "polygon": [
+            1758,
+            2206,
+            2356,
+            2046,
+            2369,
+            2092,
+            1771,
+            2252
+          ],
+          "spans": [
+            {
+              "offset": 379,
+              "length": 26
+            }
+          ]
+        },
+        {
+          "content": "This is a dummy invoice for OCR testing purposes only.",
+          "polygon": [
+            1147,
+            3563,
+            2041,
+            3329,
+            2052,
+            3369,
+            1158,
+            3606
+          ],
+          "spans": [
+            {
+              "offset": 406,
+              "length": 54
+            }
+          ]
+        }
+      ],
+      "spans": [
+        {
+          "offset": 0,
+          "length": 460
+        }
+      ]
+    }
+  ],
+  "paragraphs": [
+    {
+      "spans": [
+        {
+          "offset": 0,
+          "length": 18
+        }
+      ],
+      "boundingRegions": [
+        {
+          "pageNumber": 1,
+          "polygon": [
+            417,
+            833,
+            1238,
+            612,
+            1256,
+            677,
+            435,
+            898
+          ]
+        }
+      ],
+      "content": "COMMERCIAL INVOICE"
+    },
+    {
+      "spans": [
+        {
+          "offset": 19,
+          "length": 63
+        }
+      ],
+      "boundingRegions": [
+        {
+          "pageNumber": 1,
+          "polygon": [
+            451,
+            972,
+            917,
+            846,
+            972,
+            1048,
+            506,
+            1174
+          ]
+        }
+      ],
+      "content": "Invoice No: INV-2026-001 Invoice Date: 2026-03-21 Currency: USD"
+    },
+    {
+      "spans": [
+        {
+          "offset": 83,
+          "length": 87
+        }
+      ],
+      "boundingRegions": [
+        {
+          "pageNumber": 1,
+          "polygon": [
+            537,
+            1313,
+            988,
+            1195,
+            1078,
+            1538,
+            628,
+            1657
+          ]
+        }
+      ],
+      "content": "Seller ABC Trading Co., Ltd. 1-2-3 Example Street Tokyo, Japan Country of Origin: Japan"
+    },
+    {
+      "spans": [
+        {
+          "offset": 171,
+          "length": 64
+        }
+      ],
+      "boundingRegions": [
+        {
+          "pageNumber": 1,
+          "polygon": [
+            1457,
+            1067,
+            1886,
+            959,
+            1957,
+            1242,
+            1528,
+            1350
+          ]
+        }
+      ],
+      "content": "Buyer XYZ Manufacturing Inc. 456 Sample Ave Los Angeles, CA, USA"
+    },
+    {
+      "spans": [
+        {
+          "offset": 236,
+          "length": 2
+        }
+      ],
+      "boundingRegions": [
+        {
+          "pageNumber": 1,
+          "polygon": [
+            771,
+            2054,
+            827,
+            2045,
+            833,
+            2081,
+            777,
+            2090
+          ]
+        }
+      ],
+      "content": "No"
+    },
+    {
+      "spans": [
+        {
+          "offset": 239,
+          "length": 11
+        }
+      ],
+      "boundingRegions": [
+        {
+          "pageNumber": 1,
+          "polygon": [
+            994,
+            1995,
+            1202,
+            1941,
+            1214,
+            1987,
+            1006,
+            2041
+          ]
+        }
+      ],
+      "content": "Description"
+    },
+    {
+      "spans": [
+        {
+          "offset": 251,
+          "length": 3
+        }
+      ],
+      "boundingRegions": [
+        {
+          "pageNumber": 1,
+          "polygon": [
+            1798,
+            1779,
+            1864,
+            1771,
+            1869,
+            1811,
+            1803,
+            1819
+          ]
+        }
+      ],
+      "content": "Qty"
+    },
+    {
+      "spans": [
+        {
+          "offset": 255,
+          "length": 10
+        }
+      ],
+      "boundingRegions": [
+        {
+          "pageNumber": 1,
+          "polygon": [
+            2022,
+            1719,
+            2203,
+            1675,
+            2213,
+            1714,
+            2032,
+            1758
+          ]
+        }
+      ],
+      "content": "Unit Price"
+    },
+    {
+      "spans": [
+        {
+          "offset": 266,
+          "length": 6
+        }
+      ],
+      "boundingRegions": [
+        {
+          "pageNumber": 1,
+          "polygon": [
+            2424,
+            1615,
+            2570,
+            1575,
+            2580,
+            1612,
+            2434,
+            1652
+          ]
+        }
+      ],
+      "content": "Amount"
+    },
+    {
+      "spans": [
+        {
+          "offset": 273,
+          "length": 1
+        }
+      ],
+      "boundingRegions": [
+        {
+          "pageNumber": 1,
+          "polygon": [
+            798,
+            2128,
+            818,
+            2125,
+            823,
+            2162,
+            803,
+            2165
+          ]
+        }
+      ],
+      "content": "1"
+    },
+    {
+      "spans": [
+        {
+          "offset": 275,
+          "length": 25
+        }
+      ],
+      "boundingRegions": [
+        {
+          "pageNumber": 1,
+          "polygon": [
+            1013,
+            2064,
+            1480,
+            1941,
+            1492,
+            1986,
+            1025,
+            2109
+          ]
+        }
+      ],
+      "content": "Industrial Sensor Model A"
+    },
+    {
+      "spans": [
+        {
+          "offset": 301,
+          "length": 2
+        }
+      ],
+      "boundingRegions": [
+        {
+          "pageNumber": 1,
+          "polygon": [
+            1951,
+            1817,
+            1997,
+            1808,
+            2004,
+            1843,
+            1958,
+            1852
+          ]
+        }
+      ],
+      "content": "10"
+    },
+    {
+      "spans": [
+        {
+          "offset": 304,
+          "length": 10
+        }
+      ],
+      "boundingRegions": [
+        {
+          "pageNumber": 1,
+          "polygon": [
+            2170,
+            1757,
+            2394,
+            1698,
+            2405,
+            1738,
+            2181,
+            1797
+          ]
+        }
+      ],
+      "content": "USD 120.00"
+    },
+    {
+      "spans": [
+        {
+          "offset": 315,
+          "length": 12
+        }
+      ],
+      "boundingRegions": [
+        {
+          "pageNumber": 1,
+          "polygon": [
+            2541,
+            1658,
+            2799,
+            1590,
+            2810,
+            1632,
+            2552,
+            1700
+          ]
+        }
+      ],
+      "content": "USD 1,200.00"
+    },
+    {
+      "spans": [
+        {
+          "offset": 328,
+          "length": 1
+        }
+      ],
+      "boundingRegions": [
+        {
+          "pageNumber": 1,
+          "polygon": [
+            809,
+            2203,
+            838,
+            2197,
+            846,
+            2234,
+            817,
+            2240
+          ]
+        }
+      ],
+      "content": "2"
+    },
+    {
+      "spans": [
+        {
+          "offset": 330,
+          "length": 22
+        }
+      ],
+      "boundingRegions": [
+        {
+          "pageNumber": 1,
+          "polygon": [
+            1035,
+            2138,
+            1474,
+            2019,
+            1486,
+            2063,
+            1047,
+            2182
+          ]
+        }
+      ],
+      "content": "Control Module Model B"
+    },
+    {
+      "spans": [
+        {
+          "offset": 353,
+          "length": 1
+        }
+      ],
+      "boundingRegions": [
+        {
+          "pageNumber": 1,
+          "polygon": [
+            1990,
+            1885,
+            2019,
+            1880,
+            2025,
+            1914,
+            1996,
+            1919
+          ]
+        }
+      ],
+      "content": "5"
+    },
+    {
+      "spans": [
+        {
+          "offset": 355,
+          "length": 10
+        }
+      ],
+      "boundingRegions": [
+        {
+          "pageNumber": 1,
+          "polygon": [
+            2195,
+            1828,
+            2417,
+            1770,
+            2427,
+            1810,
+            2205,
+            1868
+          ]
+        }
+      ],
+      "content": "USD 300.00"
+    },
+    {
+      "spans": [
+        {
+          "offset": 366,
+          "length": 12
+        }
+      ],
+      "boundingRegions": [
+        {
+          "pageNumber": 1,
+          "polygon": [
+            2559,
+            1729,
+            2815,
+            1663,
+            2826,
+            1706,
+            2570,
+            1772
+          ]
+        }
+      ],
+      "content": "USD 1,500.00"
+    },
+    {
+      "spans": [
+        {
+          "offset": 379,
+          "length": 26
+        }
+      ],
+      "boundingRegions": [
+        {
+          "pageNumber": 1,
+          "polygon": [
+            1758,
+            2206,
+            2357,
+            2046,
+            2369,
+            2092,
+            1770,
+            2252
+          ]
+        }
+      ],
+      "content": "Total Amount: USD 2,700.00"
+    },
+    {
+      "spans": [
+        {
+          "offset": 406,
+          "length": 54
+        }
+      ],
+      "boundingRegions": [
+        {
+          "pageNumber": 1,
+          "polygon": [
+            1147,
+            3563,
+            2041,
+            3326,
+            2052,
+            3369,
+            1158,
+            3606
+          ]
+        }
+      ],
+      "content": "This is a dummy invoice for OCR testing purposes only."
+    }
+  ],
+  "styles": [
+    {
+      "confidence": 0.5,
+      "spans": [
+        {
+          "offset": 236,
+          "length": 2
+        }
+      ],
+      "isHandwritten": true
+    }
+  ],
+  "contentFormat": "text"
+}

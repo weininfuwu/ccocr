@@ -1,0 +1,230 @@
+{
+  "status": "succeeded",
+  "createdDateTime": "2026-03-28T00:49:05Z",
+  "lastUpdatedDateTime": "2026-03-28T00:49:05Z",
+  "analyzeResult": {
+    "version": "3.2.0",
+    "modelVersion": "2022-04-30",
+    "readResults": [
+      {
+        "page": 1,
+        "angle": 0.0899,
+        "width": 1654,
+        "height": 2339,
+        "unit": "pixel",
+        "lines": [
+          {
+            "boundingBox": [
+              862,
+              284,
+              1296,
+              284,
+              1296,
+              320,
+              862,
+              321
+            ],
+            "text": "Total Amount: USD 18,000.00",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  864,
+                  285,
+                  936,
+                  285,
+                  935,
+                  320,
+                  864,
+                  322
+                ],
+                "text": "Total",
+                "confidence": 0.998
+              },
+              {
+                "boundingBox": [
+                  943,
+                  285,
+                  1071,
+                  285,
+                  1070,
+                  319,
+                  942,
+                  320
+                ],
+                "text": "Amount:",
+                "confidence": 0.995
+              },
+              {
+                "boundingBox": [
+                  1078,
+                  285,
+                  1140,
+                  285,
+                  1138,
+                  319,
+                  1077,
+                  319
+                ],
+                "text": "USD",
+                "confidence": 0.998
+              },
+              {
+                "boundingBox": [
+                  1152,
+                  285,
+                  1289,
+                  285,
+                  1287,
+                  321,
+                  1150,
+                  319
+                ],
+                "text": "18,000.00",
+                "confidence": 0.995
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              231,
+              2079,
+              868,
+              2080,
+              868,
+              2110,
+              231,
+              2109
+            ],
+            "text": "Dummy invoice (guaranteed no overlap) for OCR testing.",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  231,
+                  2079,
+                  319,
+                  2080,
+                  319,
+                  2110,
+                  231,
+                  2110
+                ],
+                "text": "Dummy",
+                "confidence": 0.996
+              },
+              {
+                "boundingBox": [
+                  324,
+                  2080,
+                  404,
+                  2080,
+                  405,
+                  2110,
+                  325,
+                  2110
+                ],
+                "text": "invoice",
+                "confidence": 0.997
+              },
+              {
+                "boundingBox": [
+                  410,
+                  2080,
+                  545,
+                  2081,
+                  545,
+                  2110,
+                  411,
+                  2110
+                ],
+                "text": "(guaranteed",
+                "confidence": 0.994
+              },
+              {
+                "boundingBox": [
+                  551,
+                  2081,
+                  580,
+                  2081,
+                  581,
+                  2110,
+                  551,
+                  2110
+                ],
+                "text": "no",
+                "confidence": 0.998
+              },
+              {
+                "boundingBox": [
+                  586,
+                  2081,
+                  678,
+                  2081,
+                  678,
+                  2110,
+                  587,
+                  2110
+                ],
+                "text": "overlap)",
+                "confidence": 0.996
+              },
+              {
+                "boundingBox": [
+                  684,
+                  2081,
+                  715,
+                  2081,
+                  716,
+                  2110,
+                  684,
+                  2110
+                ],
+                "text": "for",
+                "confidence": 0.998
+              },
+              {
+                "boundingBox": [
+                  721,
+                  2081,
+                  775,
+                  2081,
+                  776,
+                  2111,
+                  721,
+                  2110
+                ],
+                "text": "OCR",
+                "confidence": 0.998
+              },
+              {
+                "boundingBox": [
+                  783,
+                  2081,
+                  868,
+                  2081,
+                  869,
+                  2111,
+                  784,
+                  2111
+                ],
+                "text": "testing.",
+                "confidence": 0.995
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

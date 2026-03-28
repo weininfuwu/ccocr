@@ -1,0 +1,29 @@
+{
+  "opt": {
+    "dpi": "200dpi",
+    "qlty": "lv0",
+    "engines": [
+      "intelli",
+      "vision"
+    ],
+    "usepng": "BOTH"
+  },
+  "imgs": [
+    [
+      "dangumi.pdf",
+      "d06e75a74705f1e07adcc0b6463d1698f4897213a635c672978b5ef8ef76e17520fb042eddfe199cb83da6545d777d652c0bd1b07bf55f3f8018935e24ae57b1"
+    ],
+    [
+      "pdf 3pg+blank.pdf",
+      "84bd044236658fc9239ce72ee77f0bbd687b7eeedb65ea921fa63cc69fc3f3f3d00d141ef8378ac4ecdaa6705f26172d8d652dda4a3c6fcc33fa643d23b6776e"
+    ],
+    [
+      "rot.png",
+      "4bcaa30fb50760882e5bc9c6867251f02b65a9f70c546e0ef01abadf2c25c72a77bfc2056991974a4b2f12bd1c19fa87aaec1ecba38bb4a6e8e82086e5f05021"
+    ],
+    [
+      "更复杂的.jpg",
+      "dbeac6bd1bfd829de81e600c892bcc918f6c53bd579e9fcb0aec29f9541c9516c5c4f8a8afcec7c3fed46f27b2328d7ba8573b594eb47e1c07a41dabd68940ec"
+    ]
+  ]
+}

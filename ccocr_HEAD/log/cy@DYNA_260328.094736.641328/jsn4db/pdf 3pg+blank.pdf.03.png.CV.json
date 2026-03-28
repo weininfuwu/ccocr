@@ -1,0 +1,202 @@
+{
+  "pages": [
+    {
+      "page": 1,
+      "ptop": 284,
+      "plft": 231,
+      "pryt": 1296,
+      "lines": [
+        {
+          "node": "1",
+          "top": 0,
+          "btm": 42,
+          "lft": 711,
+          "ryt": 1200,
+          "otop": 284,
+          "obtm": 321,
+          "olft": 862,
+          "oryt": 1296,
+          "text": "Total Amount: USD 18,000.00",
+          "conf": 0.972,
+          "words": [
+            {
+              "node": "1.1",
+              "top": 1,
+              "btm": 43,
+              "lft": 713,
+              "ryt": 794,
+              "otop": 285,
+              "obtm": 322,
+              "olft": 864,
+              "oryt": 936,
+              "text": "Total",
+              "conf": 0.998
+            },
+            {
+              "node": "1.2",
+              "top": 1,
+              "btm": 41,
+              "lft": 801,
+              "ryt": 946,
+              "otop": 285,
+              "obtm": 320,
+              "olft": 942,
+              "oryt": 1071,
+              "text": "Amount:",
+              "conf": 0.995
+            },
+            {
+              "node": "1.3",
+              "top": 1,
+              "btm": 39,
+              "lft": 953,
+              "ryt": 1024,
+              "otop": 285,
+              "obtm": 319,
+              "olft": 1077,
+              "oryt": 1140,
+              "text": "USD",
+              "conf": 0.998
+            },
+            {
+              "node": "1.4",
+              "top": 1,
+              "btm": 42,
+              "lft": 1035,
+              "ryt": 1192,
+              "otop": 285,
+              "obtm": 321,
+              "olft": 1150,
+              "oryt": 1289,
+              "text": "18,000.00",
+              "conf": 0.995
+            }
+          ]
+        },
+        {
+          "node": "2",
+          "top": 2023,
+          "btm": 2057,
+          "lft": 0,
+          "ryt": 718,
+          "otop": 2079,
+          "obtm": 2110,
+          "olft": 231,
+          "oryt": 868,
+          "text": "Dummy invoice (guaranteed no overlap) for OCR testing.",
+          "conf": 0.972,
+          "words": [
+            {
+              "node": "2.1",
+              "top": 2023,
+              "btm": 2057,
+              "lft": 0,
+              "ryt": 99,
+              "otop": 2079,
+              "obtm": 2110,
+              "olft": 231,
+              "oryt": 319,
+              "text": "Dummy",
+              "conf": 0.996
+            },
+            {
+              "node": "2.2",
+              "top": 2024,
+              "btm": 2057,
+              "lft": 105,
+              "ryt": 196,
+              "otop": 2080,
+              "obtm": 2110,
+              "olft": 324,
+              "oryt": 405,
+              "text": "invoice",
+              "conf": 0.997
+            },
+            {
+              "node": "2.3",
+              "top": 2024,
+              "btm": 2057,
+              "lft": 202,
+              "ryt": 354,
+              "otop": 2080,
+              "obtm": 2110,
+              "olft": 410,
+              "oryt": 545,
+              "text": "(guaranteed",
+              "conf": 0.994
+            },
+            {
+              "node": "2.4",
+              "top": 2025,
+              "btm": 2057,
+              "lft": 361,
+              "ryt": 394,
+              "otop": 2081,
+              "obtm": 2110,
+              "olft": 551,
+              "oryt": 581,
+              "text": "no",
+              "conf": 0.998
+            },
+            {
+              "node": "2.5",
+              "top": 2025,
+              "btm": 2057,
+              "lft": 400,
+              "ryt": 504,
+              "otop": 2081,
+              "obtm": 2110,
+              "olft": 586,
+              "oryt": 678,
+              "text": "overlap)",
+              "conf": 0.996
+            },
+            {
+              "node": "2.6",
+              "top": 2025,
+              "btm": 2057,
+              "lft": 510,
+              "ryt": 546,
+              "otop": 2081,
+              "obtm": 2110,
+              "olft": 684,
+              "oryt": 716,
+              "text": "for",
+              "conf": 0.998
+            },
+            {
+              "node": "2.7",
+              "top": 2025,
+              "btm": 2059,
+              "lft": 552,
+              "ryt": 614,
+              "otop": 2081,
+              "obtm": 2111,
+              "olft": 721,
+              "oryt": 776,
+              "text": "OCR",
+              "conf": 0.998
+            },
+            {
+              "node": "2.8",
+              "top": 2025,
+              "btm": 2059,
+              "lft": 622,
+              "ryt": 719,
+              "otop": 2081,
+              "obtm": 2111,
+              "olft": 783,
+              "oryt": 869,
+              "text": "testing.",
+              "conf": 0.995
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "engine": "CV",
+  "dpi": "200dpi",
+  "qlty": "lv0",
+  "usepng": "BOTH"
+}

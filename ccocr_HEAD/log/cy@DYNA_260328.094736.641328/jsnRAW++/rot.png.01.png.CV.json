@@ -1,0 +1,1714 @@
+{
+  "status": "succeeded",
+  "createdDateTime": "2026-03-28T00:49:21Z",
+  "lastUpdatedDateTime": "2026-03-28T00:49:23Z",
+  "analyzeResult": {
+    "version": "3.2.0",
+    "modelVersion": "2022-04-30",
+    "readResults": [
+      {
+        "page": 1,
+        "angle": -14.6135,
+        "width": 3305,
+        "height": 4032,
+        "unit": "pixel",
+        "lines": [
+          {
+            "boundingBox": [
+              411,
+              828,
+              1244,
+              603,
+              1266,
+              680,
+              428,
+              905
+            ],
+            "text": "COMMERCIAL INVOICE",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  411,
+                  828,
+                  906,
+                  696,
+                  928,
+                  774,
+                  428,
+                  905
+                ],
+                "text": "COMMERCIAL",
+                "confidence": 0.991
+              },
+              {
+                "boundingBox": [
+                  922,
+                  691,
+                  1217,
+                  609,
+                  1244,
+                  685,
+                  945,
+                  769
+                ],
+                "text": "INVOICE",
+                "confidence": 0.996
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              443,
+              972,
+              926,
+              842,
+              935,
+              890,
+              452,
+              1017
+            ],
+            "text": "Invoice No: INV-2026-001",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  449,
+                  972,
+                  579,
+                  936,
+                  587,
+                  980,
+                  456,
+                  1015
+                ],
+                "text": "Invoice",
+                "confidence": 0.991
+              },
+              {
+                "boundingBox": [
+                  588,
+                  933,
+                  653,
+                  916,
+                  661,
+                  961,
+                  596,
+                  978
+                ],
+                "text": "No:",
+                "confidence": 0.998
+              },
+              {
+                "boundingBox": [
+                  662,
+                  913,
+                  920,
+                  844,
+                  929,
+                  894,
+                  670,
+                  959
+                ],
+                "text": "INV-2026-001",
+                "confidence": 0.993
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              471,
+              1051,
+              930,
+              931,
+              943,
+              977,
+              483,
+              1098
+            ],
+            "text": "Invoice Date: 2026-03-21",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  472,
+                  1056,
+                  600,
+                  1019,
+                  612,
+                  1061,
+                  484,
+                  1098
+                ],
+                "text": "Invoice",
+                "confidence": 0.955
+              },
+              {
+                "boundingBox": [
+                  608,
+                  1016,
+                  709,
+                  989,
+                  722,
+                  1032,
+                  621,
+                  1059
+                ],
+                "text": "Date:",
+                "confidence": 0.998
+              },
+              {
+                "boundingBox": [
+                  718,
+                  986,
+                  927,
+                  932,
+                  941,
+                  979,
+                  730,
+                  1029
+                ],
+                "text": "2026-03-21",
+                "confidence": 0.994
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              499,
+              1131,
+              770,
+              1054,
+              783,
+              1098,
+              511,
+              1175
+            ],
+            "text": "Currency: USD",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  499,
+                  1133,
+                  668,
+                  1084,
+                  682,
+                  1128,
+                  511,
+                  1175
+                ],
+                "text": "Currency:",
+                "confidence": 0.993
+              },
+              {
+                "boundingBox": [
+                  677,
+                  1082,
+                  756,
+                  1058,
+                  771,
+                  1102,
+                  691,
+                  1126
+                ],
+                "text": "USD",
+                "confidence": 0.998
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              536,
+              1307,
+              660,
+              1280,
+              675,
+              1323,
+              549,
+              1350
+            ],
+            "text": "Seller",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  538,
+                  1306,
+                  665,
+                  1280,
+                  674,
+                  1323,
+                  547,
+                  1350
+                ],
+                "text": "Seller",
+                "confidence": 0.997
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              558,
+              1400,
+              961,
+              1296,
+              973,
+              1348,
+              572,
+              1450
+            ],
+            "text": "ABC Trading Co ., Ltd.",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  561,
+                  1400,
+                  645,
+                  1379,
+                  660,
+                  1430,
+                  578,
+                  1450
+                ],
+                "text": "ABC",
+                "confidence": 0.998
+              },
+              {
+                "boundingBox": [
+                  659,
+                  1376,
+                  796,
+                  1341,
+                  810,
+                  1392,
+                  674,
+                  1426
+                ],
+                "text": "Trading",
+                "confidence": 0.997
+              },
+              {
+                "boundingBox": [
+                  806,
+                  1338,
+                  850,
+                  1327,
+                  863,
+                  1377,
+                  820,
+                  1389
+                ],
+                "text": "Co",
+                "confidence": 0.998
+              },
+              {
+                "boundingBox": [
+                  860,
+                  1324,
+                  880,
+                  1319,
+                  892,
+                  1369,
+                  873,
+                  1375
+                ],
+                "text": ".,",
+                "confidence": 0.997
+              },
+              {
+                "boundingBox": [
+                  890,
+                  1316,
+                  960,
+                  1297,
+                  972,
+                  1348,
+                  902,
+                  1367
+                ],
+                "text": "Ltd.",
+                "confidence": 0.991
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              584,
+              1469,
+              974,
+              1366,
+              986,
+              1416,
+              598,
+              1518
+            ],
+            "text": "1-2-3 Example Street",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  585,
+                  1469,
+                  676,
+                  1448,
+                  691,
+                  1496,
+                  601,
+                  1518
+                ],
+                "text": "1-2-3",
+                "confidence": 0.996
+              },
+              {
+                "boundingBox": [
+                  686,
+                  1446,
+                  846,
+                  1404,
+                  859,
+                  1451,
+                  700,
+                  1494
+                ],
+                "text": "Example",
+                "confidence": 0.997
+              },
+              {
+                "boundingBox": [
+                  856,
+                  1401,
+                  975,
+                  1367,
+                  986,
+                  1414,
+                  868,
+                  1449
+                ],
+                "text": "Street",
+                "confidence": 0.997
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              601,
+              1538,
+              853,
+              1476,
+              865,
+              1522,
+              612,
+              1583
+            ],
+            "text": "Tokyo, Japan",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  603,
+                  1540,
+                  724,
+                  1511,
+                  736,
+                  1555,
+                  615,
+                  1583
+                ],
+                "text": "Tokyo,",
+                "confidence": 0.997
+              },
+              {
+                "boundingBox": [
+                  733,
+                  1509,
+                  849,
+                  1478,
+                  861,
+                  1524,
+                  745,
+                  1553
+                ],
+                "text": "Japan",
+                "confidence": 0.998
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              620,
+              1605,
+              1061,
+              1491,
+              1075,
+              1541,
+              633,
+              1657
+            ],
+            "text": "Country of Origin: Japan",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  620,
+                  1610,
+                  756,
+                  1571,
+                  772,
+                  1619,
+                  637,
+                  1657
+                ],
+                "text": "Country",
+                "confidence": 0.997
+              },
+              {
+                "boundingBox": [
+                  766,
+                  1568,
+                  802,
+                  1558,
+                  818,
+                  1607,
+                  782,
+                  1617
+                ],
+                "text": "of",
+                "confidence": 0.998
+              },
+              {
+                "boundingBox": [
+                  812,
+                  1555,
+                  933,
+                  1523,
+                  949,
+                  1573,
+                  828,
+                  1604
+                ],
+                "text": "Origin:",
+                "confidence": 0.996
+              },
+              {
+                "boundingBox": [
+                  943,
+                  1521,
+                  1059,
+                  1492,
+                  1074,
+                  1543,
+                  959,
+                  1571
+                ],
+                "text": "Japan",
+                "confidence": 0.997
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              776,
+              2054,
+              824,
+              2042,
+              832,
+              2091,
+              785,
+              2102
+            ],
+            "text": "No",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  776,
+                  2054,
+                  821,
+                  2042,
+                  832,
+                  2090,
+                  785,
+                  2101
+                ],
+                "text": "No",
+                "confidence": 0.997
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              993,
+              1998,
+              1197,
+              1943,
+              1207,
+              1987,
+              1005,
+              2043
+            ],
+            "text": "Description",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  994,
+                  2000,
+                  1198,
+                  1944,
+                  1207,
+                  1989,
+                  1009,
+                  2043
+                ],
+                "text": "Description",
+                "confidence": 0.991
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              774,
+              2126,
+              818,
+              2115,
+              832,
+              2161,
+              787,
+              2174
+            ],
+            "text": "1",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  785,
+                  2122,
+                  813,
+                  2115,
+                  826,
+                  2163,
+                  798,
+                  2171
+                ],
+                "text": "1",
+                "confidence": 0.995
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              1016,
+              2065,
+              1489,
+              1939,
+              1500,
+              1984,
+              1026,
+              2112
+            ],
+            "text": "Industrial Sensor Model A",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  1016,
+                  2068,
+                  1179,
+                  2021,
+                  1189,
+                  2069,
+                  1027,
+                  2112
+                ],
+                "text": "Industrial",
+                "confidence": 0.958
+              },
+              {
+                "boundingBox": [
+                  1188,
+                  2019,
+                  1318,
+                  1983,
+                  1328,
+                  2031,
+                  1198,
+                  2066
+                ],
+                "text": "Sensor",
+                "confidence": 0.997
+              },
+              {
+                "boundingBox": [
+                  1328,
+                  1981,
+                  1440,
+                  1952,
+                  1449,
+                  2000,
+                  1337,
+                  2029
+                ],
+                "text": "Model",
+                "confidence": 0.997
+              },
+              {
+                "boundingBox": [
+                  1449,
+                  1950,
+                  1476,
+                  1943,
+                  1485,
+                  1990,
+                  1459,
+                  1997
+                ],
+                "text": "A",
+                "confidence": 0.996
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              800,
+              2200,
+              838,
+              2189,
+              843,
+              2238,
+              807,
+              2249
+            ],
+            "text": "2",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  804,
+                  2198,
+                  832,
+                  2190,
+                  844,
+                  2237,
+                  818,
+                  2245
+                ],
+                "text": "2",
+                "confidence": 0.996
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              1038,
+              2136,
+              1472,
+              2025,
+              1480,
+              2071,
+              1051,
+              2187
+            ],
+            "text": "Control Module Model B",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  1039,
+                  2140,
+                  1162,
+                  2104,
+                  1174,
+                  2149,
+                  1052,
+                  2188
+                ],
+                "text": "Control",
+                "confidence": 0.994
+              },
+              {
+                "boundingBox": [
+                  1171,
+                  2101,
+                  1308,
+                  2065,
+                  1317,
+                  2109,
+                  1182,
+                  2146
+                ],
+                "text": "Module",
+                "confidence": 0.997
+              },
+              {
+                "boundingBox": [
+                  1317,
+                  2062,
+                  1431,
+                  2035,
+                  1438,
+                  2082,
+                  1326,
+                  2107
+                ],
+                "text": "Model",
+                "confidence": 0.998
+              },
+              {
+                "boundingBox": [
+                  1440,
+                  2033,
+                  1466,
+                  2027,
+                  1472,
+                  2075,
+                  1446,
+                  2080
+                ],
+                "text": "B",
+                "confidence": 0.998
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              1450,
+              1064,
+              1586,
+              1032,
+              1598,
+              1081,
+              1464,
+              1114
+            ],
+            "text": "Buyer",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  1450,
+                  1064,
+                  1585,
+                  1032,
+                  1597,
+                  1082,
+                  1462,
+                  1114
+                ],
+                "text": "Buyer",
+                "confidence": 0.994
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              1469,
+              1157,
+              1913,
+              1045,
+              1926,
+              1093,
+              1482,
+              1207
+            ],
+            "text": "XYZ Manufacturing Inc.",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  1472,
+                  1157,
+                  1551,
+                  1138,
+                  1569,
+                  1186,
+                  1490,
+                  1206
+                ],
+                "text": "XYZ",
+                "confidence": 0.998
+              },
+              {
+                "boundingBox": [
+                  1561,
+                  1136,
+                  1821,
+                  1069,
+                  1837,
+                  1116,
+                  1578,
+                  1184
+                ],
+                "text": "Manufacturing",
+                "confidence": 0.993
+              },
+              {
+                "boundingBox": [
+                  1831,
+                  1067,
+                  1911,
+                  1045,
+                  1926,
+                  1091,
+                  1846,
+                  1113
+                ],
+                "text": "Inc.",
+                "confidence": 0.962
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              1495,
+              1225,
+              1809,
+              1143,
+              1821,
+              1190,
+              1506,
+              1272
+            ],
+            "text": "456 Sample Ave",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  1498,
+                  1224,
+                  1563,
+                  1209,
+                  1574,
+                  1256,
+                  1508,
+                  1272
+                ],
+                "text": "456",
+                "confidence": 0.998
+              },
+              {
+                "boundingBox": [
+                  1572,
+                  1206,
+                  1714,
+                  1169,
+                  1728,
+                  1216,
+                  1584,
+                  1254
+                ],
+                "text": "Sample",
+                "confidence": 0.997
+              },
+              {
+                "boundingBox": [
+                  1723,
+                  1167,
+                  1796,
+                  1146,
+                  1811,
+                  1192,
+                  1737,
+                  1213
+                ],
+                "text": "Ave",
+                "confidence": 0.998
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              1513,
+              1297,
+              1928,
+              1182,
+              1938,
+              1229,
+              1524,
+              1344
+            ],
+            "text": "Los Angeles, CA, USA",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  1514,
+                  1297,
+                  1580,
+                  1279,
+                  1590,
+                  1327,
+                  1524,
+                  1344
+                ],
+                "text": "Los",
+                "confidence": 0.996
+              },
+              {
+                "boundingBox": [
+                  1589,
+                  1276,
+                  1748,
+                  1232,
+                  1758,
+                  1282,
+                  1599,
+                  1325
+                ],
+                "text": "Angeles,",
+                "confidence": 0.995
+              },
+              {
+                "boundingBox": [
+                  1758,
+                  1229,
+                  1828,
+                  1210,
+                  1837,
+                  1260,
+                  1767,
+                  1279
+                ],
+                "text": "CA,",
+                "confidence": 0.998
+              },
+              {
+                "boundingBox": [
+                  1837,
+                  1207,
+                  1922,
+                  1184,
+                  1931,
+                  1233,
+                  1846,
+                  1257
+                ],
+                "text": "USA",
+                "confidence": 0.998
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              1801,
+              1779,
+              1871,
+              1761,
+              1877,
+              1804,
+              1807,
+              1823
+            ],
+            "text": "Qty",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.777
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  1802,
+                  1778,
+                  1864,
+                  1762,
+                  1875,
+                  1804,
+                  1813,
+                  1821
+                ],
+                "text": "Qty",
+                "confidence": 0.998
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              2004,
+              1727,
+              2208,
+              1672,
+              2216,
+              1712,
+              2014,
+              1771
+            ],
+            "text": "Unit Price",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  2020,
+                  1723,
+                  2097,
+                  1700,
+                  2106,
+                  1744,
+                  2030,
+                  1767
+                ],
+                "text": "Unit",
+                "confidence": 0.987
+              },
+              {
+                "boundingBox": [
+                  2106,
+                  1698,
+                  2203,
+                  1674,
+                  2209,
+                  1716,
+                  2114,
+                  1741
+                ],
+                "text": "Price",
+                "confidence": 0.998
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              1955,
+              1811,
+              2002,
+              1801,
+              2012,
+              1848,
+              1965,
+              1860
+            ],
+            "text": "10",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  1955,
+                  1811,
+                  1997,
+                  1801,
+                  2009,
+                  1849,
+                  1965,
+                  1859
+                ],
+                "text": "10",
+                "confidence": 0.995
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              2175,
+              1749,
+              2425,
+              1691,
+              2435,
+              1734,
+              2186,
+              1797
+            ],
+            "text": "USD 120.00",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  2176,
+                  1754,
+                  2252,
+                  1731,
+                  2264,
+                  1776,
+                  2189,
+                  1797
+                ],
+                "text": "USD",
+                "confidence": 0.994
+              },
+              {
+                "boundingBox": [
+                  2270,
+                  1726,
+                  2395,
+                  1698,
+                  2404,
+                  1742,
+                  2281,
+                  1771
+                ],
+                "text": "120.00",
+                "confidence": 0.996
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              1988,
+              1877,
+              2026,
+              1870,
+              2035,
+              1919,
+              1995,
+              1929
+            ],
+            "text": "5",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.849
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  1988,
+                  1876,
+                  2020,
+                  1870,
+                  2031,
+                  1921,
+                  1997,
+                  1928
+                ],
+                "text": "5",
+                "confidence": 0.991
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              2203,
+              1820,
+              2423,
+              1766,
+              2435,
+              1811,
+              2214,
+              1868
+            ],
+            "text": "JSD 300.00",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  2203,
+                  1824,
+                  2268,
+                  1804,
+                  2284,
+                  1848,
+                  2219,
+                  1868
+                ],
+                "text": "JSD",
+                "confidence": 0.957
+              },
+              {
+                "boundingBox": [
+                  2284,
+                  1799,
+                  2413,
+                  1769,
+                  2426,
+                  1813,
+                  2299,
+                  1844
+                ],
+                "text": "300.00",
+                "confidence": 0.997
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              1758,
+              2207,
+              2357,
+              2044,
+              2367,
+              2092,
+              1771,
+              2256
+            ],
+            "text": "Total Amount: USD 2,700.00",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  1761,
+                  2208,
+                  1863,
+                  2179,
+                  1878,
+                  2227,
+                  1777,
+                  2255
+                ],
+                "text": "Total",
+                "confidence": 0.997
+              },
+              {
+                "boundingBox": [
+                  1872,
+                  2177,
+                  2061,
+                  2124,
+                  2073,
+                  2173,
+                  1887,
+                  2225
+                ],
+                "text": "Amount:",
+                "confidence": 0.997
+              },
+              {
+                "boundingBox": [
+                  2070,
+                  2121,
+                  2159,
+                  2097,
+                  2170,
+                  2147,
+                  2083,
+                  2171
+                ],
+                "text": "USD",
+                "confidence": 0.998
+              },
+              {
+                "boundingBox": [
+                  2176,
+                  2093,
+                  2351,
+                  2046,
+                  2360,
+                  2096,
+                  2187,
+                  2142
+                ],
+                "text": "2,700.00",
+                "confidence": 0.995
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              1140,
+              3566,
+              2048,
+              3323,
+              2059,
+              3367,
+              1152,
+              3611
+            ],
+            "text": "This is a dummy invoice for OCR testing purposes only.",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  1143,
+                  3567,
+                  1208,
+                  3549,
+                  1226,
+                  3592,
+                  1161,
+                  3611
+                ],
+                "text": "This",
+                "confidence": 0.993
+              },
+              {
+                "boundingBox": [
+                  1217,
+                  3547,
+                  1248,
+                  3538,
+                  1265,
+                  3581,
+                  1234,
+                  3590
+                ],
+                "text": "is",
+                "confidence": 0.998
+              },
+              {
+                "boundingBox": [
+                  1257,
+                  3536,
+                  1277,
+                  3530,
+                  1293,
+                  3573,
+                  1274,
+                  3578
+                ],
+                "text": "a",
+                "confidence": 0.995
+              },
+              {
+                "boundingBox": [
+                  1285,
+                  3528,
+                  1404,
+                  3496,
+                  1420,
+                  3537,
+                  1302,
+                  3570
+                ],
+                "text": "dummy",
+                "confidence": 0.997
+              },
+              {
+                "boundingBox": [
+                  1413,
+                  3493,
+                  1530,
+                  3462,
+                  1544,
+                  3503,
+                  1429,
+                  3535
+                ],
+                "text": "invoice",
+                "confidence": 0.997
+              },
+              {
+                "boundingBox": [
+                  1538,
+                  3460,
+                  1584,
+                  3447,
+                  1598,
+                  3489,
+                  1553,
+                  3501
+                ],
+                "text": "for",
+                "confidence": 0.998
+              },
+              {
+                "boundingBox": [
+                  1592,
+                  3445,
+                  1671,
+                  3424,
+                  1685,
+                  3465,
+                  1606,
+                  3486
+                ],
+                "text": "OCR",
+                "confidence": 0.998
+              },
+              {
+                "boundingBox": [
+                  1680,
+                  3421,
+                  1791,
+                  3392,
+                  1804,
+                  3434,
+                  1694,
+                  3463
+                ],
+                "text": "testing",
+                "confidence": 0.997
+              },
+              {
+                "boundingBox": [
+                  1800,
+                  3389,
+                  1951,
+                  3349,
+                  1962,
+                  3393,
+                  1812,
+                  3431
+                ],
+                "text": "purposes",
+                "confidence": 0.996
+              },
+              {
+                "boundingBox": [
+                  1959,
+                  3347,
+                  2048,
+                  3323,
+                  2059,
+                  3368,
+                  1970,
+                  3391
+                ],
+                "text": "only.",
+                "confidence": 0.995
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              2430,
+              1608,
+              2566,
+              1579,
+              2575,
+              1619,
+              2440,
+              1651
+            ],
+            "text": "Amount",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  2431,
+                  1612,
+                  2567,
+                  1580,
+                  2574,
+                  1620,
+                  2444,
+                  1651
+                ],
+                "text": "Amount",
+                "confidence": 0.997
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              2538,
+              1652,
+              2800,
+              1585,
+              2813,
+              1631,
+              2550,
+              1697
+            ],
+            "text": "USD 1,200.00",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  2538,
+                  1655,
+                  2616,
+                  1637,
+                  2633,
+                  1679,
+                  2556,
+                  1697
+                ],
+                "text": "USD",
+                "confidence": 0.991
+              },
+              {
+                "boundingBox": [
+                  2634,
+                  1633,
+                  2790,
+                  1588,
+                  2805,
+                  1631,
+                  2650,
+                  1675
+                ],
+                "text": "1,200.00",
+                "confidence": 0.995
+              }
+            ]
+          },
+          {
+            "boundingBox": [
+              2553,
+              1726,
+              2808,
+              1660,
+              2820,
+              1707,
+              2565,
+              1770
+            ],
+            "text": "USD 1,500.00",
+            "appearance": {
+              "style": {
+                "name": "other",
+                "confidence": 0.972
+              }
+            },
+            "words": [
+              {
+                "boundingBox": [
+                  2554,
+                  1728,
+                  2634,
+                  1709,
+                  2650,
+                  1752,
+                  2572,
+                  1770
+                ],
+                "text": "USD",
+                "confidence": 0.991
+              },
+              {
+                "boundingBox": [
+                  2652,
+                  1705,
+                  2809,
+                  1661,
+                  2821,
+                  1705,
+                  2668,
+                  1748
+                ],
+                "text": "1,500.00",
+                "confidence": 0.993
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
