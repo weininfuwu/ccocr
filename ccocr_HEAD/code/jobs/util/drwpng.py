@@ -31,10 +31,8 @@ def drwpng():
     blnkpng(pdfs, DD.pngPRE, DD.pngROT)
     drwlst     = _mk_drwlst(elmlst, pdfs)
     drwlst_rot = _mk_drwlst_rot(elmlst, pdfs)
-    draw(drwlst,         DD.pngPRE, DD.pngMK,
-         use_noup=DD.pdf2api)
-    draw_rot(drwlst_rot, DD.pngROT, DD.pngRMK,
-             use_noup=DD.pdf2api)
+    draw(drwlst,         DD.pngPRE, DD.pngMK)
+    draw_rot(drwlst_rot, DD.pngROT, DD.pngRMK)
     prnt('drwpng done')
 
 
