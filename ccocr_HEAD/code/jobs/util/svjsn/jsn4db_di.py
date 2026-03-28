@@ -36,7 +36,7 @@ def convert_di(jsn):
                     word.get('confidence', 1.0)))
             lines_out.append({
                 **elem(str(lno), lraw, ptop, plft, zm,
-                       line.get('content', ''), None),
+                       line.get('content', ''), 0),
                 'words': words_out,
             })
 
