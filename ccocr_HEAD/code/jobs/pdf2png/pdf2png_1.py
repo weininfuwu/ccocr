@@ -96,19 +96,4 @@ def pdf2png():
     #
     #   NOT YET      pngROT pngMK pngRMK      (created in jsn2db)
     #
-    prnt('''
-
-    CHECK (A): pdf2png() finished
-    1) pngUP  : files ready for API
-    2) pngPRE : hoge.ext.NN.png (canvas only, no NOUP)
-    3) pngROT pngMK pngRMK : NOT YET CREATED
-
-    BACKUP log folder
-
-    hit Q/q to quit now, otherwise continue ...
-            ''')
-    nxt = input('ok? ')
-    if nxt.lower() == 'q':
-        quit()
-
     return
