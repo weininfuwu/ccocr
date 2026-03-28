@@ -83,17 +83,19 @@ def writexl_e(dig):
         ##
         ## sheet body
         ##
-        _last_engine = None
-        _rie = 0  # row index within engine group
+        _last_key = None
+        _rie = 0  # row index within engine+usepng group
         for row,do in enumerate(dig[docname]):  # do == docObj == 1 biz doc
-            if do.engine != _last_engine:
+            _key = (do.engine, do.usepng)
+            if _key != _last_key:
                 _rie = 0
-                _last_engine = do.engine
+                _last_key = _key
             #
             #   fill pdf, document number, page(from), i# (instance num)
             #
             ws.cell(_rie*2+3,1).value = do.docnum
-            ws.cell(_rie*2+3,2).value = f'{do.pdf} {do.engine}' if do.engine else do.pdf
+            suffix = ' '.join(filter(None, [do.engine, do.usepng]))
+            ws.cell(_rie*2+3,2).value = f'{do.pdf} {suffix}' if suffix else do.pdf
             ws.cell(_rie*2+3,3).value = do.fm
             ws.cell(_rie*2+3,4).value = do.inum
             #
