@@ -74,12 +74,12 @@ from jobs.env import DD
 # public entry point
 # ---------------------------------------------------------------------------
 
-def jsn4db(bn, jsn, engine, usepng):
+def jsn4db(bn, jsn, engine, apisrc):
     """
     bn     : base filename  (e.g. 'foo.pdf.STRAIGHT.pdf')
     jsn    : dict returned by wrd2line()  (jsnRAW++ content)
     engine : 'vision' or 'intelli'
-    usepng : True if PNG was sent to API, False if PDF was sent as-is
+    apisrc : 'cnvpng' if PNG was sent to API, 'original' if file was sent as-is
 
     Converts coordinates to normalized top/btm/lft/ryt (0-1200 scale),
     writes result to jsn4db/<bn>.<CV|DI>.json.
@@ -100,7 +100,7 @@ def jsn4db(bn, jsn, engine, usepng):
     out['engine'] = tag
     out['dpi']    = DD.frmopt['dpi']
     out['qlty']   = DD.frmopt['qlty']
-    out['usepng'] = usepng
+    out['apisrc'] = apisrc
     dst = os.path.join(jsn4db_dir, f'{bn}.{tag}.json')
     with open(dst, 'w', encoding='utf-8') as f:
         json.dump(out, f, indent=2, ensure_ascii=False)
