@@ -35,12 +35,12 @@ def control():
             drwpng()
             with open(os.path.join(D.logd, 'dumpdb_ok.txt'), 'w') as f:
                 f.write('')
-            #
-            #   CHECKPOINT (B)
-            #
-            #   dump.db dump.xlsx   ready
-            #   pngROT pngMK pngRMK ready
-            #
+        #
+        #   CHECKPOINT (B)
+        #
+        #   dump.db dump.xlsx   ready
+        #   pngROT pngMK pngRMK ready
+        #
         prnt('''
 
     CHECK (B): drwpng() finished
@@ -49,11 +49,10 @@ def control():
 
     BACKUP log folder
 
-    hit a key to go on (aby) or Ctrl+C to quit ...
+    hit a key to quit()
             ''')
-            input('ok? ')
-            ## chkjson moved
-#            jsn2db()                ## json -> db, mark png
+        input('ok? ')
+        quit()
 
         aby(msconf)
     elif DD.jobtyp == 'txt':
