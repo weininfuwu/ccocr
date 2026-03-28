@@ -32,7 +32,7 @@ from .nxtdic2locdic   import nxtdic2locdic
                     see digin_sub.ojbs for detail of docObj
 '''
 
-def digin(docname,docdef,pdf,fm,to,docnum,jobid):
+def digin(docname,docdef,pdf,fm,to,docnum,jobid,engine='',apisrc=''):
     lvl = 1
     ## ddObj == Document Definition Object == one _dd sheet
     ##          aka. lvl object
@@ -45,7 +45,7 @@ def digin(docname,docdef,pdf,fm,to,docnum,jobid):
     do          = docObj(docname,pdf,fm,to,docnum,ddObj)  # blank docObj
     do.oid      = id(do)
     # dos == list of docObj
-    dos         = d_top(ddObj,do,docname,pdf,fm,to)
+    dos         = d_top(ddObj,do,docname,pdf,fm,to,engine,apisrc)
     nxtdic2locdic(dos)
     #
     #   deeper level
@@ -57,7 +57,7 @@ def digin(docname,docdef,pdf,fm,to,docnum,jobid):
         ttl = len(dos)
         for cnt,do in enumerate(dos):
             ddObj = copy.deepcopy(org_ddObj)    # will use pop() for control
-            tmp_dos = d_blw(ddObj,do,docname,pdf,fm,to)
+            tmp_dos = d_blw(ddObj,do,docname,pdf,fm,to,engine,apisrc)
             nxtdic2locdic(tmp_dos)
             new_dos += tmp_dos
             #

@@ -4,6 +4,7 @@
 #   digdb.py    230421  cy
 #   updated: 260321 strip engine suffix from pdf, set do.engine
 #   updated: 260322 read usepng from sorter, set do.usepng
+#   updated: 260329 pass engine/apisrc to digin() → SQL filter (fix mixed-elm crash)
 #
 #--------1---------2---------3---------4---------5---------6---------7--------#
 
@@ -31,12 +32,14 @@ def digdb(docdef):
         'SELECT pdf, pg_fm, pg_to, docname, docnum, engine, usepng '
         'FROM sorter ORDER BY docnum'
         ).fetchall()
+    _apisrc_map = {'png': 'cnvpng', 'straight': 'original'}
     for i in rtn:
         [pdf, fm, to, docname, docnum, engine, usepng] = i
         if docname == '_OOS':
             continue
+        apisrc = _apisrc_map.get(usepng, usepng)
         dig.setdefault(docname, [])
-        dos = digin(docname, docdef, pdf, fm, to, docnum, jobid)
+        dos = digin(docname, docdef, pdf, fm, to, docnum, jobid, engine, apisrc)
         for do in dos:
             do.engine = engine  if engine  else ''
             do.usepng = usepng  if usepng  else ''

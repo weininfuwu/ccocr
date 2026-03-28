@@ -10,7 +10,7 @@ from m.prnt import prnt
 from ...gv import gv # m_ccocr\m_aby\digdb_sub
 
 
-def runsql(docname,pdf,fm,to,do,io):
+def runsql(docname,pdf,fm,to,do,io,engine='',apisrc=''):
     dl = io.dl
     u_blw = ''
     u_pgt = ''
@@ -67,6 +67,8 @@ def runsql(docname,pdf,fm,to,do,io):
 SELECT  seq ,node,txt ,page, pg_top, pg_btm,
         top ,btm ,lft ,ryt, otop,obtm,olft,oryt,conf FROM elm
 WHERE pdf = :pdf
+AND engine = :engine
+AND apisrc = :apisrc
 AND pg_top >= :top
 AND pg_btm <= :btm
 AND lft >= :lft
@@ -76,6 +78,8 @@ ORDER BY pg_top, lft'''
     io.sqltxt = io.sqltxt[1:]
     try:
         io.sqlarg = {   'pdf'       : pdf                   ,
+                        'engine'    : engine                ,
+                        'apisrc'    : apisrc                ,
                         'top'       : top                   ,
                         'btm'       : btm                   ,
                         'lft'       : dl.sp_rof + dl.of_rof ,

@@ -14,7 +14,7 @@ from ..cmn.regexchk          import regexchk
 from ..cmn.resub             import resub
 from ..cmn.fill_io_do        import fill_io_do
 
-def d_top(ddObj,do,docname,pdf,fm,to):
+def d_top(ddObj,do,docname,pdf,fm,to,engine='',apisrc=''):
     idx = 0
     while len(ddObj.defs) > 0:
         io = itmObj(ddObj.defs[idx])    ## blank itmObj
@@ -28,7 +28,7 @@ def d_top(ddObj,do,docname,pdf,fm,to):
         if sp_has_str(do,io,fm,to):
             idx += 1    # skip orphan
             continue    # pandas check should gurantee this control
-        runsql(docname,pdf,fm,to,do,io)
+        runsql(docname,pdf,fm,to,do,io,engine,apisrc)
         regexchk(do,io)
         doios = pos_narrow(ddObj,do,io,fm,to)
         #
