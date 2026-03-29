@@ -102,7 +102,6 @@ def rmv_overwrap(do,io):
                 else:
                     log_nidx(do,io,lst,idx,nidx)
                     lst.pop(nidx)
-                    nidx = 1
                     continue # poped & nidx unch -> see next item
 
             # if not (btm <= ntop or ryt <= nlft):
