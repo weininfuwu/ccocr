@@ -68,6 +68,7 @@ SELECT  seq ,node,txt ,page, pg_top, pg_btm,
         top ,btm ,lft ,ryt, otop,obtm,olft,oryt,conf FROM elm
 WHERE pdf = :pdf
 AND engine = :engine
+AND apisrc = :apisrc
 AND pg_top >= :top
 AND pg_btm <= :btm
 AND lft >= :lft
@@ -78,6 +79,7 @@ ORDER BY pg_top, lft'''
     try:
         io.sqlarg = {   'pdf'       : pdf                   ,
                         'engine'    : engine                ,
+                        'apisrc'    : apisrc                ,
                         'top'       : top                   ,
                         'btm'       : btm                   ,
                         'lft'       : dl.sp_rof + dl.of_rof ,
