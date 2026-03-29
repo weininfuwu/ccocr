@@ -6,6 +6,7 @@
 #   updated: 260322 replace use_noup_png() global with do.usepng check
 #   updated: 260328 remove use_noup (NOUP files gone); guard ww>=1; guard oww/ohh==0
 #   updated: 260328 use rotate() to transform coords to pngROT space (fix rotated docs)
+#   updated: 260329 remove straight-entry skip (pngROT and polygon are same for all combos)
 #
 #--------1---------2---------3---------4---------5---------6---------7--------#
 
@@ -56,13 +57,6 @@ def spic(dig):
     np_png  = os.path.join(spicdir,'no_papa.png')
     for docname in dig:
         for docObj in dig[docname]:
-            # straight entries have no rotated marking png; skip spic entirely
-            if docObj.usepng == 'straight':
-                for io in docObj.itm:
-                    if io.dl.clm is None:
-                        continue
-                    io.spic = err_png   # placeholder so downstream never sees None
-                continue
             for io in docObj.itm:
                 if io.dl.clm is None:
                     continue
