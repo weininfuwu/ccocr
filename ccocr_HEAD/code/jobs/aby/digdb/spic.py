@@ -82,14 +82,17 @@ def spic(dig):
                     continue
                 tl_x, tl_y, tr_x, tr_y, br_x, br_y, bl_x, bl_y = poly[io.seq]
                 angl, jw, jh = geom[(docObj.pdf, io.page)]
-                # rotate() uses ow/jw and oh/jh as scale factors; pass jw/jh so
-                # scale = 1.0 and output coords are in the same space as pngROT.
-                # (pngROT pixel dims differ from jw/jh due to rotation padding,
-                #  but text coords fall well within jw/jh bounds.)
+                # For inch coords (straight mode, jw≈8.26), pass pngROT pixel
+                # dims so rotate() scales inch→pixel correctly.
+                # For pixel coords (png mode, jw≈1700), scale=1.0 as before.
+                if jw < 50:
+                    rw, rh = ow, oh
+                else:
+                    rw, rh = jw, jh
                 tl, tr, br, bl = rotate(
                     angl,
                     tl_x, tl_y, tr_x, tr_y, br_x, br_y, bl_x, bl_y,
-                    jw, jh, jw, jh)
+                    rw, rh, rw, rh)
                 xs = [tl[0], tr[0], br[0], bl[0]]
                 ys = [tl[1], tr[1], br[1], bl[1]]
                 top  = max(min(ys) - 10, 0)
