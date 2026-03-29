@@ -125,7 +125,10 @@ def _write_out(cur, out):
         angl = pg['angl']
         jw   = pg['jw']
         jh   = pg['jh']
-        ow, oh = jw, jh  # PNG: API pixel coords == image pixel dims
+        if jw < 50:        # inch coords (original PDF): scale up for rotate() precision
+            ow, oh = jw * 1000, jh * 1000
+        else:
+            ow, oh = jw, jh  # PNG: API pixel coords == image pixel dims
 
         # Collect all elements (line/word/orphan) in order
         all_elms = []
