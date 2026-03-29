@@ -10,6 +10,7 @@
 #--------1---------2---------3---------4---------5---------6---------7--------#
 
 import glob
+import re
 import shutil
 import os
 
@@ -44,21 +45,16 @@ def pdf2png():
     #   img -> pngPRE
     #
     opt     = DD.frmopt
-    dpi     = opt['dpi']
-    qlty    = opt['qlty']
-    dpidic  = { 'default'   : 200,
-                '200dpi'    : 200,
-                '300dpi'    : 300,
-                '400dpi'    : 400 }
-    dpi = dpidic[dpi]
+    dpi_s   = opt['dpi']    # '2d' / '3d' / '4d'
+    lv_s    = opt['qlty']   # 'lv0' / 'lv1' / ...
     prnt(f'''
   frmopt {DD.frmopt}
-  dpi    {dpi}
-  qlty   {qlty}''')
+  dpi    {dpi_s}
+  qlty   {lv_s}''')
     for itm in sorted(glob.glob(os.path.join(img, '*'))):
         ext = os.path.splitext(itm)[1].lower()
         bn  = os.path.basename(itm)
-        conv(itm, bn, pngPRE, pngUP, dpi, qlty)
+        conv(itm, bn, pngPRE, pngUP, dpi_s, lv_s)
     #
     #   pngPRE -> pngUP
     #
@@ -69,7 +65,7 @@ def pdf2png():
             twoup(itm)
             continue
         if not use_png_conversion():
-            #   usepng=False : pngPRE files are canvas only, not sent to API
+            #   ncv: pngPRE files are canvas only, not sent to API
             continue
         # bad-font PNGs are already in pngUP (copied in conv._conv_pdf);
         # skip here to avoid double-copy
@@ -80,8 +76,11 @@ def pdf2png():
         if os.path.isfile(os.path.join(pngUP, f'{bnBDY}.pdf')):
             prnt(f'{bnBDY}.png aready in pngUP, maybe by maniacSplit')
             continue
-        shutil.copy(itm, pngUP)
-        prnt(f'copied to pngUP     {bn}')
+        # cnv: rename to include dpi_s + lv_s
+        m = re.search(r'^(.+)\.(\d{2})\.png$', bn)
+        new_bn = f'{m.group(1)}.{dpi_s}.{lv_s}.{m.group(2)}.png'
+        shutil.copy(itm, os.path.join(pngUP, new_bn))
+        prnt(f'copied to pngUP     {new_bn}')
     if DD.skipPdf: # if no PNG conversion DD.skipPdf == []
         lines = [f'  {f}: {sorted(DD.skipPdfEnc.get(f, set()))}'
                  for f in DD.skipPdf]

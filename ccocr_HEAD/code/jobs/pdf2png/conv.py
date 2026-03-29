@@ -26,6 +26,7 @@
 #--------1---------2---------3---------4---------5---------6---------7--------#
 
 import os
+import re
 import shutil
 import cv2
 
@@ -47,11 +48,13 @@ from .encChk.encChk import encChk
 # public entry points
 # ---------------------------------------------------------------------------
 
-def conv(itm, bn, pngPRE, pngUP, dpi, qlty):
+_DPIDIC = {'2d': 200, '3d': 300, '4d': 400}
+
+def conv(itm, bn, pngPRE, pngUP, dpi_s, lv_s):
     """Route one input file to the appropriate handler."""
     ext = os.path.splitext(bn)[1].lower()
     if ext == '.pdf':
-        _conv_pdf(itm, bn, pngPRE, pngUP, dpi, qlty)
+        _conv_pdf(itm, bn, pngPRE, pngUP, dpi_s, lv_s)
     else:
         _conv_img(itm, bn, pngPRE, pngUP)
 
@@ -126,10 +129,10 @@ def _pdftocairo_to_pre(itm, bn, pngPRE, ppld, dpi):
 
 
 def _pdf_to_up(itm, bn, pngUP):
-    """Copy PDF as-is to pngUP as STRAIGHT."""
-    dst = os.path.join(pngUP, straight_name(bn))
+    """Copy file as-is to pngUP (ncv)."""
+    dst = os.path.join(pngUP, bn)
     shutil.copy(itm, dst)
-    prnt(f'PDF -> pngUP STRAIGHT  {os.path.basename(dst)}')
+    prnt(f'ncv -> pngUP  {bn}')
 
 
 def _apply_qlty(tmp, qlty):
@@ -154,18 +157,19 @@ def _apply_qlty(tmp, qlty):
 # PDF handler
 # ---------------------------------------------------------------------------
 
-def _conv_pdf(itm, bn, pngPRE, pngUP, dpi, qlty):
+def _conv_pdf(itm, bn, pngPRE, pngUP, dpi_s, lv_s):
+    dpi_int = _DPIDIC[dpi_s]
     ppld    = os.path.join(
         D.sysFld, 'code', 'poppler', 'Library', 'bin')
     pdf2api = use_straight()
     png2api = use_png_conversion()
 
-    # PDF only to API (usepng=False)
+    # PDF only to API (ncv)
     if pdf2api and not png2api:
         _pdf_to_up(itm, bn, pngUP)
         pg = convert_from_path(
-            itm, poppler_path=ppld, use_cropbox=True, dpi=dpi)
-        _png_to_pre(pg, bn, pngPRE, qlty, apply_qlty=False)
+            itm, poppler_path=ppld, use_cropbox=True, dpi=dpi_int)
+        _png_to_pre(pg, bn, pngPRE, lv_s, apply_qlty=False)
         return
 
     # PNG (and optionally PDF) to API -- encChk required
@@ -176,23 +180,25 @@ def _conv_pdf(itm, bn, pngPRE, pngUP, dpi, qlty):
         # bad font: call pdftocairo.exe directly via subprocess
         # avoids pdf2image's LD_LIBRARY_PATH-only env handling on Windows
         prnt(f'enc issue: pdftocairo -> pngPRE (no qlty)  {bn}')
-        _pdftocairo_to_pre(itm, bn, pngPRE, ppld, dpi)
+        _pdftocairo_to_pre(itm, bn, pngPRE, ppld, dpi_int)
         if pdf2api:
             _pdf_to_up(itm, bn, pngUP)
         if png2api:
             # poppler folder restructure resolved char-loss on PNG conversion;
-            # copy bad-font PNGs to pngUP just like good-font ones
+            # copy bad-font PNGs to pngUP with dpi_s+lv_s suffix
             import glob as _glob
             for src in sorted(_glob.glob(os.path.join(pngPRE, f'{bn}.*.png'))):
-                dst = os.path.join(pngUP, os.path.basename(src))
-                shutil.copy(src, dst)
-                prnt(f'bad-font PNG -> pngUP  {os.path.basename(dst)}')
+                src_bn = os.path.basename(src)
+                m_pg = re.search(r'^(.+)\.(\d{2})\.png$', src_bn)
+                new_bn = f'{m_pg.group(1)}.{dpi_s}.{lv_s}.{m_pg.group(2)}.png'
+                shutil.copy(src, os.path.join(pngUP, new_bn))
+                prnt(f'bad-font PNG -> pngUP  {new_bn}')
         return
 
     # good font
     pg = convert_from_path(
-        itm, poppler_path=ppld, use_cropbox=True, dpi=dpi)
-    _png_to_pre(pg, bn, pngPRE, qlty, apply_qlty=True)
+        itm, poppler_path=ppld, use_cropbox=True, dpi=dpi_int)
+    _png_to_pre(pg, bn, pngPRE, lv_s, apply_qlty=True)
     if pdf2api:
         _pdf_to_up(itm, bn, pngUP)
     # png2api: pngPRE -> pngUP copy handled by pdf2png() loop
@@ -218,10 +224,9 @@ def _conv_img(itm, bn, pngPRE, pngUP):
     im.save(dst_pre, 'png')
     prnt(f'saved at pngPRE  {bn}.01.png')
 
-    # original as STRAIGHT to pngUP (if pdf2api)
+    # original as-is to pngUP (ncv)
     if pdf2api:
-        dst = os.path.join(pngUP, straight_name(bn))
-        shutil.copy(itm, dst)
-        prnt(f'original -> pngUP STRAIGHT  {os.path.basename(dst)}')
+        shutil.copy(itm, os.path.join(pngUP, bn))
+        prnt(f'ncv -> pngUP  {bn}')
 
     # png2api: pngPRE -> pngUP copy handled by pdf2png() loop

@@ -10,6 +10,9 @@
 
 import glob
 import os
+import re
+
+_CNV_PAT = re.compile(r'^(.+)\.(2d|3d|4d)\.(lv\d)\.(\d{2})\.png$')
 
 from azure.ai.documentintelligence   import DocumentIntelligenceClient
 from azure.core.credentials          import AzureKeyCredential
@@ -38,19 +41,25 @@ def svjsn():
     for png in sorted(glob.glob(os.path.join(DD.pngUP, '*'))):
         bn = os.path.basename(png)
         prnt(f'letting API read {bn}')
-        apisrc = 'cnvpng' if 'STRAIGHT.' not in bn else 'original'
+        m_cnv  = _CNV_PAT.match(bn)
+        apisrc = 'cnvpng' if m_cnv else 'original'
         for engine in DD.engines:
+            eng_tag = 'CV' if engine == 'vision' else 'DI'
+            if m_cnv:
+                base, dpi_s, lv_s, nn = m_cnv.groups()
+                jsnf = os.path.join(DD.jsn_raw,
+                                    f'{base}.{eng_tag}.{dpi_s}.{lv_s}.{nn}.json')
+            else:
+                jsnf = os.path.join(DD.jsn_raw, f'{bn}.{eng_tag}.json')
             if engine == 'vision':
-                jsnf = os.path.join(DD.jsn_raw, f'{bn}.CV.json')
-                jsn = updn_cv(png,jsnf)
-                jsn = chk_cv(bn,jsn)
+                jsn = updn_cv(png, jsnf)
+                jsn = chk_cv(bn, jsn)
             elif engine == 'intelli':
-                jsnf = os.path.join(DD.jsn_raw, f'{bn}.DI.json')
-                jsn = updn_di(png,jsnf,client)
-                jsn = chk_di(bn,jsn)
+                jsn = updn_di(png, jsnf, client)
+                jsn = chk_di(bn, jsn)
             else:
                 raise Exception(f'unknown engine: {engine}')
-            jsn = wrd2line(bn, jsn, engine)
+            jsn = wrd2line(bn, jsn, engine, jsnf)
             out, dst = jsn4db(bn, jsn, engine, apisrc)
             jsn4db_results[dst] = out
 

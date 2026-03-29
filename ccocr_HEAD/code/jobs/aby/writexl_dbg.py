@@ -45,9 +45,13 @@ def writexl_dbg(dig):
         ws.cell(1,2).alignment = Alignment(horizontal = 'center')
         ws.cell(1,3).value = 'page'
         ws.cell(1,3).alignment = Alignment(horizontal = 'center')
-        ws.cell(1,4).value = 'inum'
+        ws.cell(1,4).value = 'dpi'
         ws.cell(1,4).alignment = Alignment(horizontal = 'center')
-        clm = 4
+        ws.cell(1,5).value = 'lvl'
+        ws.cell(1,5).alignment = Alignment(horizontal = 'center')
+        ws.cell(1,6).value = 'inum'
+        ws.cell(1,6).alignment = Alignment(horizontal = 'center')
+        clm = 6
         for io in do.itm:
             # sqltxt
             clm += 1
@@ -80,11 +84,13 @@ def writexl_dbg(dig):
         for row,do in enumerate(dig[docname]):
             # fixed
             ws.cell(row+2,1).value = do.docnum
-            suffix = ' '.join(filter(None, [do.engine, do.usepng]))
+            suffix = ' '.join(filter(None, [do.engine, do.dpi, do.lvl]))
             ws.cell(row+2,2).value = f'{do.pdf} {suffix}' if suffix else do.pdf
             ws.cell(row+2,3).value = do.fm  # page
-            ws.cell(row+2,4).value = do.inum
-            clm = 4
+            ws.cell(row+2,4).value = do.dpi
+            ws.cell(row+2,5).value = do.lvl
+            ws.cell(row+2,6).value = do.inum
+            clm = 6
             for io in do.itm:
                 # sqltxt
                 clm += 1

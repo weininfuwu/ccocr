@@ -57,8 +57,8 @@ def loadxl():
     typ = wb[sht][addr].value
     [sht,addr] = names['dpi'].attr_text.split('!')
     dpi = wb[sht][addr].value
-    if dpi == 'default':
-        dpi = '200dpi'
+    _dpi_legacy = {'default': '2d', '200dpi': '2d', '300dpi': '3d', '400dpi': '4d'}
+    dpi = _dpi_legacy.get(dpi, dpi)
     [sht,addr] = names['picqlty'].attr_text.split('!')
     picqlty = wb[sht][addr].value
     [sht,addr] = names['twoup'].attr_text.split('!')

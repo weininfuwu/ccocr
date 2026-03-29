@@ -11,7 +11,8 @@
 
 import sqlite3
 
-from .gv import gv
+from .gv        import gv
+from jobs.env   import DD
 
 def setupdb(dumpdb):
     gv.ddb = dumpdb
@@ -25,26 +26,26 @@ def setupdb(dumpdb):
             pg_to   INTEGER,                            -- 04
             docname TEXT,                               -- 05
             engine  TEXT,                               -- 06  'CV' / 'DI' / ''
-            usepng  TEXT                                -- 07  'png' / 'straight'
+            dpi     TEXT,                               -- 07  '2d'/'3d'/'4d'/'nd'
+            lv      TEXT                                -- 08  'lv0'-'lv3'/'lvn'
         )''')
     tmplst = gv.cur.execute(
             'SELECT DISTINCT pdf, page, engine, apisrc FROM elm ORDER BY pdf, page'
             ).fetchall()
-    # key = 'pdf|engine|usepng' to uniquely identify each processing variant
-    _apisrc2usepng = {'cnvpng': 'png', 'original': 'straight'}
+    # key = 'pdf|engine|dpi|lv' to uniquely identify each processing variant
     pdf_pg     = {}
-    pdf_meta   = {}     # key -> (engine, usepng)
+    pdf_meta   = {}     # key -> (engine, dpi, lv)
     for i in tmplst:
         pdf, page, engine, apisrc = i[0], i[1], i[2] or '', i[3] or ''
-        usepng = _apisrc2usepng.get(apisrc, apisrc)
-        key = f'{pdf}|{engine}|{usepng}'
+        if apisrc == 'original':
+            dpi, lv = 'nd', 'lvn'
+        else:
+            dpi, lv = DD.frmopt['dpi'], DD.frmopt['qlty']
+        key = f'{pdf}|{engine}|{dpi}|{lv}'
         pdf_pg.setdefault(key, [])
         pdf_pg[key].append(page)
-        pdf_meta[key] = (engine, usepng)
+        pdf_meta[key] = (engine, dpi, lv)
     for key in pdf_pg:
         pdf_pg[key] = [[min(pdf_pg[key]), max(pdf_pg[key])]]
-    gv.pdf_meta = pdf_meta  # replaces old gv.pdf_engine
-    from m.prnt import prnt
-    prnt(f'[QUIT CHECK] sorter setupdb: pdf_meta = {pdf_meta}')
-    quit()
+    gv.pdf_meta = pdf_meta
     return pdf_pg

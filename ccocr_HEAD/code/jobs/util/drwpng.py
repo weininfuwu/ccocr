@@ -29,8 +29,11 @@ from jobs.jsn2db.markpng.blnkpng import blnkpng
 from jobs.jsn2db.markpng.rotate  import rotate
 from jobs.jsn2db.markpng.nTyp    import nTyp
 
-_TAG    = {'cnvpng': 'CNV', 'original': 'STR'}
-_APISRC = {'CNV': 'cnvpng', 'STR': 'original'}
+def _dpi_lv_tag(apisrc):
+    if apisrc == 'original':
+        return 'nd.lvn'
+    from jobs.env import DD as _DD
+    return f'{_DD.frmopt["dpi"]}.{_DD.frmopt["qlty"]}'
 
 
 def drwpng():
@@ -91,8 +94,7 @@ def _load_db():
          tl_x, tl_y, tr_x, tr_y,
          br_x, br_y, bl_x, bl_y,
          engine, apisrc) = row
-        tag = _TAG.get(apisrc, apisrc)
-        key = (pdf, tag, engine)
+        key = (pdf, apisrc, engine)
         data.setdefault(key, {})
         data[key].setdefault(page, [])
         data[key][page].append((
@@ -105,8 +107,7 @@ def _load_db():
 
 def _draw_mk(data, pdfs, page_geom):
     """pngPRE + pre-rotation boxes -> pngMK"""
-    for (pdf, tag, engine), pages in data.items():
-        apisrc = _APISRC[tag]
+    for (pdf, apisrc, engine), pages in data.items():
         for page, elems in pages.items():
             ow  = pdfs[pdf][page]['ow']
             oh  = pdfs[pdf][page]['oh']
@@ -117,7 +118,7 @@ def _draw_mk(data, pdfs, page_geom):
                 DD.pngPRE, s2l(pdf, page, 'png'))
             dst = os.path.join(
                 DD.pngMK,
-                _dstname(pdf, tag, engine, page))
+                _dstname(pdf, apisrc, engine, page))
             img = cv2read(src)
             for (node,
                  tl_x, tl_y, tr_x, tr_y,
@@ -136,8 +137,7 @@ def _draw_mk(data, pdfs, page_geom):
 
 def _draw_rmk(data, pdfs, page_geom):
     """pngROT + post-rotation boxes -> pngRMK"""
-    for (pdf, tag, engine), pages in data.items():
-        apisrc = _APISRC[tag]
+    for (pdf, apisrc, engine), pages in data.items():
         for page, elems in pages.items():
             pg   = pdfs[pdf][page]
             ow   = pg['ow']
@@ -150,7 +150,7 @@ def _draw_rmk(data, pdfs, page_geom):
                 DD.pngROT, s2l(pdf, page, 'png'))
             dst  = os.path.join(
                 DD.pngRMK,
-                _dstname(pdf, tag, engine, page))
+                _dstname(pdf, apisrc, engine, page))
             img  = cv2read(src)
             for (node,
                  otl_x, otl_y, otr_x, otr_y,
@@ -177,5 +177,6 @@ def _boxes(img, node, tl, tr, br, bl):
                 cv2.FONT_HERSHEY_SIMPLEX, 0.6, color, 1)
 
 
-def _dstname(pdf, tag, engine, page):
-    return f'{pdf}.{tag}.{engine}.{page:02d}.png'
+def _dstname(pdf, apisrc, engine, page):
+    dpi_lv = _dpi_lv_tag(apisrc)
+    return f'{pdf}.{engine}.{dpi_lv}.{page:02d}.png'

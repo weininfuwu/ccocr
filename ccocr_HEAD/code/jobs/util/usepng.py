@@ -33,8 +33,5 @@ def strip_label(name):
             .replace(' DI', ''))
 
 def straight_name(bn):
-    # hoge.pdf -> hoge.pdf.STRAIGHT.pdf
-    # hoge.jpg -> hoge.jpg.STRAIGHT.jpg
-    # hoge.png -> hoge.png.STRAIGHT.png
-    ext = os.path.splitext(bn)[1]   # e.g. '.pdf'
-    return f'{bn}.STRAIGHT{ext}'
+    # ncv: send original file as-is to pngUP (no suffix)
+    return bn

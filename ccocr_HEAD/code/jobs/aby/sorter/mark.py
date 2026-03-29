@@ -11,9 +11,9 @@ from m.prnt import prnt
 from .gv    import gv
 
 def mark(docname, key, pg_fm, pg_to):
-    pdf             = key.split('|')[0]
-    engine, usepng  = gv.pdf_meta.get(key, ('', ''))
+    pdf              = key.split('|')[0]
+    engine, dpi, lv  = gv.pdf_meta.get(key, ('', '', ''))
     gv.cur.execute(
-        'INSERT INTO sorter(pdf, pg_fm, pg_to, docname, engine, usepng) '
-        'VALUES(?, ?, ?, ?, ?, ?)',
-        (pdf, pg_fm, pg_to, docname, engine, usepng))
+        'INSERT INTO sorter(pdf, pg_fm, pg_to, docname, engine, dpi, lv) '
+        'VALUES(?, ?, ?, ?, ?, ?, ?)',
+        (pdf, pg_fm, pg_to, docname, engine, dpi, lv))

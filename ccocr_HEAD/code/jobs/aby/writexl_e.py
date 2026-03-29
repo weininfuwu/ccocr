@@ -89,7 +89,7 @@ def writexl_e(dig):
             #   fill pdf, document number, page(from), i# (instance num)
             #
             ws.cell(_rie*2+3,1).value = do.docnum
-            suffix = ' '.join(filter(None, [do.engine, do.usepng]))
+            suffix = ' '.join(filter(None, [do.engine, do.dpi, do.lvl]))
             ws.cell(_rie*2+3,2).value = f'{do.pdf} {suffix}' if suffix else do.pdf
             ws.cell(_rie*2+3,3).value = do.fm
             ws.cell(_rie*2+3,4).value = do.inum

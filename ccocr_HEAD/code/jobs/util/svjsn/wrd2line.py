@@ -25,11 +25,12 @@ from m.env    import D
 # public entry point
 # ---------------------------------------------------------------------------
 
-def wrd2line(bn, jsn, engine):
+def wrd2line(bn, jsn, engine, jsnf):
     """
-    bn     : base filename (e.g. 'foo.pdf.STRAIGHT.pdf')
+    bn     : pngUP basename (for logging)
     jsn    : JSON dict already returned by chk_cv / chk_di (jsnRAW+ content)
     engine : 'vision' or 'intelli'
+    jsnf   : path to jsnRAW file; jsnRAW++ uses same filename in sibling dir
 
     vision  : write jsnRAW+ content as-is to jsnRAW++
     intelli : assign page-level words to lines, write result to jsnRAW++
@@ -39,7 +40,7 @@ def wrd2line(bn, jsn, engine):
     os.makedirs(jsnraw_plus2, exist_ok=True)
 
     if engine == 'vision':
-        dst = os.path.join(jsnraw_plus2, f'{bn}.CV.json')
+        dst = os.path.join(jsnraw_plus2, os.path.basename(jsnf))
         with open(dst, 'w', encoding='utf-8') as f:
             json.dump(jsn, f, indent=2, ensure_ascii=False)
         prnt(f'wrd2line (CV) saved   {os.path.basename(dst)}')
@@ -47,7 +48,7 @@ def wrd2line(bn, jsn, engine):
 
     elif engine == 'intelli':
         out = _convert_di(jsn)
-        dst = os.path.join(jsnraw_plus2, f'{bn}.DI.json')
+        dst = os.path.join(jsnraw_plus2, os.path.basename(jsnf))
         with open(dst, 'w', encoding='utf-8') as f:
             json.dump(out, f, indent=2, ensure_ascii=False)
         prnt(f'wrd2line (DI) saved   {os.path.basename(dst)}')

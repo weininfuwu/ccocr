@@ -63,7 +63,8 @@ class docObj:
         self.lastins    = False
         self.oid        = None  # objece id
         self.engine     = ''    # 'CV' or 'DI', set at digdb()
-        self.usepng     = ''    # 'png' or 'straight', set at digdb()
+        self.dpi        = ''    # '2d'/'3d'/'4d'/'nd', set at digdb()
+        self.lvl        = ''    # 'lv0'-'lv3'/'lvn', set at digdb()
 
 '''
          one itmObj == one line in _dd sheet

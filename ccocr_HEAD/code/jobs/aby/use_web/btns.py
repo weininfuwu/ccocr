@@ -86,7 +86,8 @@ def btns(dig):
                 _row_in_engine = 0
                 _last_engine = do.engine
             picrow   = [None,None,None,None]
-            pdf_disp = f'{do.pdf} {do.engine}' if do.engine else do.pdf
+            suffix   = ' '.join(filter(None, [do.engine, do.dpi, do.lvl]))
+            pdf_disp = f'{do.pdf} {suffix}' if suffix else do.pdf
             txtrow   = [do.docnum,pdf_disp,do.fm,do.inum]
             clonerow = [None,None,None,None]    # True if column is clone
             for clmidx,io in enumerate(do.itm):

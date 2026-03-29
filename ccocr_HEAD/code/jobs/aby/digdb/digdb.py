@@ -29,22 +29,20 @@ def digdb(docdef):
     gv.con  = sqlite3.connect(db)
     gv.cur  = gv.con.cursor()
     rtn     = gv.cur.execute(
-        'SELECT pdf, pg_fm, pg_to, docname, docnum, engine, usepng '
+        'SELECT pdf, pg_fm, pg_to, docname, docnum, engine, dpi, lv '
         'FROM sorter ORDER BY docnum'
         ).fetchall()
-    _apisrc_map = {'png': 'cnvpng', 'straight': 'original'}
     for i in rtn:
-        [pdf, fm, to, docname, docnum, engine, usepng] = i
+        [pdf, fm, to, docname, docnum, engine, dpi, lv] = i
         if docname == '_OOS':
             continue
-        apisrc = _apisrc_map.get(usepng, usepng)
+        apisrc = 'original' if dpi == 'nd' else 'cnvpng'
         dig.setdefault(docname, [])
         dos = digin(docname, docdef, pdf, fm, to, docnum, jobid, engine, apisrc)
         for do in dos:
             do.engine = engine  if engine  else ''
-            do.usepng = usepng  if usepng  else ''
-            prnt(f'[QUIT CHECK] digdb: do.pdf={do.pdf!r} do.engine={do.engine!r} do.usepng={do.usepng!r}')
-        quit()
+            do.dpi    = dpi     if dpi     else ''
+            do.lvl    = lv      if lv      else ''
         dig[docname] += dos
     if DD.use_spic:
         spic(dig)

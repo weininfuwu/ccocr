@@ -108,20 +108,22 @@ def jsn4db(bn, jsn, engine, apisrc):
     if apisrc == 'cnvpng':
         pg_num = int(re.search(r'\.(\d+)\.png$', bn).group(1))
         out['pages'][0]['page'] = pg_num
-        # hoge.ext.01.png -> hoge.ext
-        base = re.sub(r'\.\d+\.png$', '', bn)
+        # hoge.ext.2d.lv0.01.png -> hoge.ext
+        base = re.sub(r'\.(2d|3d|4d)\.lv\d\.\d{2}\.png$', '', bn)
+        dpi_s = DD.frmopt['dpi']
+        lv_s  = DD.frmopt['qlty']
         dst  = os.path.join(jsn4db_dir,
-                            f'{base}.CNV.{tag}.json')
+                            f'{base}.{tag}.{dpi_s}.{lv_s}.json')
         if os.path.exists(dst):
             with open(dst, 'r', encoding='utf-8') as f:
                 existing = json.load(f)
             existing['pages'].extend(out['pages'])
             out = existing
     else:
-        # hoge.ext.STRAIGHT.ext -> hoge.ext
-        base = re.sub(r'\.STRAIGHT\.[^.]+$', '', bn)
+        # ncv: bn = hoge.ext (original filename)
+        base = bn
         dst  = os.path.join(jsn4db_dir,
-                            f'{base}.STR.{tag}.json')
+                            f'{base}.{tag}.json')
 
     out['pdf'] = base
 
