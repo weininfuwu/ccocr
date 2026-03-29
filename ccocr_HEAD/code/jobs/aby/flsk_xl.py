@@ -26,8 +26,8 @@ def flsk_xl():
     if DD.use_web:
         use_web()
     if DD.use_macro and D.EMBEDDED != True:
-        # both mode: writexl_e saves as jobid_xl.xlsm to avoid collision with web output
-        xl_suffix = '_xl' if DD.use_web else ''
+        # both mode: writexl_e saves as jobid_WEB.xlsm to avoid collision with web output
+        xl_suffix = '_WEB' if DD.use_web else ''
         xlsm = os.path.join(D.logd,f'{D.jobid}{xl_suffix}.xlsm')
         shutil.copy(xlsm,DD.thisOutd)
 
