@@ -46,8 +46,9 @@ def check_cv(key, ep):
             timeout = 10,
             verify  = False,
         )
-        prnt(f'CV check status: {r.status_code}')
-        return r.status_code != 401
+        ok = r.status_code != 401
+        prnt(f'CV check: {"OK" if ok else "NG"} (http {r.status_code})')
+        return ok
     except Exception as e:
         prnt(f'CV check error: {e}')
         return False
@@ -60,8 +61,9 @@ def check_di(key, ep):
             timeout = 10,
             verify  = False,
         )
-        prnt(f'DI check status: {r.status_code}')
-        return r.status_code != 401
+        ok = r.status_code != 401
+        prnt(f'DI check: {"OK" if ok else "NG"} (http {r.status_code})')
+        return ok
     except Exception as e:
         prnt(f'DI check error: {e}')
         return False
