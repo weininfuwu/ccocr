@@ -55,8 +55,6 @@ def pdf2png():
   frmopt {DD.frmopt}
   dpi    {dpi}
   qlty   {qlty}''')
-    prnt(f'[QUIT CHECK] pdf2png: dpi={dpi!r} qlty={qlty!r}')
-    quit()
     for itm in sorted(glob.glob(os.path.join(img, '*'))):
         ext = os.path.splitext(itm)[1].lower()
         bn  = os.path.basename(itm)
