@@ -23,7 +23,6 @@ from .cred import cred_all
 def setup_flds():
 
     cred_all(DD.engines)
-    quit()  # 260330 動作確認用 TODO: 削除
 
     inputd      = os.path.join(D.logd,'input')
     img         = os.path.join(D.logd,'img')        # picfile in input
