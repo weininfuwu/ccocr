@@ -80,7 +80,8 @@ def writexl_dbg(dig):
         for row,do in enumerate(dig[docname]):
             # fixed
             ws.cell(row+2,1).value = do.docnum
-            ws.cell(row+2,2).value = f'{do.pdf} {do.engine}' if do.engine else do.pdf
+            suffix = ' '.join(filter(None, [do.engine, do.usepng]))
+            ws.cell(row+2,2).value = f'{do.pdf} {suffix}' if suffix else do.pdf
             ws.cell(row+2,3).value = do.fm  # page
             ws.cell(row+2,4).value = do.inum
             clm = 4
