@@ -18,13 +18,12 @@ from m.env              import D
 from m.prnt             import prnt
 from ..util.msg         import shutilerr
 from ..env              import DD
-from .cred import cred, cred_di
+from .cred import cred_all
 
 def setup_flds():
 
-    cred()
-    if 'intelli' in DD.engines:
-        cred_di()
+    cred_all(DD.engines)
+    quit()  # 260330 動作確認用 TODO: 削除
 
     inputd      = os.path.join(D.logd,'input')
     img         = os.path.join(D.logd,'img')        # picfile in input

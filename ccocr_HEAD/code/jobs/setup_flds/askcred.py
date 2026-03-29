@@ -3,17 +3,28 @@
 #
 #   askcred.py      250204  cy
 #   updated: 260321 add DI key/ep fields
+#   updated: 260330 --cv / --di args: show only needed fields
 #
 #--------1---------2---------3---------4---------5---------6---------7--------#
 '''
 
     THIS CODE IS NOT ORPHAN
-    kicked by cred.py / cred_di()
+    kicked by cred.py / cred_all()
 
 '''
 
+import argparse
 import json
 import tkinter as tk
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--cv', action='store_true')
+parser.add_argument('--di', action='store_true')
+args    = parser.parse_args()
+need_cv = args.cv
+need_di = args.di
+if not need_cv and not need_di:     # 引数なし → 両方表示（フォールバック）
+    need_cv = need_di = True
 
 def make_toggle(ent):
     def handler(ev):
@@ -41,12 +52,14 @@ def add_field(root, label_text, show='*'):
     btn.pack(side=tk.LEFT, padx=(10,0))
     return ent
 
+ent_cv_key = ent_cv_ep = ent_di_key = ent_di_ep = None
+
 def click_btm(ev):
     rtn = {
-        'key'    : ent_cv_key.get(),
-        'ep'     : ent_cv_ep.get(),
-        'di_key' : ent_di_key.get(),
-        'di_ep'  : ent_di_ep.get(),
+        'key'    : ent_cv_key.get() if ent_cv_key else '',
+        'ep'     : ent_cv_ep.get()  if ent_cv_ep  else '',
+        'di_key' : ent_di_key.get() if ent_di_key else '',
+        'di_ep'  : ent_di_ep.get()  if ent_di_ep  else '',
     }
     print(json.dumps(rtn, ensure_ascii=False), end='')
     quit()
@@ -65,17 +78,21 @@ tk.Label(frm_top, text=(
     )).pack()
 
 ## CV
-tk.Label(root, text='── Computer Vision ──', anchor=tk.W).pack(
-    anchor=tk.W, padx=(10,10), pady=(6,0))
-ent_cv_key = add_field(root, 'CV 課金キー')
-ent_cv_key.focus_set()
-ent_cv_ep  = add_field(root, 'CV エンドポイント')
+if need_cv:
+    tk.Label(root, text='── Computer Vision ──', anchor=tk.W).pack(
+        anchor=tk.W, padx=(10,10), pady=(6,0))
+    ent_cv_key = add_field(root, 'CV 課金キー')
+    ent_cv_key.focus_set()
+    ent_cv_ep  = add_field(root, 'CV エンドポイント')
 
 ## DI
-tk.Label(root, text='── Document Intelligence ──', anchor=tk.W).pack(
-    anchor=tk.W, padx=(10,10), pady=(6,0))
-ent_di_key = add_field(root, 'DI 課金キー')
-ent_di_ep  = add_field(root, 'DI エンドポイント')
+if need_di:
+    tk.Label(root, text='── Document Intelligence ──', anchor=tk.W).pack(
+        anchor=tk.W, padx=(10,10), pady=(6,0))
+    ent_di_key = add_field(root, 'DI 課金キー')
+    if not need_cv:
+        ent_di_key.focus_set()
+    ent_di_ep  = add_field(root, 'DI エンドポイント')
 
 ## BTM
 frm_btm = tk.Frame(root)
