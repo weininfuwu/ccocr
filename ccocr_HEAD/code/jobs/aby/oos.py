@@ -26,17 +26,16 @@ def oos():
     con     = sqlite3.connect(dumpdb)
     cur     = con.cursor()
     rtn     = cur.execute(
-        "SELECT pdf, pg_fm, pg_to, usepng, engine FROM sorter WHERE docname = '_OOS'"
+        "SELECT pdf, pg_fm, pg_to, dpi, lv, engine FROM sorter WHERE docname = '_OOS'"
         ).fetchall()
     for i in rtn:
-        [pdf, pg, pg_to, usepng, engine] = i
-        # straight rows are not inserted into _OOS by mark_oos, but guard anyway
-        if usepng == 'straight':
+        [pdf, pg, pg_to, dpi, lv, engine] = i
+        # ncv rows are not inserted into _OOS by mark_oos, but guard anyway
+        if dpi == 'nd':
             continue
-        tag = 'CNV'   # OOS entries are always cnvpng (straight skipped above)
         os.makedirs(ignrd, exist_ok=True)
         while pg <= pg_to:
-            longname = f'{pdf}.{tag}.{engine}.{pg:02d}.png'
+            longname = f'{pdf}.{engine}.{dpi}.{lv}.{pg:02d}.png'
             prnt(longname)
             shutil.copy(os.path.join(pngRMK, longname), ignrd)
             pg += 1
