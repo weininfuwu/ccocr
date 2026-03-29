@@ -29,14 +29,15 @@ def _load_geom():
     cur = con.cursor()
     poly = {}
     cur.execute(
-        'SELECT seq, otl_x, otl_y, otr_x, otr_y, obr_x, obr_y, obl_x, obl_y FROM elm')
+        'SELECT seq, otl_x, otl_y, otr_x, otr_y, obr_x, obr_y, obl_x, obl_y,'
+        ' engine, apisrc FROM elm')
     for row in cur.fetchall():
-        seq, tl_x, tl_y, tr_x, tr_y, br_x, br_y, bl_x, bl_y = row
-        poly[seq] = (tl_x, tl_y, tr_x, tr_y, br_x, br_y, bl_x, bl_y)
+        seq, tl_x, tl_y, tr_x, tr_y, br_x, br_y, bl_x, bl_y, eng, api = row
+        poly[seq] = (tl_x, tl_y, tr_x, tr_y, br_x, br_y, bl_x, bl_y, eng, api)
     geom = {}
-    cur.execute('SELECT pdf, page, angl, jw, jh FROM page')
-    for pdf, page, angl, jw, jh in cur.fetchall():
-        geom[(pdf, page)] = (angl, jw, jh)
+    cur.execute('SELECT pdf, page, angl, jw, jh, engine, apisrc FROM page')
+    for pdf, page, angl, jw, jh, eng, api in cur.fetchall():
+        geom[(pdf, page, eng, api)] = (angl, jw, jh)
     con.close()
     return poly, geom
 
@@ -77,11 +78,15 @@ def spic(dig):
                 png = cv2read(png)
                 oh, ow = png.shape[:2]
                 # transform polygon to pngROT coordinate space via rotate()
-                if io.seq not in poly or (docObj.pdf, io.page) not in geom:
+                if io.seq not in poly:
                     io.spic = err_png
                     continue
-                tl_x, tl_y, tr_x, tr_y, br_x, br_y, bl_x, bl_y = poly[io.seq]
-                angl, jw, jh = geom[(docObj.pdf, io.page)]
+                tl_x, tl_y, tr_x, tr_y, br_x, br_y, bl_x, bl_y, eng, api = poly[io.seq]
+                geom_key = (docObj.pdf, io.page, eng, api)
+                if geom_key not in geom:
+                    io.spic = err_png
+                    continue
+                angl, jw, jh = geom[geom_key]
                 # rotate(ow, oh, jw, jh): etl_x = coord * ow / jw
                 # inch coords (straight, jw≈8.26): ow=pngROT pixels → inch→pixel
                 # pixel coords (png, jw≈1700): ow=jw → scale=1.0
