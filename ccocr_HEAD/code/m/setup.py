@@ -84,11 +84,16 @@ def setupPlus():  ## for embedded
   EMBEDDED  {str(EMBEDDED)}''')
 
 def setup():    ## for nomal use
-    [xxx, sysFld, flwid, appname] = sys.argv
+    [xxx, sysFld, flwid, appname, *rest] = sys.argv
+    config = None
+    for i, a in enumerate(rest):
+        if a == '--config' and i + 1 < len(rest):
+            config = rest[i + 1]
     #   sysFld      system folder in Box
     D.sysFld    = sysFld
     D.flwid     = flwid
     D.appname   = appname
+    DD.config   = config
     mymail      = kickPS0('mymail.ps1', [os.path.join(
                                     os.path.dirname(__file__),'mymail.ps1')])
     D.mymail    = mymail
