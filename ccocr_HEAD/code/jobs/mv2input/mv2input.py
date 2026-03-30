@@ -65,5 +65,5 @@ def mv2input():
     jsn = {'opt' : DD.frmopt, 'imgs' : jsn }
     with open(os.path.join(D.logd,'opt+imgs.json'),'w',encoding='utf-8') as f:
         json.dump(jsn,f,indent=2,ensure_ascii=False)
-    prnt(f'opt+imgs.json saved\n  {jsn}')
+    prnt(f'opt+imgs.json saved\n{json.dumps(jsn, indent=2, ensure_ascii=False)}')
     return msconf

@@ -54,7 +54,7 @@ def btns(dig):
     for docname in dig:
         idx = apndidx(idx,docname)
     idx += idx_ftr
-    prnt(f'making btns.html\n  {DD.btnsf}')
+    prnt(f'making btns.html\n  {DD.btnsf.replace(D.logd, "")}')
     with open(DD.btnsf,'w',encoding='utf-8') as f:
         f.write(idx)
     ##

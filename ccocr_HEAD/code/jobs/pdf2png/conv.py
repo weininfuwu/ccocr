@@ -68,7 +68,7 @@ def _png_to_pre(pages, bn, pngPRE, qlty, apply_qlty=True):
     for pgnum, pg in enumerate(pages):
         tmp = os.path.join(pngPRE, f'{bn}.{pgnum+1:02}.png')
         pg.save(tmp)
-        prnt(f'saved at pngPRE  {tmp}')
+        prnt(f'saved at pngPRE  {tmp.replace(D.logd, "")}')
         if apply_qlty:
             _apply_qlty(tmp, qlty)
 
@@ -125,7 +125,7 @@ def _pdftocairo_to_pre(itm, bn, pngPRE, ppld, dpi):
         pg_pad  = pg_str.zfill(2)                     # '01'
         dst     = os.path.join(pngPRE, f'{bn}.{pg_pad}.png')
         os.rename(src, dst)
-        prnt(f'saved at pngPRE  {dst}')
+        prnt(f'saved at pngPRE  {dst.replace(D.logd, "")}')
 
 
 def _pdf_to_up(itm, bn, pngUP):
