@@ -8,7 +8,7 @@
 Add-Type -AssemblyName System.Windows.Forms
 
 $thisName   = 'ccocr'
-$repoUrl    = 'https://github.com/ykawate1114/ccocr_with_claude'
+$repoUrl    = 'https://github.com/ykawate1114/ccocr_with_claude.git'
 $appDataDir = Join-Path $env:LOCALAPPDATA 'chuanlai_apps\ccocr'
 $sysFldFile = Join-Path $appDataDir 'sysFld.txt'
 $cfgMapFile = Join-Path $appDataDir 'config_map.json'
@@ -53,10 +53,11 @@ if ($null -eq $sysFld) {
         exit
     }
     Write-Host "git clone $repoUrl"
-    & $git clone $repoUrl $sysFld
+    $cloneOut = & $git clone $repoUrl $sysFld 2>&1
+    Write-Host $cloneOut
     if ($LASTEXITCODE -ne 0) {
         errmsg ("git clone に失敗しました。`n`n" +
-                "ネットワーク接続を確認してください。")
+                "エラー詳細:`n" + ($cloneOut -join "`n"))
         exit
     }
 
