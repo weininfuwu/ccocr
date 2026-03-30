@@ -75,7 +75,8 @@ if ($null -eq $sysFld) {
 #------------------------------------------------------------
 # 2. git pull (sysFld 内の MinGit を優先、なければ exe 隣)
 #------------------------------------------------------------
-$gitInRepo = Join-Path $sysFld 'MinGit\cmd\git.exe'
+$appFld    = Join-Path $sysFld 'ccocr_HEAD'   # repo内の実コードroot
+$gitInRepo = Join-Path $appFld 'MinGit\cmd\git.exe'
 $gitLocal  = Join-Path $PSScriptRoot 'MinGit\cmd\git.exe'
 if     (Test-Path $gitInRepo) { $git = $gitInRepo }
 elseif (Test-Path $gitLocal)  { $git = $gitLocal  }
@@ -134,7 +135,7 @@ if (Test-Path $flowidFile) {
 #------------------------------------------------------------
 # 5. Python 確認
 #------------------------------------------------------------
-$codeFld = Join-Path $sysFld 'code'
+$codeFld = Join-Path $appFld 'code'
 Set-Location $codeFld
 
 try {
@@ -174,4 +175,4 @@ foreach ($module in $pyModules) {
 #------------------------------------------------------------
 # 7. main.py 起動
 #------------------------------------------------------------
-python main.py $sysFld $flowid $thisName --config $xlPath
+python main.py $appFld $flowid $thisName --config $xlPath
