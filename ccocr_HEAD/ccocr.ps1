@@ -1,4 +1,4 @@
-﻿# vim: set ts=4 sw=4 sts=4 et ff=unix fenc=utf-8 ai :
+﻿﻿# vim: set ts=4 sw=4 sts=4 et ff=unix fenc=utf-8 ai :
 #
 #   ccocr.ps1       260330  cy
 #   new launcher: AppData-based state, git clone/pull, config_map
@@ -179,4 +179,5 @@ foreach ($module in $pyModules) {
 # 7. main.py 起動
 #------------------------------------------------------------
 $env:PYTHONIOENCODING = 'utf-8'
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 python main.py $appFld $flowid $thisName --config $xlPath
