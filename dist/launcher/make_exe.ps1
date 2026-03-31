@@ -35,7 +35,7 @@ Invoke-ps2exe `
     -version    '2.0.10' `
     -noConsole:$false
 
-if ($LASTEXITCODE -eq 0) {
+if (Test-Path $exePath) {
     $size = (Get-Item $exePath).Length
     Write-Host "Done: ccocr.exe ($size bytes)"
 } else {
