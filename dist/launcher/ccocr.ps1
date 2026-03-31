@@ -8,7 +8,7 @@
 Add-Type -AssemblyName System.Windows.Forms
 
 $thisName   = 'ccocr'
-$repoUrl    = 'https://github.com/ykawase1114/ccocr_with_claude.git'
+$repoUrl    = 'https://github.com/ykawase1114/ccocr.git'
 $appDataDir = Join-Path $env:LOCALAPPDATA 'chuanlai_apps\ccocr'
 $sysFldFile = Join-Path $appDataDir 'sysFld.txt'
 $cfgMapFile = Join-Path $appDataDir 'config_map.json'
@@ -78,8 +78,8 @@ if ($null -eq $sysFld) {
 #------------------------------------------------------------
 # 2. git pull (sysFld 内の MinGit を優先、なければ exe 隣)
 #------------------------------------------------------------
-$appFld    = Join-Path $sysFld 'ccocr_HEAD'   # repo内の実コードroot
-$gitInRepo = Join-Path $appFld 'MinGit\cmd\git.exe'
+$appFld    = $sysFld                           # repo内の実コードroot
+$gitInRepo = Join-Path $sysFld 'dist\launcher\MinGit\cmd\git.exe'
 $gitLocal  = Join-Path $scriptDir 'MinGit\cmd\git.exe'
 if     (Test-Path $gitInRepo) { $git = $gitInRepo }
 elseif (Test-Path $gitLocal)  { $git = $gitLocal  }

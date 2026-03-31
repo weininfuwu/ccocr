@@ -6,6 +6,19 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **ccocr** is a Python-based OCR document processing system. It reads PDF/image documents, sends them to Azure Cognitive Services (Computer Vision + Document Intelligence APIs), and extracts structured data defined by an Excel configuration file. Output is written to SQLite databases and Excel files.
 
+## Repository Structure
+
+```
+ccocr/
+├── code/               main.py から始まる一連の処理
+├── dist/
+│   ├── launcher/       ccocr.exe 生成材料一式 (ccocr.ps1, make_exe.ps1, make_ico.ps1, MinGit/)
+│   ├── sample/         サンプル設定Excel・帳票・テスト画像
+│   └── doc/            取扱説明書・プログラム仕様書
+├── CLAUDE.md
+└── .gitignore
+```
+
 ## Running the Application
 
 All code lives under `code/`. The entry point is `code/main.py`.
