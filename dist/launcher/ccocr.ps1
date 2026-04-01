@@ -7,10 +7,6 @@
 
 Add-Type -AssemblyName System.Windows.Forms
 
-# コンソールウィンドウを最小化
-Add-Type -Name "Win32" -Namespace "" -MemberDefinition '[DllImport("user32.dll")] public static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);'
-[Win32]::ShowWindow(([System.Diagnostics.Process]::GetCurrentProcess().MainWindowHandle), 6) | Out-Null
-
 $thisName   = 'ccocr'
 $repoUrl    = 'https://github.com/ykawase1114/ccocr.git'
 $sysFld     = Join-Path $env:LOCALAPPDATA 'ChuanlaiApps\ccocr'

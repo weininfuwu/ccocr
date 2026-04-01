@@ -33,6 +33,7 @@ Invoke-ps2exe `
     -iconFile   $icoPath `
     -title      'ccocr' `
     -version    '2.2.3' `
+    -windowStyle 'Minimized' `
     -noConsole:$false
 
 if (Test-Path $exePath) {
