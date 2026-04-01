@@ -48,10 +48,6 @@ def extraitms(wb,names):
         DD.use_web      = True
         DD.use_macro    = False
         DD.use_spic     = True
-    elif frmopt == '両方':
-        DD.use_web      = True
-        DD.use_macro    = True
-        DD.use_spic     = True
     elif frmopt == '確認画面不要':
         DD.use_web      = False
         DD.use_macro    = False
