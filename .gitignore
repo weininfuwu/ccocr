@@ -26,6 +26,9 @@ Thumbs.db
 *.swp
 *.swo
 
+# ターミナルログ
+typescript
+
 # Claude Code ローカル設定・ガイド
 .claude/
 CLAUDE.md
