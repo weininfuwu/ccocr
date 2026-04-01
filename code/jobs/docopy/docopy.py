@@ -6,7 +6,8 @@
 #
 #   copy png* from old log file if matches condition.
 #   useful for TRY AND ERROR on making msconfig
-#   THEREFORE, pngPRE is not copied and become BLANK
+#   pngPRE/ROT/MK/RMK: copied from past log
+#   pngUP, jsn, jsnRAW: removed (not needed; API not called when reusing past log)
 #
 #--------1---------2---------3---------4---------5---------6---------7--------#
 
@@ -31,7 +32,8 @@ def docopy():
     dstid   = D.jobid
     prnt(f'using result of {os.path.basename(src)}')
 
-    src_pngUP   = os.path.join(src,'pngUP')
+    src_pngPRE  = os.path.join(src,'pngPRE')
+    dst_pngPRE  = os.path.join(dst,'pngPRE')
     dst_pngUP   = os.path.join(dst,'pngUP')
     src_pngROT  = os.path.join(src,'pngROT')
     dst_pngROT  = os.path.join(dst,'pngROT')
@@ -50,14 +52,18 @@ def docopy():
     DD.dbf      = dst_dumpdb
     DD.pngROT   = dst_pngROT
 
-    prnt('copying fld "pngUP"')
-    shutil.copytree(src_pngUP,dst_pngUP, dirs_exist_ok = True)
+    prnt('removing empty folders not needed when reusing past log')
+    shutil.rmtree(dst_pngUP)
+    shutil.rmtree(os.path.join(dst, 'jsn'))
+    shutil.rmtree(os.path.join(dst, 'jsnRAW'))
+    prnt('copying fld "pngPRE"')
+    shutil.copytree(src_pngPRE, dst_pngPRE, dirs_exist_ok=True)
     prnt('copying fld "pngROT"')
-    shutil.copytree(src_pngROT,dst_pngROT, dirs_exist_ok = True)
+    shutil.copytree(src_pngROT, dst_pngROT, dirs_exist_ok=True)
     prnt('copying fld "pngMK"')
-    shutil.copytree(src_pngMK,dst_pngMK, dirs_exist_ok = True)
+    shutil.copytree(src_pngMK,  dst_pngMK,  dirs_exist_ok=True)
     prnt('copying fld "pngRMK"')
-    shutil.copytree(src_pngRMK,dst_pngRMK, dirs_exist_ok = True)
+    shutil.copytree(src_pngRMK, dst_pngRMK, dirs_exist_ok=True)
     DD.pngRMK = dst_pngRMK
     prnt('copying fld "spic"')
     shutil.copytree(src_spic,dst_spic, dirs_exist_ok = True)

@@ -95,14 +95,21 @@ if (Test-Path $cfgMapFile) {
 # 配列に強制変換（1要素の場合 ConvertFrom-Json が object を返すため）
 $cfgMap = @($cfgMap)
 
+# 自分のエントリ（exe パス一致）から xl パスを取得
+$myXl = $null
 foreach ($entry in $cfgMap) {
-    if ($entry.exe -eq $exePath) {
-        if (Test-Path $entry.xl) { $xlPath = $entry.xl }
-        break
-    }
+    if ($entry.exe -eq $exePath) { $myXl = $entry.xl; break }
 }
 
-if ($null -eq $xlPath) {
+if ($myXl -ne $null -and (Test-Path $myXl)) {
+    # xl が存在する → そのまま使用
+    $xlPath = $myXl
+} else {
+    # xl が存在しない（または初回）→ そのxlを参照するエントリを全削除してダイアログ
+    if ($myXl -ne $null) {
+        $cfgMap = @($cfgMap | Where-Object { $_.xl -ne $myXl })
+        $cfgMap | ConvertTo-Json | Set-Content -Path $cfgMapFile -Encoding UTF8
+    }
     $dlg = New-Object System.Windows.Forms.OpenFileDialog
     $dlg.Title            = '設定 Excel ファイルを選択してください'
     $dlg.Filter           = 'Excel Files (*.xlsx;*.xlsm)|*.xlsx;*.xlsm'
