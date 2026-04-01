@@ -26,9 +26,13 @@ def mv2input():
     usrd        = os.path.dirname(D.fpath)
     DD.usrd     = usrd
     try:
-        shutil.copytree(usrd,inputd)
-    except shutil.Error as e:
-        prnt(f'''shutil.Error while copytree of usrd, quitting
+        os.makedirs(inputd)
+        for fname in os.listdir(usrd):
+            src = os.path.join(usrd, fname)
+            if os.path.isfile(src):
+                shutil.copy2(src, inputd)
+    except Exception as e:
+        prnt(f'''error while copying files from usrd, quitting
   {e}''')
         shutilerr(usrd,e)
         quit()
