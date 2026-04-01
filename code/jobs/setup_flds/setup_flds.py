@@ -61,7 +61,7 @@ def setup_flds():
     DD.jsn_raw  = jsn_raw
     DD.usrd     = usrd
 
-    DD.outd     = os.path.join(D.sysFld,'output')
+    DD.outd     = usrd
     DD.thisOutd = None
 
     return
