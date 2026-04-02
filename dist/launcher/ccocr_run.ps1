@@ -14,5 +14,5 @@ $codeFld  = Join-Path $appFld 'code'
 
 $env:PYTHONIOENCODING = 'utf-8'
 Set-Location $codeFld
-python -u main.py "$appFld" $flowid $thisName --config "$xlPath"
+python -u main.py "$appFld" $flowid "$thisName" --config "$xlPath"
 exit $LASTEXITCODE

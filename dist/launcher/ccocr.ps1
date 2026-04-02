@@ -199,7 +199,7 @@ foreach ($module in $pyModules) {
 #------------------------------------------------------------
 $runExe = Join-Path $sysFld 'dist\launcher\ccocr_run.exe'
 $proc = Start-Process $runExe `
-    -ArgumentList "`"$appFld`" $flowid $thisName `"$xlPath`"" `
+    -ArgumentList "`"$appFld`" $flowid `"$thisName $appVer`" `"$xlPath`"" `
     -WindowStyle Minimized `
     -PassThru -Wait
 if ($proc.ExitCode -ne 0) {
