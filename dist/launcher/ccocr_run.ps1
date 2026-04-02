@@ -12,7 +12,11 @@ $thisName = $args[2]
 $xlPath   = $args[3]
 $codeFld  = Join-Path $appFld 'code'
 
+# bundled python を優先、なければシステム python
+$bundledPy = Join-Path $appFld 'dist\python\python.exe'
+if (Test-Path $bundledPy) { $pyExe = $bundledPy } else { $pyExe = 'python' }
+
 $env:PYTHONIOENCODING = 'utf-8'
 Set-Location $codeFld
-python -u main.py "$appFld" $flowid "$thisName" --config "$xlPath"
+& $pyExe -u main.py "$appFld" $flowid "$thisName" --config "$xlPath"
 exit $LASTEXITCODE

@@ -56,9 +56,20 @@ if ($isFirstRun) {
                 "エラー詳細:`n" + ($cloneOut -join "`n"))
         exit
     }
+    # bundled python を AppData 配下にコピーして元フォルダを削除
+    $srcPy = Join-Path $scriptDir 'python'
+    $dstPy = Join-Path $sysFld   'dist\python'
+    if ((Test-Path $srcPy) -and -not (Test-Path $dstPy)) {
+        Copy-Item $srcPy $dstPy -Recurse
+        Remove-Item $srcPy -Recurse -Force
+    }
+
+    # MinGit も不要になるため削除
+    $localGit = Join-Path $scriptDir 'MinGit'
+    if (Test-Path $localGit) { Remove-Item $localGit -Recurse -Force }
+
     [System.Windows.Forms.MessageBox]::Show(
-        ("インストールが完了しました。`n`n" +
-         "exe と同じフォルダの MinGit フォルダは削除してかまいません。"),
+        "インストールが完了しました。",
         "$thisName $appVer",
         [System.Windows.Forms.MessageBoxButtons]::OK,
         [System.Windows.Forms.MessageBoxIcon]::Information
@@ -160,36 +171,48 @@ if (Test-Path $flowidFile) {
 #------------------------------------------------------------
 # 5. Python 確認
 #------------------------------------------------------------
-$codeFld = Join-Path $appFld 'code'
+$codeFld   = Join-Path $appFld 'code'
+$bundledPy = Join-Path $appFld 'dist\python\python.exe'
+if (Test-Path $bundledPy) {
+    $pyExe     = $bundledPy
+    $useBundled = $true
+} else {
+    $pyExe      = 'python'
+    $useBundled = $false
+}
 Set-Location $codeFld
 
-try {
-    python -V 2>&1 | Out-Null
-    if ($LASTEXITCODE -ne 0) { throw }
-} catch {
-    errmsg ("Python が見つかりません。`n`n" +
-            "Python をインストールしてから再度起動してください。`n" +
-            "https://www.python.org/downloads/")
-    exit
+if (-not $useBundled) {
+    try {
+        & $pyExe -V 2>&1 | Out-Null
+        if ($LASTEXITCODE -ne 0) { throw }
+    } catch {
+        errmsg ("Python が見つかりません。`n`n" +
+                "Python をインストールしてから再度起動してください。`n" +
+                "https://www.python.org/downloads/")
+        exit
+    }
 }
 
 #------------------------------------------------------------
 # 6. モジュール確認 / インストール
 #------------------------------------------------------------
-$pyModules = @("flask", "keyring", "numpy", "opencv-python", "openpyxl",
-               "pandas", "pdf2image", "pillow", "requests", "selenium",
-               "scikit-image", "sqlparse", "urllib3")
+if (-not $useBundled) {
+    $pyModules = @("flask", "keyring", "numpy", "opencv-python", "openpyxl",
+                   "pandas", "pdf2image", "pillow", "requests", "selenium",
+                   "scikit-image", "sqlparse", "urllib3")
 
-foreach ($module in $pyModules) {
-    python ifHasModule.py $module 2>&1 | Out-Null
-    if ($LASTEXITCODE -ne 0) {
-        pip config set global.trusted-host "pypi.org files.pythonhosted.org" 2>&1 | Out-Null
-        pip install --user $module 2>&1 | Out-Null
+    foreach ($module in $pyModules) {
+        & $pyExe ifHasModule.py $module 2>&1 | Out-Null
         if ($LASTEXITCODE -ne 0) {
-            errmsg ("モジュールのインストールに失敗しました。`n`n" +
-                    "モジュール名: $module`n`n" +
-                    "ネットワーク接続を確認して再度お試しください。")
-            exit
+            pip config set global.trusted-host "pypi.org files.pythonhosted.org" 2>&1 | Out-Null
+            pip install --user $module 2>&1 | Out-Null
+            if ($LASTEXITCODE -ne 0) {
+                errmsg ("モジュールのインストールに失敗しました。`n`n" +
+                        "モジュール名: $module`n`n" +
+                        "ネットワーク接続を確認して再度お試しください。")
+                exit
+            }
         }
     }
 }

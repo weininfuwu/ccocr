@@ -12,6 +12,9 @@ CURRENT_TASK_文字起こし/
 # zipファイル
 *.zip
 
+# ポータブルPython（バイナリのためgit管理外）
+dist/python/
+
 # Python
 __pycache__/
 *.py[cod]
