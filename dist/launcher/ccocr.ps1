@@ -1,15 +1,14 @@
-﻿﻿# vim: set ts=4 sw=4 sts=4 et ff=unix fenc=utf-8 ai :
-#
-#   ccocr.ps1       260331  cy
-#   launcher: AppData fixed install, git clone/pull, config_map
-#
-#--------1---------2---------3---------4---------5---------6---------7--------#
+﻿<#
+    vim: set ts=4 sw=4 sts=4 et ff=unix fenc=utf-8 ai :
+
+    ccocr.ps1       260331  cy
+    launcher: AppData fixed install, git clone/pull, config_map
+
+    -------1---------2---------3---------4---------5---------6---------7--------
+#>
 
 Add-Type -AssemblyName System.Windows.Forms
 
-# コンソールウィンドウを最小化
-Add-Type -Name "Win32" -Namespace "" -MemberDefinition '[DllImport("user32.dll")] public static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);'
-[Win32]::ShowWindow(([System.Diagnostics.Process]::GetCurrentProcess().MainWindowHandle), 6) | Out-Null
 
 $thisName   = 'ccocr'
 $repoUrl    = 'https://github.com/ykawase1114/ccocr.git'
@@ -34,6 +33,21 @@ function errmsg($msg) {
 }
 
 #------------------------------------------------------------
+# 0. 開始ダイアログ
+#------------------------------------------------------------
+$r = [System.Windows.Forms.MessageBox]::Show(
+    ("OCR処理を始めます。`n`n" +
+     "処理中は、タスクバー（画面下端）に`n" +
+     "Python のアイコン（青と黄色の丸2つ）が表示されます。`n`n" +
+     "「閉じる」ボタンで消すと処理が止まりますので、`n" +
+     "処理が終わるまで閉じないでください。"),
+    $thisName,
+    [System.Windows.Forms.MessageBoxButtons]::OKCancel,
+    [System.Windows.Forms.MessageBoxIcon]::Information
+)
+if ($r -ne [System.Windows.Forms.DialogResult]::OK) { exit }
+
+#------------------------------------------------------------
 # 1. 初回インストール判定 (.git の有無)
 #------------------------------------------------------------
 $isFirstRun = -not (Test-Path (Join-Path $sysFld '.git'))
@@ -50,9 +64,7 @@ if ($isFirstRun) {
         (Get-ChildItem $sysFld -Force | Measure-Object).Count -eq 0) {
         Remove-Item $sysFld
     }
-    Write-Host "git clone $repoUrl"
     $cloneOut = & $git clone $repoUrl $sysFld 2>&1
-    Write-Host $cloneOut
     if ($LASTEXITCODE -ne 0) {
         errmsg ("git clone に失敗しました。`n`n" +
                 "エラー詳細:`n" + ($cloneOut -join "`n"))
@@ -79,8 +91,7 @@ else {
     errmsg "MinGit が見つかりません。"
     exit
 }
-Write-Host "git pull"
-& $git -C $sysFld pull
+& $git -C $sysFld pull 2>&1 | Out-Null
 
 #------------------------------------------------------------
 # 3. 設定 Excel の確認
@@ -141,9 +152,8 @@ $codeFld = Join-Path $appFld 'code'
 Set-Location $codeFld
 
 try {
-    $pyVer = python -V 2>&1
+    python -V 2>&1 | Out-Null
     if ($LASTEXITCODE -ne 0) { throw }
-    Write-Host "Python: $pyVer"
 } catch {
     errmsg ("Python が見つかりません。`n`n" +
             "Python をインストールしてから再度起動してください。`n" +
@@ -159,11 +169,10 @@ $pyModules = @("flask", "keyring", "numpy", "opencv-python", "openpyxl",
                "scikit-image", "sqlparse", "urllib3")
 
 foreach ($module in $pyModules) {
-    python ifHasModule.py $module
+    python ifHasModule.py $module 2>&1 | Out-Null
     if ($LASTEXITCODE -ne 0) {
-        Write-Host "Installing $module..."
-        pip config set global.trusted-host "pypi.org files.pythonhosted.org" | Out-Null
-        pip install --user $module
+        pip config set global.trusted-host "pypi.org files.pythonhosted.org" 2>&1 | Out-Null
+        pip install --user $module 2>&1 | Out-Null
         if ($LASTEXITCODE -ne 0) {
             errmsg ("モジュールのインストールに失敗しました。`n`n" +
                     "モジュール名: $module`n`n" +
@@ -171,12 +180,14 @@ foreach ($module in $pyModules) {
             exit
         }
     }
-    Write-Host "module ready: $module"
 }
 
 #------------------------------------------------------------
 # 7. main.py 起動
 #------------------------------------------------------------
 $env:PYTHONIOENCODING = 'utf-8'
-[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
-python -u main.py $appFld $flowid $thisName --config $xlPath
+Start-Process python `
+    -ArgumentList "-u main.py `"$appFld`" $flowid $thisName --config `"$xlPath`"" `
+    -WindowStyle Minimized `
+    -WorkingDirectory $codeFld `
+    -Wait
