@@ -66,14 +66,14 @@ def click_btm(ev):
 
 root = tk.Tk()
 root.geometry('+100+100')
-root.title('為徳三：資格情報の保存')
+root.title('ccocr：資格情報の保存')
 root.protocol('WM_DELETE_WINDOW', (lambda: 'pass')())
 
 ## TOP
 frm_top = tk.Label(root).pack()
 tk.Label(frm_top, text=(
-    '\nこの DaaS の「資格情報ストア」に情報を保存します\n'
-    '「課金キー」て何？な人は tkz@pp.toyota-tsusho.com へお尋ね下さい\n\n'
+    '\nこの Windows の「資格情報ストア」に課金キー等を保存します。\n'
+    '「課金キー」が不明な場合は、取説を参照ください。\n\n'
     'タイプミスした場合、訂正がとても面倒なので慎重にねがいますm(_ _)m'
     )).pack()
 

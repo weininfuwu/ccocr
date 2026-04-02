@@ -26,13 +26,6 @@ def remove_nokids(board):
                 board.loc[p_zero, c_zero] = 0   # claud says
 #                board.loc[c_zero, p_zero] = 0      ## 250307 DOESN'T WORD
 
-# C:\Users\dk039\tkz\code\m_ccocr\m_ldmsconf\m_pdchk\remove_nokids.py:24: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
-# You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
-# A typical example is when you are setting values in a column of a DataFrame, like:
-# 
-# df["col"][row_indexer] = value
-                # df       ["col"] [row_indexer] = value
-                # board.loc[p_zero][c_zero]      = 0
 
 
 # 
