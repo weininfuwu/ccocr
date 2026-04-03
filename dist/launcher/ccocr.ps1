@@ -62,10 +62,10 @@ if (-not $isFirstRun) {
     }
 
     if ($verCmp -gt 0) {
-        # アップグレード必要 — 必要なパーツが揃っているか確認
+        # アップグレード必要 — パーツが隣に揃っているか確認（何が変わったか不明なため全部必要）
         $needSetup  = $true
-        $missingPy  = -not (Test-Path $srcPy)  -and -not (Test-Path $dstPy)
-        $missingGit = -not (Test-Path $srcGit) -and -not (Test-Path $dstGit)
+        $missingPy  = -not (Test-Path $srcPy)
+        $missingGit = -not (Test-Path $srcGit)
         if ($missingPy -or $missingGit) {
             errmsg ("PCに保存されているパーツの更新が必要です。`n`n" +
                     "ccocr.exe`n設定エクセル`n処理する帳表`n" +
