@@ -34,7 +34,7 @@ Invoke-ps2exe `
     -outputFile $exePath `
     -iconFile   $icoPath `
     -title      'ccocr' `
-    -version    '2.2.3' `
+    -version    '2.3.2' `
     -noConsole
 
 if (Test-Path $exePath) {
@@ -50,7 +50,7 @@ Invoke-ps2exe `
     -outputFile $runExePath `
     -iconFile   $icoPath `
     -title      'ccocr' `
-    -version    '2.2.3'
+    -version    '2.3.2'
 
 if (Test-Path $runExePath) {
     $size = (Get-Item $runExePath).Length
