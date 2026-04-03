@@ -14,6 +14,10 @@ $runPs1Path = Join-Path $workFld 'ccocr_run.ps1'
 $runExePath = Join-Path $workFld 'ccocr_run.exe'
 $icoPath    = Join-Path $workFld 'ccocr.ico'
 
+# ccocr.ps1 の $appVer からバージョン番号を取得
+$verLine = Get-Content $ps1Path | Where-Object { $_ -match '^\$appVer\s*=' }
+$exeVer  = ($verLine -replace ".*'v(.*)'.*", '$1')
+
 # Install ps2exe if not available
 if (-not (Get-Module -ListAvailable -Name ps2exe)) {
     Write-Host "Installing ps2exe..."
@@ -34,7 +38,7 @@ Invoke-ps2exe `
     -outputFile $exePath `
     -iconFile   $icoPath `
     -title      'ccocr' `
-    -version    '2.3.2' `
+    -version    $exeVer `
     -noConsole
 
 if (Test-Path $exePath) {
@@ -50,7 +54,7 @@ Invoke-ps2exe `
     -outputFile $runExePath `
     -iconFile   $icoPath `
     -title      'ccocr' `
-    -version    '2.3.2'
+    -version    $exeVer
 
 if (Test-Path $runExePath) {
     $size = (Get-Item $runExePath).Length
