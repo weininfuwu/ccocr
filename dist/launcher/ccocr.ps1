@@ -126,6 +126,9 @@ if ($needSetup) {
         }
         Remove-Item $srcGit -Recurse -Force
     }
+    # systemParts フォルダごと削除（空フォルダが残らないように）
+    $srcSysParts = Join-Path $scriptDir 'systemParts'
+    if (Test-Path $srcSysParts) { Remove-Item $srcSysParts -Recurse -Force }
     # バージョン記録
     Set-Content -Path $verFile -Value $appVer -Encoding UTF8
 }
