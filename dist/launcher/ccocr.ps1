@@ -49,6 +49,7 @@ $srcGit = Join-Path $scriptDir 'MinGit'
 $dstPy  = Join-Path $sysFld   'dist\python'
 $dstGit = Join-Path $sysFld   'dist\launcher\MinGit'
 
+$needSetup = $isFirstRun
 if (-not $isFirstRun) {
     $verCmp = (ParseVer $appVer).CompareTo((ParseVer $installedVer))
 
@@ -62,6 +63,7 @@ if (-not $isFirstRun) {
 
     if ($verCmp -gt 0) {
         # アップグレード必要 — 必要なパーツが揃っているか確認
+        $needSetup  = $true
         $missingPy  = -not (Test-Path $srcPy)  -and -not (Test-Path $dstPy)
         $missingGit = -not (Test-Path $srcGit) -and -not (Test-Path $dstGit)
         if ($missingPy -or $missingGit) {
@@ -106,25 +108,26 @@ if ($isFirstRun) {
 }
 
 #------------------------------------------------------------
-# 3. パーツコピー（初回 or アップグレード時に src があれば実施）
+# 3. パーツコピー（初回 or アップグレード時のみ）
 #------------------------------------------------------------
-# Python
-if (Test-Path $srcPy) {
-    if (Test-Path $dstPy) { Remove-Item $dstPy -Recurse -Force }
-    Copy-Item $srcPy $dstPy -Recurse
-    Remove-Item $srcPy -Recurse -Force
-}
-# MinGit（初回はclone済みのrepo内MinGitを使うためコピー不要、削除のみ）
-if (Test-Path $srcGit) {
-    if (-not $isFirstRun) {
-        if (Test-Path $dstGit) { Remove-Item $dstGit -Recurse -Force }
-        Copy-Item $srcGit $dstGit -Recurse
+if ($needSetup) {
+    # Python
+    if (Test-Path $srcPy) {
+        if (Test-Path $dstPy) { Remove-Item $dstPy -Recurse -Force }
+        Copy-Item $srcPy $dstPy -Recurse
+        Remove-Item $srcPy -Recurse -Force
     }
-    Remove-Item $srcGit -Recurse -Force
+    # MinGit（初回はclone済みのrepo内MinGitを使うためコピー不要、削除のみ）
+    if (Test-Path $srcGit) {
+        if (-not $isFirstRun) {
+            if (Test-Path $dstGit) { Remove-Item $dstGit -Recurse -Force }
+            Copy-Item $srcGit $dstGit -Recurse
+        }
+        Remove-Item $srcGit -Recurse -Force
+    }
+    # バージョン記録
+    Set-Content -Path $verFile -Value $appVer -Encoding UTF8
 }
-
-# バージョン記録
-Set-Content -Path $verFile -Value $appVer -Encoding UTF8
 
 #------------------------------------------------------------
 # 4. git pull
