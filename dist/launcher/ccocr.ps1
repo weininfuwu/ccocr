@@ -1,8 +1,8 @@
-﻿<#
+<#
     vim: set ts=4 sw=4 sts=4 et ff=unix fenc=utf-8 ai :
 
-    ccocr.ps1       260331  cy
-    launcher: AppData fixed install, git clone/pull, config_map
+    ccocr.ps1       260403  cy
+    launcher: version-aware install/upgrade, bundled Python/MinGit
 
     -------1---------2---------3---------4---------5---------6---------7--------
 #>
@@ -15,13 +15,14 @@ $appVer     = 'v2.3.2'
 $repoUrl    = 'https://github.com/weininfuwu/ccocr.git'
 $sysFld     = Join-Path $env:LOCALAPPDATA 'ChuanlaiApps\ccocr'
 $cfgMapFile = Join-Path $sysFld 'config_map.json'
+$verFile    = Join-Path $sysFld 'ccocr_version.txt'
 
 # ps2exe では $scriptDir / $MyInvocation が使えないためプロセスから取得
 $exePath   = [System.Diagnostics.Process]::GetCurrentProcess().MainModule.FileName
 $scriptDir = Split-Path $exePath -Parent
 
 #------------------------------------------------------------
-# errmsg helper
+# helpers
 #------------------------------------------------------------
 function errmsg($msg) {
     $f = New-Object Windows.Forms.Form
@@ -33,14 +34,52 @@ function errmsg($msg) {
     ) | Out-Null
 }
 
-#------------------------------------------------------------
-# 1. 初回インストール判定 (.git の有無)
-#------------------------------------------------------------
-$isFirstRun = -not (Test-Path (Join-Path $sysFld '.git'))
+function ParseVer($v) { [System.Version]($v -replace '^v','') }
 
+#------------------------------------------------------------
+# 1. インストール状態・バージョン確認
+#------------------------------------------------------------
+$isFirstRun   = -not (Test-Path (Join-Path $sysFld '.git'))
+$installedVer = if (Test-Path $verFile) {
+                    (Get-Content $verFile -Encoding UTF8).Trim()
+                } else { 'v0.0.0' }
+
+$srcPy  = Join-Path $scriptDir 'python'
+$srcGit = Join-Path $scriptDir 'MinGit'
+$dstPy  = Join-Path $sysFld   'dist\python'
+$dstGit = Join-Path $sysFld   'dist\launcher\MinGit'
+
+if (-not $isFirstRun) {
+    $verCmp = (ParseVer $appVer).CompareTo((ParseVer $installedVer))
+
+    if ($verCmp -lt 0) {
+        # このexeは古い
+        errmsg ("起動した ccocr.exe はバージョンが古いです。`n`n" +
+                "他のフォルダにある最新のものを使うか、`n" +
+                "再度 zip のダウンロードからお願いします。")
+        exit
+    }
+
+    if ($verCmp -gt 0) {
+        # アップグレード必要 — 必要なパーツが揃っているか確認
+        $missingPy  = -not (Test-Path $srcPy)  -and -not (Test-Path $dstPy)
+        $missingGit = -not (Test-Path $srcGit) -and -not (Test-Path $dstGit)
+        if ($missingPy -or $missingGit) {
+            errmsg ("PCに保存されているパーツの更新が必要です。`n`n" +
+                    "ccocr.exe`n設定エクセル`n処理する帳表`n" +
+                    "の他に`n`n" +
+                    "　MinGit フォルダ`n　Python フォルダ`n`n" +
+                    "全部同じフォルダに入れて、再度動かしてください。")
+            exit
+        }
+    }
+}
+
+#------------------------------------------------------------
+# 2. 初回インストール（git clone）
+#------------------------------------------------------------
 if ($isFirstRun) {
-    $git = Join-Path $scriptDir 'MinGit\cmd\git.exe'
-    if (-not (Test-Path $git)) {
+    if (-not (Test-Path $srcGit)) {
         errmsg ("MinGit が見つかりません。`n`n" +
                 "exe と同じフォルダに MinGit フォルダを置いてください。")
         exit
@@ -50,23 +89,13 @@ if ($isFirstRun) {
         (Get-ChildItem $sysFld -Force | Measure-Object).Count -eq 0) {
         Remove-Item $sysFld
     }
+    $git      = Join-Path $srcGit 'cmd\git.exe'
     $cloneOut = & $git clone $repoUrl $sysFld 2>&1
     if ($LASTEXITCODE -ne 0) {
         errmsg ("git clone に失敗しました。`n`n" +
                 "エラー詳細:`n" + ($cloneOut -join "`n"))
         exit
     }
-    # bundled python を AppData 配下にコピーして元フォルダを削除
-    $srcPy = Join-Path $scriptDir 'python'
-    $dstPy = Join-Path $sysFld   'dist\python'
-    if ((Test-Path $srcPy) -and -not (Test-Path $dstPy)) {
-        Copy-Item $srcPy $dstPy -Recurse
-        Remove-Item $srcPy -Recurse -Force
-    }
-
-    # MinGit も不要になるため削除
-    $localGit = Join-Path $scriptDir 'MinGit'
-    if (Test-Path $localGit) { Remove-Item $localGit -Recurse -Force }
 
     [System.Windows.Forms.MessageBox]::Show(
         "インストールが完了しました。",
@@ -77,9 +106,30 @@ if ($isFirstRun) {
 }
 
 #------------------------------------------------------------
-# 2. git pull (sysFld 内の MinGit を優先、なければ exe 隣)
+# 3. パーツコピー（初回 or アップグレード時に src があれば実施）
 #------------------------------------------------------------
-$appFld    = $sysFld                           # repo内の実コードroot
+# Python
+if (Test-Path $srcPy) {
+    if (Test-Path $dstPy) { Remove-Item $dstPy -Recurse -Force }
+    Copy-Item $srcPy $dstPy -Recurse
+    Remove-Item $srcPy -Recurse -Force
+}
+# MinGit（初回はclone済みのrepo内MinGitを使うためコピー不要、削除のみ）
+if (Test-Path $srcGit) {
+    if (-not $isFirstRun) {
+        if (Test-Path $dstGit) { Remove-Item $dstGit -Recurse -Force }
+        Copy-Item $srcGit $dstGit -Recurse
+    }
+    Remove-Item $srcGit -Recurse -Force
+}
+
+# バージョン記録
+Set-Content -Path $verFile -Value $appVer -Encoding UTF8
+
+#------------------------------------------------------------
+# 4. git pull
+#------------------------------------------------------------
+$appFld    = $sysFld
 $gitInRepo = Join-Path $sysFld 'dist\launcher\MinGit\cmd\git.exe'
 $gitLocal  = Join-Path $scriptDir 'MinGit\cmd\git.exe'
 if     (Test-Path $gitInRepo) { $git = $gitInRepo }
@@ -88,18 +138,11 @@ else {
     errmsg "MinGit が見つかりません。"
     exit
 }
+& $git -C $sysFld remote set-url origin $repoUrl 2>&1 | Out-Null
 & $git -C $sysFld pull 2>&1 | Out-Null
 
-# アップグレード: bundled python を AppData 配下にコピー（初回以外も対応）
-$srcPy = Join-Path $scriptDir 'python'
-$dstPy = Join-Path $sysFld   'dist\python'
-if ((Test-Path $srcPy) -and -not (Test-Path $dstPy)) {
-    Copy-Item $srcPy $dstPy -Recurse
-    Remove-Item $srcPy -Recurse -Force
-}
-
 #------------------------------------------------------------
-# 3. 設定 Excel の確認
+# 5. 設定 Excel の確認
 #------------------------------------------------------------
 $xlPath = $null
 $cfgMap = @()
@@ -150,7 +193,7 @@ if ($myXl -ne $null -and (Test-Path $myXl) -and
 }
 
 #------------------------------------------------------------
-# 3b. 開始ダイアログ
+# 5b. 開始ダイアログ
 #------------------------------------------------------------
 $r = [System.Windows.Forms.MessageBox]::Show(
     ("OCR処理を始めます。`n`n" +
@@ -165,7 +208,7 @@ $r = [System.Windows.Forms.MessageBox]::Show(
 if ($r -ne [System.Windows.Forms.DialogResult]::OK) { exit }
 
 #------------------------------------------------------------
-# 4. flowid (Python 互換のため exe 隣に隠しファイルで保持)
+# 6. flowid (Python 互換のため exe 隣に隠しファイルで保持)
 #------------------------------------------------------------
 $flowidFile = Join-Path $scriptDir '.flowid'
 if (Test-Path $flowidFile) {
@@ -177,12 +220,12 @@ if (Test-Path $flowidFile) {
 }
 
 #------------------------------------------------------------
-# 5. Python 確認
+# 7. Python 確認
 #------------------------------------------------------------
 $codeFld   = Join-Path $appFld 'code'
 $bundledPy = Join-Path $appFld 'dist\python\python.exe'
 if (Test-Path $bundledPy) {
-    $pyExe     = $bundledPy
+    $pyExe      = $bundledPy
     $useBundled = $true
 } else {
     $pyExe      = 'python'
@@ -203,7 +246,7 @@ if (-not $useBundled) {
 }
 
 #------------------------------------------------------------
-# 6. モジュール確認 / インストール
+# 8. モジュール確認 / インストール
 #------------------------------------------------------------
 if (-not $useBundled) {
     $pyModules = @("flask", "keyring", "numpy", "opencv-python", "openpyxl",
@@ -226,7 +269,7 @@ if (-not $useBundled) {
 }
 
 #------------------------------------------------------------
-# 7. main.py 起動
+# 9. main.py 起動
 #------------------------------------------------------------
 $runExe = Join-Path $sysFld 'dist\launcher\ccocr_run.exe'
 $proc = Start-Process $runExe `
